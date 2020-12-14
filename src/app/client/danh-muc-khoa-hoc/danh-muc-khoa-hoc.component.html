@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 style="color: white; justify-content: center; display: flex;" class="mt-5">Các khóa học gần đây</h2>
+    <div class="coursesList">
+        <ng-container *ngFor="let course of courses">
+            <div class="coursesItem">
+                <div class="img__container">
+                    <img class="course__img" [src]="course.hinhAnh" alt="course.tenKhoaHoc" />
+                </div>
+                <h3 routerLink="/chi-tiet-khoa-hoc/{{course.maKhoaHoc}}" class="course__title">{{course.tenKhoaHoc}}
+                </h3>
+                <div class="course__author">{{course.nguoiTao.hoTen}}</div>
+                <div class="course__views">{{course.luotXem}}</div>
+                <div class=" d-flex justify-content-center">
+                    <button class="btn btn-success">Đăng ký</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

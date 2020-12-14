@@ -1,0 +1,17 @@
+<div class="courseDetail">
+    <div class="courseDetail_header">
+        <img [src]="course.hinhAnh" alt="">
+        <div class="courseDetail_header--content">
+            <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc">{{course.tenKhoaHoc}}</h3>
+            <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc === '' || course.tenKhoaHoc === null">Khóa
+                học này không có tên</h3>
+            <p class="courseDetail_header--rating">rating <span>******</span></p>
+            <button class="courseDetail_header--btn">Đăng ký</button>
+        </div>
+
+    </div>
+    <div class="courseDetail_desc">
+        <h3 class="courseDetail_desc--title">Nội Dung Khóa Học</h3>
+        <p class="courseDetail_desc--content">{{course.moTa}}</p>
+    </div>
+</div>

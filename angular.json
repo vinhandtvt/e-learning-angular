@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "e-learning"
+  "defaultProject": "e-learning",
+  "cli": {
+    "analytics": "e03a2643-c308-4780-bfec-42f5f5815ab5"
+  }
 }
