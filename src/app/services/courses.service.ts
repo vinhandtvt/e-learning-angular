@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CoursesService {
-  searchItem: any;
+  private data = new BehaviorSubject(''); // '' là giá trị ban đầu của phim
+  public searchText = this.data.asObservable();
+
 
   constructor(private http: HttpClient) { }
 
@@ -77,6 +79,11 @@ export class CoursesService {
     );
   }
   // End of Request khóa học theo mã danh mục
+
+  getSearchItem(text: any) {
+    // this.searchItem = text;
+    this.data.next(text);    
+  }
 
 
 }

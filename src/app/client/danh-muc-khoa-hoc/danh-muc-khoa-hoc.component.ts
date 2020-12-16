@@ -16,11 +16,15 @@ export class DanhMucKhoaHocComponent implements OnInit {
   constructor( private courseServices: CoursesService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.maDanhMuc = this.activatedRoute.snapshot.params.maDanhMuc;    
-    this.courseServices.getCourseByCategory(this.maDanhMuc, this.maNhom).subscribe(res => {
-      console.log(res);
-      
-    })
+    this.activatedRoute.url.subscribe(url => {
+      this.courseServices.getCourseByCategory(url[1]?.path, this.maNhom).subscribe(res => {
+        this.courses = res; 
+      })
+    });
+    // this.courseServices.getCourseByCategory(this.maDanhMuc, this.maNhom).subscribe(res => {
+    //   console.log(res);
+    // })     
+    
   }
 
 

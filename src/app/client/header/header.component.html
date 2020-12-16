@@ -25,7 +25,9 @@
             </div>
             <div class="search-box">
                 <div class="search-icon">
-                    <input type="search" placeholder="Search" (change)="onSearch($any($event.target).value)" />
+                    <input type="search" placeholder="Search" (keyup)="onSearch($any($event.target).value)" />
+                    <!-- <input type="search" placeholder="Search" (change)="onSearch($any($event.target).value)" /> do not filter dynamically, but on key press -->
+                    <!-- <input type="search" placeholder="Search" [(ngModel)]="text" /> -->
                     <label class="icon mb-0">
                         <span class="fa fa-search"></span>
                     </label>

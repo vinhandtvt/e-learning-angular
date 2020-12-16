@@ -1,5 +1,8 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+
 
 import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client.component';
@@ -10,13 +13,17 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { DanhMucKhoaHocComponent } from './danh-muc-khoa-hoc/danh-muc-khoa-hoc.component';
 import { ChiTietKhoaHocComponent } from './chi-tiet-khoa-hoc/chi-tiet-khoa-hoc.component';
+import { FilterPipe } from '../pipes/filter.pipe';
+
 
 
 @NgModule({
-  declarations: [ClientComponent, HeaderComponent, LogInComponent, SignUpComponent, HomeComponent, FooterComponent, DanhMucKhoaHocComponent, ChiTietKhoaHocComponent],
+  declarations: [ClientComponent, HeaderComponent, LogInComponent, SignUpComponent, HomeComponent, FooterComponent, DanhMucKhoaHocComponent, ChiTietKhoaHocComponent, FilterPipe],
   imports: [
     CommonModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    FormsModule,
+     // -> added filter pipe to use it inside the component 
   ]
 })
 export class ClientModule { }

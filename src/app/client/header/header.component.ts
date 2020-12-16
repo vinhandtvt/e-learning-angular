@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 
@@ -9,18 +10,13 @@ import { CoursesService } from '../../services/courses.service';
 export class HeaderComponent implements OnInit {
 
   danhMucKhoaHoc: any;
-  searchItem: string = '';
-
+  text: any;
   constructor( private courseServices: CoursesService) { }
 
   ngOnInit(): void {
     this.courseServices.layDanhMucKhoaHoc().subscribe( res => this.danhMucKhoaHoc = res);
-    
+  }  
+  onSearch(event: any){
+    this.courseServices.getSearchItem(event);
   }
-
-  onSearch(data: string) {
-    this.courseServices.searchItem = data;    
-  }
-  
-
 }
