@@ -24,8 +24,9 @@
     <div class="container">
         <h2 style="color: white; justify-content: center; display: flex;" class="mt-5">Các khóa học gần đây</h2>
         <div class="coursesList">
-            <ng-container class="list-group-item" *ngFor="let course of layDanhSachKhoaHoc| Filter: inputSearch">
-                <div class="coursesItem">
+            <ng-container class="list-group-item"
+                *ngFor="let course of layDanhSachKhoaHoc| Filter: inputSearch; let i = index">
+                <div *ngIf="i < 8" class="coursesItem">
                     <div class="img__container">
                         <img class="course__img" [src]="course.hinhAnh" alt="course.tenKhoaHoc" />
                     </div>

@@ -27,7 +27,7 @@ export class LogInComponent implements OnInit {
       matKhau: formDangNhap.value.matKhau,
     };
     this.courseService.dangNhap(objDangNhap).subscribe( res => {
-      if (res && res.maLoaiNguoiDung === 'HV') {
+      if (res && res.maLoaiNguoiDung === 'GV') {
         localStorage.setItem('userAdmin', JSON.stringify(res));
         this.router.navigate(['/admin']);
       } else {

@@ -26,7 +26,7 @@ export class SignUpComponent implements OnInit {
       if(res) {
         alert("Bạn đã đăng ký thành công!")
       } else {
-        alert("Xin lỗi!")
+        alert("Nothing!")
       }
     }
     )
