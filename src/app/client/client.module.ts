@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -23,6 +23,7 @@ import { FilterPipe } from '../pipes/filter.pipe';
     CommonModule,
     ClientRoutingModule,
     FormsModule,
+    ReactiveFormsModule
      // -> added filter pipe to use it inside the component 
   ]
 })

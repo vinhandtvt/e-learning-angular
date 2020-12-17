@@ -85,5 +85,32 @@ export class CoursesService {
     this.data.next(text);    
   }
 
+  // DangNhap form 
+  dangNhap(objDangNhap: any): Observable<any> {
+    const url = 'https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap';
+    return this.http.post(url, objDangNhap).pipe(tap((data: any) => {
+      //loading
+    }),
+    catchError(err => {
+      return this.handleErr(err)
+    }));
+  }
+
+  // Service đăng ký user 
+
+  dangKy(objDangKy: any): Observable<any> {
+    const url = 'https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy';
+    return this.http.post(url, objDangKy).pipe(
+      tap((data: any) => {
+        // loading
+      }
+    ),
+    catchError( err => {
+      return this.handleErr(err);
+    })
+    );
+  }
+
+
 
 }

@@ -1,21 +1,19 @@
 <div class="login" id="login">
     <h1 class="login_title">Đăng nhập</h1>
 
-    <form class="login_form">
+    <form class="login_form" [formGroup]="formDangNhap" (ngSubmit)="dangNhap(formDangNhap)">
         <div class="form-group login_form--input">
-            <label htmlFor="exampleInputEmail1">Địa chỉ Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Điền email của bạn" />
-            <small id="emailHelp" class="form-text text-muted">
-                Chúng tôi sẽ không chia sẻ email của bạn với bất kỳ ai.
-            </small>
+            <label>Tài khoản</label>
+            <input #taiKhoan type="text" class="form-control" placeholder="Vui lòng nhập tài khoản"
+                formControlName="taiKhoan" />
         </div>
         <div class="form-group login_form--input">
-            <label htmlFor="exampleInputPassword1">Mật khẩu</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hay nhập mật khẩu" />
+            <label>Mật khẩu</label>
+            <input #matkhau type="password" class="form-control" placeholder="Hay nhập mật khẩu"
+                formControlName="matKhau" />
         </div>
         <div class="login__form--button">
-            <button type="submit" class="btn transparent">
+            <button (click)="dangNhap(formDangNhap)" type="submit" class="btn transparent">
                 Đăng nhập
             </button>
         </div>
