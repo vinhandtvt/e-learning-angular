@@ -62,7 +62,7 @@
                 <option>GP09</option>
                 <option>GP10</option>
             </select>
-            <div *ngIf="maNhom.errors">
+            <div *ngIf="maNhom.errors && maNhom.touched">
                 <div *ngIf="maNhom.errors.required" class="alert alert-danger">Mã nhóm không được để trống</div>
             </div>
         </div>

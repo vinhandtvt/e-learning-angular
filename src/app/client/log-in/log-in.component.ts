@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
 
@@ -14,9 +14,9 @@ export class LogInComponent implements OnInit {
 
   constructor(private courseService: CoursesService, private router: Router) {
     this.formDangNhap = new FormGroup({
-      'taiKhoan': new FormControl(null),
-      'matKhau': new FormControl(null)
-    })
+      taiKhoan: new FormControl(undefined, [Validators.required, Validators.minLength(6)]),
+      matKhau: new FormControl()
+    });
    }
 
   ngOnInit(): void {  
@@ -27,11 +27,11 @@ export class LogInComponent implements OnInit {
       matKhau: formDangNhap.value.matKhau,
     };
     this.courseService.dangNhap(objDangNhap).subscribe( res => {
-      if (res && res.maLoaiNguoiDung === 'QuanTri') {
+      if (res && res.maLoaiNguoiDung === 'HV') {
         localStorage.setItem('userAdmin', JSON.stringify(res));
-        this.router.navigate(['/admin/dashboard']);
+        this.router.navigate(['/admin']);
       } else {
-        alert('Khong phai quan tri');
+        alert('Khong phai hOC VIEN');
       }
     });
 

@@ -22,7 +22,13 @@ export class SignUpComponent implements OnInit {
       maNhom: data.form.value.maNhom,
       email: data.form.value.email
     }
-    this.dangKyService.dangKy(objDangKy).subscribe( res => console.log(res)
+    this.dangKyService.dangKy(objDangKy).subscribe( res => {
+      if(res) {
+        alert("Bạn đã đăng ký thành công!")
+      } else {
+        alert("Xin lỗi!")
+      }
+    }
     )
     
     
