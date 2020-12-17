@@ -31,7 +31,7 @@ export class LogInComponent implements OnInit {
         localStorage.setItem('userAdmin', JSON.stringify(res));
         this.router.navigate(['/admin']);
       } else {
-        alert('Khong phai hOC VIEN');
+        this.router.navigate(['/client'])
       }
     });
 
