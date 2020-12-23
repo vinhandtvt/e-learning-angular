@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <a href="#" class="navbar-brand">Navbar</a>
 
     <div class="collapse navbar-collapse" id="collapseibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a routerLink="/admin/" class="nav-link">Dashboard</a>
+                <a routerLink="/admin/dashboard" class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link">Đăng ký</a>
@@ -14,6 +14,40 @@
                     Đăng nhập
                 </a>
             </li>
+            <li>
+                <a class="btn btn-success" routerLink="/admin/users">Users</a>
+            </li>
         </ul>
     </div>
-</nav>
+</nav> -->
+
+<mat-toolbar color="primary" class="admin__header">
+    <mat-toolbar-row>
+        <span>
+            <a href="#"><img src="../../../assets/img/index.png" style="width: 50px" alt=""></a>
+            Admin Center
+        </span>
+        <span class="example-spacer"></span>
+        <span>
+            <a routerLink="/admin/dashboard">Dashboard</a>
+        </span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="user__icon">
+            <span><i class="fa fa-user-tie"></i></span>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>dialpad</mat-icon>
+                <span>Redial</span>
+            </button>
+            <button mat-menu-item>
+                <span><i class="fa fa-user-cog"></i></span>
+                <span>Cập nhật thông tin</span>
+            </button>
+            <button mat-menu-item>
+                <span><i class="fa fa-sign-out-alt"></i></span>
+                <span>Đăng xuất</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar-row>
+</mat-toolbar>

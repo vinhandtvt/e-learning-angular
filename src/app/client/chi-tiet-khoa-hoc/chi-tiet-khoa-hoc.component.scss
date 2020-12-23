@@ -1,5 +1,5 @@
 .courseDetail {
-    width: 90%;
+    width: 80%;
     margin: 2rem auto;
     height: 85vh;
     box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
@@ -8,46 +8,79 @@
         height: 45%;
         background-color: seagreen;
         position: relative;
-        img {
+        display: flex;
+        justify-content: space-between;
+        background-image: url(../../../assets/img/pexels-josh-sorenson-small.jpg);
+        .courseDetail_header--img {
+            background-color: hotpink;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.8;
+            bottom: 15%;
+            right: 15%;
+            width: 30rem;
+            height: 20rem;
+            border-radius: 1rem;
+            clip-path: polygon(
+                0% 15%,
+                14% 13%,
+                15% 0%,
+                85% 0%,
+                87% 12%,
+                100% 15%,
+                100% 85%,
+                86% 88%,
+                85% 100%,
+                15% 100%,
+                11% 89%,
+                0% 85%
+            );
+            img {
+                width: 100%;
+                height: 100%;
+
+                // clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            }
         }
         .courseDetail_header--content {
             position: absolute;
-            top: 40%;
-            left: 20%;
+            bottom: 15%;
+            left: 10%;
+            width: 40rem;
+            height: 15rem;
+            padding-left: 1rem;
+            color: white;
             .courseDetail_header--title {
-                font-size: 4rem;
+                font-size: 3rem;
+                font-weight: 600;
                 color: white;
+                text-transform: uppercase;
             }
             .courseDetail_header--rating {
-                font-size: 2.5rem;
-                color: white;
-                span {
-                    color: yellow;
-                }
+                font-size: 1.4rem;
             }
             .courseDetail_header--btn {
-                display: inline-block;
-                padding: 0.7rem 1.5rem;
-                font-size: calc(1rem + 0.2vw);
-                border: 0.2rem solid white;
-                border-radius: 4rem;
-                transition: 0.3s;
-                text-transform: uppercase;
-                transition: 0.5s;
                 cursor: pointer;
+                background: none;
+                width: 80px;
+                height: 40px;
+                font-size: 1.4rem;
+                border: 1px solid #28769c;
+                background-color: white;
+                color: #3489bd;
+                border-radius: 5px;
+                font-weight: 500;
+                transition: 0.5s;
                 &:hover {
-                    background-color: #0b5479;
-                    color: white;
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                        rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                    border: 2px solid #925a07;
+                    transform: scale(1.2);
+                    color: black;
                 }
             }
         }
     }
+
     .courseDetail_desc {
         height: 55%;
         background-color: seashell;

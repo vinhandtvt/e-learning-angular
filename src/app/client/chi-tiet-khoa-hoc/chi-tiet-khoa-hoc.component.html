@@ -1,14 +1,25 @@
 <div class="courseDetail">
     <div class="courseDetail_header">
-        <img [src]="course.hinhAnh" alt="">
         <div class="courseDetail_header--content">
-            <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc">{{course.tenKhoaHoc}}</h3>
-            <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc === '' || course.tenKhoaHoc === null">Khóa
-                học này không có tên</h3>
-            <p class="courseDetail_header--rating">rating <span>******</span></p>
-            <button class="courseDetail_header--btn">Đăng ký</button>
+            <h3 class="courseDetail_header--title">{{course.tenKhoaHoc}}</h3>
+            <!-- <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc">{{course.tenKhoaHoc}}</h3> -->
+            <!-- <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc === '' || course.tenKhoaHoc === null">
+                Khóa
+                học này không có tên</h3> -->
+            <p class="courseDetail_header--rating">Đánh giá khóa học
+                <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                <span class="course__views--rating"><i class="fa fa-star-half-alt"></i></span>
+                4.5
+                <span class="course__views--number">({{course.luotXem}})</span>
+            </p>
+            <button class="btn courseDetail_header--btn">Đăng ký</button>
         </div>
-
+        <div class="courseDetail_header--img">
+            <img [src]="course.hinhAnh" alt="hình ảnh khóa học">
+        </div>
     </div>
     <div class="courseDetail_desc">
         <h3 class="courseDetail_desc--title">Nội Dung Khóa Học</h3>

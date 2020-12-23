@@ -72,7 +72,8 @@
             min-height: 25rem;
             margin: 15px;
             background-color: rgba(0, 0, 0, 0.39);
-            border: 1px solid red;
+            border: 2px solid rgb(161, 101, 101);
+            border-radius: 5px;
             cursor: pointer;
             .img__container {
                 width: 100%;
@@ -94,6 +95,18 @@
                 font-size: calc(1rem + 0.4vw);
                 color: white;
                 padding-left: 1rem;
+                .course__views--rating {
+                    color: yellow;
+                }
+                .course__views--number {
+                    font-size: 1.4rem;
+                    color: rgb(224, 218, 218);
+                }
+            }
+            .course__register {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 1.3rem;
             }
         }
     }

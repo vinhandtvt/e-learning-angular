@@ -32,9 +32,17 @@
                     </div>
                     <h3 routerLink="/chi-tiet-khoa-hoc/{{course.maKhoaHoc}}" class="course__title">{{course.tenKhoaHoc}}
                     </h3>
-                    <div class="course__author">{{course.nguoiTao.hoTen}}</div>
-                    <div class="course__views">{{course.luotXem}}</div>
-                    <div class=" d-flex justify-content-center">
+                    <div class="course__views">
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star-half-alt"></i></span>
+                        4.5
+                        <span class="course__views--number">({{course.luotXem}})</span>
+
+                    </div>
+                    <div class="course__register">
                         <button class="btn btn-success">Đăng ký</button>
                     </div>
                 </div>

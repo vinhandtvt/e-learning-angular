@@ -28,9 +28,12 @@ export class LogInComponent implements OnInit {
     };
     this.courseService.dangNhap(objDangNhap).subscribe( res => {
       if (res && res.maLoaiNguoiDung === 'GV') {
-        localStorage.setItem('userAdmin', JSON.stringify(res));
-        this.router.navigate(['/admin']);
+        // localStorage.setItem('userAdmin', JSON.stringify(res));
+        localStorage.setItem('token', JSON.stringify(res));
+        this.router.navigate(['/admin/dashboard']);
       } else {
+        // localStorage.setItem('userHocVien', JSON.stringify(res));
+        localStorage.setItem('token', JSON.stringify(res));
         this.router.navigate(['/client'])
       }
     });

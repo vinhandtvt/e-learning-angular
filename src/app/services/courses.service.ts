@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CoursesService {
   public searchText = this.data.asObservable();
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   handleErr(err: any): any {
     switch ( err.status ) {
@@ -96,6 +97,16 @@ export class CoursesService {
     }));
   }
 
+  daDangNhap() {
+    return !!localStorage.getItem('token');
+    // console.log(!!localStorage.getItem('token'));
+  }
+
+  dangXuat() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/client']);
+  }
+
   // Service đăng ký user 
 
   dangKy(objDangKy: any): Observable<any> {
@@ -109,6 +120,19 @@ export class CoursesService {
       return this.handleErr(err);
     })
     );
+  }
+
+
+  // Service find all users
+  getAllUsers(maNhom: string, page: number, size: number): Observable<any> {
+    return this.http.get(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung_PhanTrang?MaNhom=${maNhom}&page=${page}&pageSize=${size}`).pipe(
+      tap((data: any) => {
+        // loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
   }
 
 

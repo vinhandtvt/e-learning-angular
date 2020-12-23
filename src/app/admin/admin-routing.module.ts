@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../core/auth.guard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -13,7 +15,18 @@ const routes: Routes = [
       },
       {
         path: 'header', component: HeaderComponent
-      }
+      },
+      {
+        path: 'users', children: [
+          {
+            path: '', component: UsersComponent
+          },
+          {
+            path: ':id', component: UserProfileComponent
+          }
+        ]
+      },
+      
     ]
   },
 

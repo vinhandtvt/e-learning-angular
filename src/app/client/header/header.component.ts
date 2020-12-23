@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   danhMucKhoaHoc: any;
   text: any;
-  constructor( private courseServices: CoursesService) { }
+  constructor( public courseServices: CoursesService) { }
 
   ngOnInit(): void {
     this.courseServices.layDanhMucKhoaHoc().subscribe( res => this.danhMucKhoaHoc = res);
