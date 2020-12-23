@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  searchUser: string = '';
+
+  constructor(private search: CoursesService) { }
 
   ngOnInit(): void {
+  }
+
+  onSearch(event: any){
+    this.search.getSearchItem(event);
   }
 
 }
