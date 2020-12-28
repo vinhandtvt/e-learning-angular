@@ -10,7 +10,9 @@
                 <div class="input">
                     <form>
                         <div class="input-group">
-                            <input type="search" placeholder="Search" (keyup)="onSearch($any($event.target).value)" />
+                            <input type="search" placeholder="Search" (keyup)="onSearch($any($event.target).value)"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                class="form-control" />
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">
                                     <!-- <i class="fab fa-search"></i> -->
@@ -25,7 +27,7 @@
         <div class="dashboard__body row">
             <div class="dashboard__body--menu col-2">
                 <ul>
-                    <li routerLink="/courses">Quản lý khóa học</li>
+                    <li routerLink="/admin/courses">Quản lý khóa học</li>
                     <li routerLink="/admin/users">Quản lý người dùng</li>
                 </ul>
             </div>

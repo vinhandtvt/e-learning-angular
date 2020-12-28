@@ -30,7 +30,7 @@
             <mat-cell *matCellDef="let row">
                 <button class="mr-3">Chi tiet</button>
                 <button class="mr-3">Chinh sua</button>
-                <button class="mr-3">Xoa</button>
+                <button class="mr-3" (click)="deleteUser(this.row.taiKhoan)">Xoa</button>
             </mat-cell>
         </ng-container>
     </mat-table>

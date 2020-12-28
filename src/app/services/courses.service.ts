@@ -11,6 +11,8 @@ export class CoursesService {
   private data = new BehaviorSubject(''); // '' là giá trị ban đầu của phim
   public searchText = this.data.asObservable();
 
+  token: any;
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -107,6 +109,11 @@ export class CoursesService {
     this.router.navigate(['/client']);
   }
 
+  getToken() {
+    
+    return localStorage.getItem('token')
+  }
+
   // Service đăng ký user 
 
   dangKy(objDangKy: any): Observable<any> {
@@ -128,6 +135,19 @@ export class CoursesService {
     return this.http.get(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung_PhanTrang?MaNhom=${maNhom}&page=${page}&pageSize=${size}`).pipe(
       tap((data: any) => {
         // loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  deleteUser(userName: string) {
+    return this.http.delete(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${userName}`).pipe(
+      tap((data: any) => {
+        // loading
+        console.log(data);
+        
       }),
       catchError( err => {
         return this.handleErr(err);

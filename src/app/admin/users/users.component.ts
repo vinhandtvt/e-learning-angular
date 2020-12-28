@@ -14,13 +14,15 @@ export class UsersComponent implements OnInit {
 
   maNhom: string = 'GP01';
   page: number = 1;
-  size: number = 5;
+  size: number = 20;
   inputSearch: string = '';
   // MatPaginator Output
   // MatPaginator Output
   pageEvent!: PageEvent;
   dataSource: any = [];
   columnsToDisplay: string[] = ['index', 'name', 'useraccount', 'soDT', 'role', 'action'];
+  token: any;
+
 
   constructor(private getUserService: CoursesService) { }
 
@@ -34,6 +36,7 @@ export class UsersComponent implements OnInit {
       this.inputSearch = data;
       console.log(this.inputSearch);
     });
+    
   }
 
   initDataSource() {
@@ -52,6 +55,11 @@ export class UsersComponent implements OnInit {
       this.dataSource = data;
      
     })
+  }
+  deleteUser(taiKhoan: string) {
+    console.log(taiKhoan);
+    this.getUserService.deleteUser(taiKhoan);
+    this.initDataSource(); 
   }
 
 }
