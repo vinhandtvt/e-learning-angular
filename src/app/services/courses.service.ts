@@ -143,11 +143,9 @@ export class CoursesService {
   }
 
   deleteUser(userName: string) {
-    return this.http.delete(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${userName}`).pipe(
+    return this.http.delete(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${userName}`, { responseType: 'text'}).pipe(
       tap((data: any) => {
-        // loading
-        console.log(data);
-        
+        // loading        
       }),
       catchError( err => {
         return this.handleErr(err);

@@ -20,6 +20,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { UserFilterPipe } from '../pipes/user-filter.pipe';
 import { CoursesComponent } from './courses/courses.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -35,7 +37,9 @@ import { CoursesComponent } from './courses/courses.component';
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule,
+    MatDialogModule
   ]
 
 })

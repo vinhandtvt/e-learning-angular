@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
     console.log(this.courseService.searchText);
     
     this.courseService.layDanhSachKhoaHoc(this.maNhom).subscribe( res => {
-      this.layDanhSachKhoaHoc = res;      
+      this.layDanhSachKhoaHoc = res; 
+         
 
     });   
     this.courseService.searchText.subscribe(data => {

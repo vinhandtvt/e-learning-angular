@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { CoursesService } from 'src/app/services/courses.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
+
 
 
 
@@ -24,7 +28,7 @@ export class UsersComponent implements OnInit {
   token: any;
 
 
-  constructor(private getUserService: CoursesService) { }
+  constructor(private getUserService: CoursesService, private snackbar: MatSnackBar, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     // this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( users => {
@@ -42,6 +46,8 @@ export class UsersComponent implements OnInit {
   initDataSource() {
     this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
       this.dataSource = data;
+      console.log('get all users', data);
+      
       console.log(this.dataSource.items);
       
     })
@@ -57,9 +63,25 @@ export class UsersComponent implements OnInit {
     })
   }
   deleteUser(taiKhoan: string) {
-    console.log(taiKhoan);
-    this.getUserService.deleteUser(taiKhoan);
-    this.initDataSource(); 
+    if(confirm(`Bạn có muốn xóa người dùng ${taiKhoan} không ?`)) {
+      this.getUserService.deleteUser(taiKhoan).subscribe( res => {
+        this.initDataSource();
+        this.snackbar.open(res.toString(), '', {
+          duration: 5000,
+          verticalPosition: 'top'
+        });
+      });
+    }
+    // console.log(taiKhoan);
+    // this.getUserService.deleteUser(taiKhoan);
+    // this.initDataSource(); 
+  }
+
+  // user information detail
+  openDialog() {
+    console.log('you clicked here!');
+    const dialogRef = this.dialog.open(UserProfileComponent);
+    
   }
 
 }
