@@ -4,7 +4,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { CoursesService } from 'src/app/services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { UserProfileComponent } from '../user-profile/user-profile.component';
+import { GhiDanhComponent } from '../ghi-danh/ghi-danh.component';
 
 
 
@@ -81,7 +81,7 @@ export class UsersComponent implements OnInit {
 
   // user information detail
   openDialog(taiKhoan: string) {
-    // const dialogRef = this.dialog.open(UserProfileComponent);
+    const dialogRef = this.dialog.open(GhiDanhComponent);
     
     
   }

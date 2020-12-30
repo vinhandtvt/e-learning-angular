@@ -24,11 +24,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import { GhiDanhComponent } from './ghi-danh/ghi-danh.component';
 
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent],
+  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
