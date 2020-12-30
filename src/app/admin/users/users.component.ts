@@ -90,4 +90,8 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/admin/users/' + taiKhoan], {relativeTo: this.activatedRoute})
   }
 
+  updateUser(){
+    alert('Chưa lập trình button này, đừng có bấm ahihi đồ ngốc')
+  }
+
 }
