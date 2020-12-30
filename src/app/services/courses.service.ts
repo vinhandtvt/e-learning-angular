@@ -153,6 +153,18 @@ export class CoursesService {
     )
   }
 
+  getUserInfo(taiKhoan: string, matKhau: string) {
+    const user = { 'taiKhoan': taiKhoan, 'matKhau': matKhau};
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan`, user).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError(err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
 
 
 }

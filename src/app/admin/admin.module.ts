@@ -22,6 +22,8 @@ import { UserFilterPipe } from '../pipes/user-filter.pipe';
 import { CoursesComponent } from './courses/courses.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -39,7 +41,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatDividerModule
   ]
 
 })

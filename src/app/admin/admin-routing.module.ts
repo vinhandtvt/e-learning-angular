@@ -26,7 +26,7 @@ const routes: Routes = [
             path: '', component: UsersComponent
           },
           {
-            path: ':id', component: UserProfileComponent
+            path: ':taiKhoan', component: UserProfileComponent
           }
         ]
       },

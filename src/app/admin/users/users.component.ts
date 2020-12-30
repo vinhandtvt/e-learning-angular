@@ -1,9 +1,11 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { CoursesService } from 'src/app/services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
+
 
 
 
@@ -28,7 +30,7 @@ export class UsersComponent implements OnInit {
   token: any;
 
 
-  constructor(private getUserService: CoursesService, private snackbar: MatSnackBar, public dialog: MatDialog) { }
+  constructor(private getUserService: CoursesService, private snackbar: MatSnackBar, public dialog: MatDialog, private activatedRoute: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void {
     // this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( users => {
@@ -78,10 +80,14 @@ export class UsersComponent implements OnInit {
   }
 
   // user information detail
-  openDialog() {
-    console.log('you clicked here!');
-    const dialogRef = this.dialog.open(UserProfileComponent);
+  openDialog(taiKhoan: string) {
+    // const dialogRef = this.dialog.open(UserProfileComponent);
     
+    
+  }
+
+  getUserInfo(taiKhoan: string) {
+    this.router.navigate(['/admin/users/' + taiKhoan], {relativeTo: this.activatedRoute})
   }
 
 }
