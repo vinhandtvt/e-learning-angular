@@ -25,14 +25,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { GhiDanhComponent } from './ghi-danh/ghi-danh.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent],
+  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
+    FormsModule,
     MatTableModule,
     MatToolbarModule,
     MatSelectModule,
@@ -44,7 +47,8 @@ import { GhiDanhComponent } from './ghi-danh/ghi-danh.component';
     MatSnackBarModule,
     MatDialogModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule, 
+    ReactiveFormsModule
   ]
 
 })

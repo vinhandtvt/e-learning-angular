@@ -165,6 +165,19 @@ export class CoursesService {
     )
   }
 
+  addUser(data: any){
+    const url = 'https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung';
+    return this.http.post(url, data).pipe(
+      tap((data: any) => {
+        // loading
+      }
+    ),
+    catchError( err => {
+      return this.handleErr(err);
+    })
+    ); 
+  }
+
 
 
 }

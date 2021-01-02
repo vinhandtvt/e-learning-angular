@@ -80,10 +80,8 @@ export class UsersComponent implements OnInit {
   }
 
   // user information detail
-  openDialog(taiKhoan: string) {
+  openDialog() {
     const dialogRef = this.dialog.open(GhiDanhComponent);
-    
-    
   }
 
   getUserInfo(taiKhoan: string) {

@@ -1,0 +1,51 @@
+<div class="add__user">
+    <h2>Thêm người dùng</h2>
+    <form [formGroup]="addForm">
+        <div class="form-group">
+            <label>Tài khoản</label>
+            <input type="text" formControlName="taiKhoan" class="form-control" placeholder="Tài khoản người dùng"
+                aria-describedby="helpId">
+            <div *ngIf="taiKhoan?.invalid && taiKhoan?.touched">
+                <span class="error">Tài khoản không hợp lệ</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" name="email" formControlName="email" class="form-control"
+                placeholder="Email người dùng" aria-describedby="helpId">
+            <div *ngIf="email?.invalid && email?.touched">
+                <span class="error">Email không hợp lệ</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Mật khẩu</label>
+            <input type="text" name="matKhau" formControlName="matKhau" class="form-control"
+                placeholder="Mật khẩu người dùng" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+            <label for="">Số điện thoại</label>
+            <input type="text" name="soDT" formControlName="soDT" class="form-control"
+                placeholder="Số điện thoại người dùng" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+            <label for="">Họ tên</label>
+            <input type="text" name="hoTen" formControlName="hoTen" class="form-control"
+                placeholder="Họ tên người dùng" aria-describedby="helpId">
+        </div>
+        <div class="form-group">
+            <label> Loại người dùng</label>
+            <select name="maLoaiNguoiDung" formControlName="maLoaiNguoiDung" class="form-control">
+                <option value="HV">HỌC VIÊN</option>
+                <option value="GV">GIÁO VIÊN</option>
+            </select>
+        </div>
+        <div class="form__actions">
+            <div>Trở về</div>
+            <div>
+                <button type="submit" [disabled]="addForm.invalid" (click)="addUser(addForm)">Thêm</button>
+                <button>Lưu</button>
+            </div>
+        </div>
+    </form>
+
+</div>

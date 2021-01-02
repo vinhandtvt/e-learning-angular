@@ -1,0 +1,37 @@
+.add__user {
+    color: white;
+    form {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        .form-group {
+            width: 45%;
+            margin-left: 5px;
+            padding: 1rem 1.5rem;
+            input {
+                padding: 10px 4px;
+                font-size: 1.6rem;
+            }
+            input.ng-invalid {
+                &:focus {
+                    border-left: 5px solid red;
+                }
+            }
+            input.ng-valid {
+                border-left: 5px solid green;
+            }
+            .error {
+                color: red;
+            }
+            select {
+                height: calc(4.25rem + 2px);
+            }
+        }
+        .form__actions {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

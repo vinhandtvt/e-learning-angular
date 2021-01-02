@@ -7,6 +7,7 @@ import { AuthGuard } from '../core/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsersComponent } from './users/users.component';
 import { CoursesComponent } from './courses/courses.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const routes: Routes = [
   {
@@ -26,8 +27,12 @@ const routes: Routes = [
             path: '', component: UsersComponent
           },
           {
+            path: 'add' , component: AddUserComponent
+          },
+          {
             path: ':taiKhoan', component: UserProfileComponent
           }
+          
         ]
       },
       {

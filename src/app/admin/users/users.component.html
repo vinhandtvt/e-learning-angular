@@ -1,5 +1,6 @@
 <div class="users">
     <h2 style="text-align: center;">All users</h2>
+    <h3 class="users__add"> <a routerLink="/admin/users/add">Thêm người dùng</a> </h3>
     <div *ngIf="dataSource">
         <mat-table [dataSource]="dataSource.items | userFilter: inputSearch">
             <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
