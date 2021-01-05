@@ -8,6 +8,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsersComponent } from './users/users.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 const routes: Routes = [
   {
@@ -36,8 +37,16 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'courses', component: CoursesComponent
+        path: 'courses', children: [
+          {
+            path: '', component: CoursesComponent
+          },
+          {
+            path: 'add-course', component: AddCourseComponent
+          }
+        ]
       }
+      
       
     ]
   },

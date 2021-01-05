@@ -1,0 +1,51 @@
+<div class="container">
+  <form [formGroup]="courseForm">
+    <h3>Thêm khóa học</h3>
+    <div class="form-group">
+      <label>Mã khóa học</label>
+      <input type="text" class="form-control" formControlName="maKhoaHoc">
+    </div>
+    <div class="form-group">
+      <label>Bí danh</label>
+      <input type="text" class="form-control" formControlName="biDanh">
+    </div>
+    <div class="form-group">
+      <label>Tên khóa học</label>
+      <input type="text" class="form-control" formControlName="tenKhoaHoc">
+    </div>
+    <div class="form-group">
+      <label>Mô tả</label>
+      <textarea class="form-control" formControlName="moTa"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Lượt xem</label>
+      <input type="text" class="form-control" formControlName="luotXem">
+    </div>
+    <div class="form-group">
+      <label>Danh gia</label>
+      <input type="text" class="form-control" formControlName="danhGia">
+    </div>
+    <div class="form-group">
+      <label>Hình ảnh</label>
+      <input type="file" class="form-control" #imgCourse>
+    </div>
+    <div class="form-group">
+      <label>Mã nhóm</label>
+      <input type="text" class="form-control" formControlName="maNhom">
+    </div>
+    <div class="form-group">
+      <label>Ngày tạo</label>
+      <input type="text" class="form-control" formControlName="ngayTao">
+    </div>
+    <div class="form-group">
+      <label>Mã danh mục khóa học</label>
+      <input type="text" class="form-control" formControlName="maDanhMucKhoaHoc">
+    </div>
+    <div class="form-group">
+      <label>Tài khoản người tạo</label>
+      <input type="text" class="form-control" formControlName="taiKhoanNguoiTao">
+    </div>
+    <button type="submit" (click)="onUpload(courseForm, imgCourse.files)">Them</button>
+    <button type="submit">lưa</button>
+  </form>
+</div>

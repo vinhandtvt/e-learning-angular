@@ -27,11 +27,12 @@ import {MatDividerModule} from '@angular/material/divider';
 import { GhiDanhComponent } from './ghi-danh/ghi-danh.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent],
+  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

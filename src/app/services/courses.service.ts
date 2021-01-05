@@ -178,6 +178,41 @@ export class CoursesService {
     ); 
   }
 
+  // course management services
+
+  getAllCourse(maNhom: string){
+    return this.http.get(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=${maNhom}`).pipe(
+      tap( res => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  addCourse(course: any) {
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/ThemKhoaHoc`, course).pipe(
+      tap( res => {
+
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  uploadPicture(data: any) {
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/UploadHinhAnhKhoaHoc`, data, {responseType: 'text'}).pipe(
+      tap( res => {
+
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
 
 
 }

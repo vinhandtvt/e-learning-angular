@@ -1,4 +1,29 @@
-:host {
-    font-size: 50px;
+.courses {
     color: red;
+    font-size: 50px;
+    h2 {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
+    mat-table {
+        width: 100%;
+        .mat-column-STT {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 5% !important;
+            width: 5% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-LuotXem {
+            justify-content: center;
+        }
+    }
 }

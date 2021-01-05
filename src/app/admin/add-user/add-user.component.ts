@@ -16,9 +16,9 @@ export class AddUserComponent implements OnInit {
     this.addForm = new FormGroup({
       taiKhoan: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.maxLength(20)]),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      matKhau: new FormControl(),
-      soDT: new FormControl(),
-      hoTen: new FormControl(),
+      matKhau: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
+      soDT: new FormControl(null, Validators.required),
+      hoTen: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶ" + "ẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợ" + "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$")]),
       maLoaiNguoiDung: new FormControl()
     })
   }
@@ -44,8 +44,14 @@ export class AddUserComponent implements OnInit {
     }),
     addForm.reset();
   }
+
+
   get taiKhoan(){ return this.addForm.get('taiKhoan')}
   get email(){ return this.addForm.get('email')}
+  get password(){ return this.addForm.get('password')}
+  get phoneNumber() { return this.addForm.get('soDT')}
+  get name() { return this.addForm.get('hoTen')}
+  get userType() { return this.addForm.get('maLoaiNguoiDung')}
 
   
 

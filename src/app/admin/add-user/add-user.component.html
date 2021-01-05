@@ -19,18 +19,27 @@
         </div>
         <div class="form-group">
             <label for="">Mật khẩu</label>
-            <input type="text" name="matKhau" formControlName="matKhau" class="form-control"
-                placeholder="Mật khẩu người dùng" aria-describedby="helpId">
+            <input type="password" formControlName="matKhau" class="form-control" placeholder="Mật khẩu người dùng"
+                aria-describedby="helpId">
+            <div *ngIf="password?.invalid && password?.touched">
+                <span class="error">Mật khẩu từ 6 đến 20 ký tự!</span>
+            </div>
         </div>
         <div class="form-group">
             <label for="">Số điện thoại</label>
             <input type="text" name="soDT" formControlName="soDT" class="form-control"
                 placeholder="Số điện thoại người dùng" aria-describedby="helpId">
+            <div *ngIf="phoneNumber?.invalid && phoneNumber?.touched">
+                <span class="error">Số điện thoại không được để trống!</span>
+            </div>
         </div>
         <div class="form-group">
             <label for="">Họ tên</label>
             <input type="text" name="hoTen" formControlName="hoTen" class="form-control"
                 placeholder="Họ tên người dùng" aria-describedby="helpId">
+            <div *ngIf="name?.invalid && name?.touched">
+                <span class="error">Tên không hợp lệ!</span>
+            </div>
         </div>
         <div class="form-group">
             <label> Loại người dùng</label>
@@ -38,6 +47,9 @@
                 <option value="HV">HỌC VIÊN</option>
                 <option value="GV">GIÁO VIÊN</option>
             </select>
+            <div *ngIf="userType?.invalid && userType?.touched">
+                <span class="error">Số điện thoại không được để trống!</span>
+            </div>
         </div>
         <div class="form__actions">
             <div>Trở về</div>

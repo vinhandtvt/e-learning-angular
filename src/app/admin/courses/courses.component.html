@@ -1,1 +1,47 @@
-<p>courses works!</p>
+<div class="courses">
+    <h2 style="text-align: center;">Tất cả các khóa học.</h2>
+    <h3 class="users__add"> <a routerLink="#">Thêm Khóa học</a> </h3>
+    <div *ngIf="dataSource">
+        <mat-table [dataSource]="dataSource">
+            <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="STT">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> STT</mat-header-cell>
+                <mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="MaKhoaHoc">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Mã khóa học </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.maKhoaHoc}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="TenKhoaHoc">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Tên khóa học </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.tenKhoaHoc}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="HinhAnh">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Hình ảnh </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.hinhAnh}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="LuotXem">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Lượt xem</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.luotXem}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="NguoiTao">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Người tạo</mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.nguoiTao.hoTen}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ThaoTac">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Thao tác</mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button class="mr-3">Ghi danh</button>
+                    <button class="mr-3">Xoa</button>
+                </mat-cell>
+            </ng-container>
+        </mat-table>
+        <!-- <mat-paginator [length]="dataSource.totalCount" [pageSize]="dataSource.count"
+            [pageSizeOptions]="[5, 10, 20, 30, 100]" (page)="pageEvent = $event; onPaginateChange($event)"
+            showFirstLastButtons>
+        </mat-paginator> -->
+    </div>
+</div>

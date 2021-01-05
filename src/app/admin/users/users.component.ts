@@ -47,11 +47,7 @@ export class UsersComponent implements OnInit {
 
   initDataSource() {
     this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
-      this.dataSource = data;
-      console.log('get all users', data);
-      
-      console.log(this.dataSource.items);
-      
+      this.dataSource = data;      
     })
   }
   
