@@ -13,7 +13,7 @@ export interface khoaHoc {
   maNhom: string,
   ngayTao: string,
   maDanhMucKhoaHoc: string,
-  taiKhoanNguoiTao: string
+  taiKhoanNguoiTao: object
 }
 @Component({
   selector: 'app-add-course',
@@ -27,16 +27,16 @@ export class AddCourseComponent implements OnInit {
   constructor(private service: CoursesService) { 
     this.courseForm = new FormGroup({
       maKhoaHoc: new FormControl(null, [Validators.required]),
-      biDanh: new FormControl(null, [Validators.required]),
+      biDanh: new FormControl(null),
       tenKhoaHoc: new FormControl(null, [Validators.required]),
       moTa: new FormControl(null, [Validators.required]),
       luotXem: new FormControl(null, [Validators.required]),
-      danhGia: new FormControl(null, [Validators.required]),
+      danhGia: new FormControl(null),
       hinhAnh: new FormControl(null, [Validators.required]),
       maNhom: new FormControl(null, [Validators.required]),
       ngayTao: new FormControl(null, [Validators.required]),
       maDanhMucKhoaHoc: new FormControl(null, [Validators.required]),
-      taiKhoanNguoiTao: new FormControl(null, [Validators.required])
+      taiKhoanNguoiTao: new FormControl(null)
     })
   }
 
@@ -47,7 +47,6 @@ export class AddCourseComponent implements OnInit {
   onUpload(courseForm: any , imgCourse: any){
     const course = {
       maKhoaHoc: this.courseForm.value.maKhoaHoc,
-      biDanh: this.courseForm.value.biDanh,
       tenKhoaHoc: this.courseForm.value.tenKhoaHoc,
       moTa: this.courseForm.value.moTa,
       luotXem: this.courseForm.value.luotXem,
@@ -56,7 +55,7 @@ export class AddCourseComponent implements OnInit {
       maNhom: this.courseForm.value.maNhom,
       ngayTao: this.courseForm.value.ngayTao,
       maDanhMucKhoaHoc: this.courseForm.value.maDanhMucKhoaHoc,
-      taiKhoanNguoiTao: this.courseForm.value.taiKhoanNguoiTao
+      taiKhoanNguoiTao: JSON.parse(this.service.getToken()).taiKhoan
     }
     this.service.addCourse(course).subscribe( res => {
       if( typeof res === 'object') {

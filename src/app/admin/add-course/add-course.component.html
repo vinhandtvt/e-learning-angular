@@ -5,10 +5,10 @@
       <label>Mã khóa học</label>
       <input type="text" class="form-control" formControlName="maKhoaHoc">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label>Bí danh</label>
       <input type="text" class="form-control" formControlName="biDanh">
-    </div>
+    </div> -->
     <div class="form-group">
       <label>Tên khóa học</label>
       <input type="text" class="form-control" formControlName="tenKhoaHoc">
@@ -21,31 +21,51 @@
       <label>Lượt xem</label>
       <input type="text" class="form-control" formControlName="luotXem">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label>Danh gia</label>
       <input type="text" class="form-control" formControlName="danhGia">
-    </div>
+    </div> -->
     <div class="form-group">
       <label>Hình ảnh</label>
       <input type="file" class="form-control" #imgCourse>
     </div>
     <div class="form-group">
-      <label>Mã nhóm</label>
-      <input type="text" class="form-control" formControlName="maNhom">
+      <!-- <label>Mã nhóm</label>
+      <input type="text" class="form-control" formControlName="maNhom"> -->
+      <label>Mã nhóm: </label>
+      <select class="form-control" formControlName="maNhom">
+        <option>GP01</option>
+        <option>GP02</option>
+        <option>GP03</option>
+        <option>GP04</option>
+        <option>GP05</option>
+        <option>GP06</option>
+        <option>GP07</option>
+        <option>GP08</option>
+        <option>GP09</option>
+        <option>GP10</option>
+      </select>
     </div>
     <div class="form-group">
       <label>Ngày tạo</label>
-      <input type="text" class="form-control" formControlName="ngayTao">
+      <input type="date" class="form-control" formControlName="ngayTao">
     </div>
     <div class="form-group">
       <label>Mã danh mục khóa học</label>
-      <input type="text" class="form-control" formControlName="maDanhMucKhoaHoc">
+      <select class="form-control" formControlName="maDanhMucKhoaHoc">
+        <option>BackEnd</option>
+        <option>Design</option>
+        <option>DiDong</option>
+        <option>FrontEnd</option>
+        <option>FullStack</option>
+        <option>TuDuy</option>
+      </select>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label>Tài khoản người tạo</label>
       <input type="text" class="form-control" formControlName="taiKhoanNguoiTao">
-    </div>
-    <button type="submit" (click)="onUpload(courseForm, imgCourse.files)">Them</button>
-    <button type="submit">lưa</button>
+    </div> -->
+    <button class="btn btn-success" type="submit" (click)="onUpload(courseForm, imgCourse.files)">Them</button>
+    <button class="btn btn-danger" type="submit">lưa</button>
   </form>
 </div>

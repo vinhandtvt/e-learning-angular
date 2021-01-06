@@ -109,8 +109,7 @@ export class CoursesService {
     this.router.navigate(['/client']);
   }
 
-  getToken() {
-    
+  getToken(): any {
     return localStorage.getItem('token')
   }
 
@@ -206,6 +205,18 @@ export class CoursesService {
     return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/UploadHinhAnhKhoaHoc`, data, {responseType: 'text'}).pipe(
       tap( res => {
 
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  // service which delete course by maKhoaHoc + Bearer accessToken
+  deleteCourse(maKhoaHoc: string) {
+    return this.http.delete(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/XoaKhoaHoc?MaKhoaHoc=${maKhoaHoc}`, { responseType: 'text'}).pipe(
+      tap( (data: any) => {
+        //loading
       }),
       catchError( err => {
         return this.handleErr(err);

@@ -1,6 +1,6 @@
 <div class="courses">
     <h2 style="text-align: center;">Tất cả các khóa học.</h2>
-    <h3 class="users__add"> <a routerLink="#">Thêm Khóa học</a> </h3>
+    <h3 class="users__add"> <a routerLink="/admin/courses/add-course">Thêm Khóa học</a> </h3>
     <div *ngIf="dataSource">
         <mat-table [dataSource]="dataSource">
             <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
@@ -35,7 +35,7 @@
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Thao tác</mat-header-cell>
                 <mat-cell *matCellDef="let row">
                     <button class="mr-3">Ghi danh</button>
-                    <button class="mr-3">Xoa</button>
+                    <button class="mr-3" (click)="deleteCourse(this.row.maKhoaHoc)">Xoa</button>
                 </mat-cell>
             </ng-container>
         </mat-table>
