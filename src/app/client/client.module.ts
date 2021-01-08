@@ -15,11 +15,12 @@ import { DanhMucKhoaHocComponent } from './danh-muc-khoa-hoc/danh-muc-khoa-hoc.c
 import { ChiTietKhoaHocComponent } from './chi-tiet-khoa-hoc/chi-tiet-khoa-hoc.component';
 import { FilterPipe } from '../pipes/filter.pipe';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RegisterCourseComponent } from './register-course/register-course.component';
 
 
 
 @NgModule({
-  declarations: [ClientComponent, HeaderComponent, LogInComponent, SignUpComponent, HomeComponent, FooterComponent, DanhMucKhoaHocComponent, ChiTietKhoaHocComponent, FilterPipe, UserProfileComponent],
+  declarations: [ClientComponent, HeaderComponent, LogInComponent, SignUpComponent, HomeComponent, FooterComponent, DanhMucKhoaHocComponent, ChiTietKhoaHocComponent, FilterPipe, UserProfileComponent, RegisterCourseComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,

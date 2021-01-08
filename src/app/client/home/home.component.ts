@@ -1,5 +1,6 @@
 import { CoursesService } from './../../services/courses.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   inputSearch: string = '';
   filtered = [];
 
-  constructor( private courseService: CoursesService) { }
+  constructor( private courseService: CoursesService, private router: Router, private acitvatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.courseService.searchText);
@@ -28,6 +29,20 @@ export class HomeComponent implements OnInit {
       console.log(this.inputSearch);
       
     });
+  }
+
+  registerCourse(maKhoaHoc: string) {
+
+    if(this.courseService.daDangNhap()) {
+      console.log('Ma khoa hoc ban muon dang ky la',maKhoaHoc);
+      this.courseService.courseRegister(maKhoaHoc).subscribe( res => {
+        alert(res)
+        this.router.navigate([`chi-tiet-khoa-hoc/${maKhoaHoc}`], { relativeTo: this.acitvatedRoute})
+      })
+    } else {
+      this.router.navigate(['/log-in'], {relativeTo: this.acitvatedRoute})
+      
+    }
   }
   
 }

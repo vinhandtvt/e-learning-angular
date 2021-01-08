@@ -11,6 +11,10 @@ export class CoursesService {
   private data = new BehaviorSubject(''); // '' là giá trị ban đầu của phim
   public searchText = this.data.asObservable();
 
+  // Observe the course t modify 
+  private course = new BehaviorSubject({}); // giá trị ban đầu là object trống
+  public courseToModify = this.course.asObservable();
+
   token: any;
 
 
@@ -224,6 +228,27 @@ export class CoursesService {
     )
   }
 
+  modifyCourse(course: object) {
+    this.course.next(course);
+  }
+
+  // service that register a course
+  courseRegister(maKhoaHoc: string) {
+    const body = {
+      maKhoaHoc: maKhoaHoc,
+      taiKhoan: JSON.parse(this.getToken()).taiKhoan
+    }
+    // console.log(body);
+    
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/DangKyKhoaHoc`, body, { responseType: 'text'}).pipe(
+    tap( data => {
+      // loading
+    }),
+    catchError( err => {
+      return this.handleErr(err);
+    })
+    )
+  }
 
 
 }

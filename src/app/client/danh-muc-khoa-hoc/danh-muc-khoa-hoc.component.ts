@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CoursesService } from './../../services/courses.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,7 +13,7 @@ export class DanhMucKhoaHocComponent implements OnInit {
   maNhom = 'GP01';
 
 
-  constructor( private courseServices: CoursesService, private activatedRoute: ActivatedRoute) { }
+  constructor( private courseServices: CoursesService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.url.subscribe(url => {
@@ -25,6 +25,18 @@ export class DanhMucKhoaHocComponent implements OnInit {
     //   console.log(res);
     // })     
     
+  }
+  registerCourse(maKhoaHoc: string) {
+
+    if(this.courseServices.daDangNhap()) {
+      this.courseServices.courseRegister(maKhoaHoc).subscribe( res => {
+        alert(res)
+        this.router.navigate([`chi-tiet-khoa-hoc/${maKhoaHoc}`])
+      })
+    } else {
+      this.router.navigate(['/log-in'], {relativeTo: this.activatedRoute})
+      
+    }
   }
 
 

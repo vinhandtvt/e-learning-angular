@@ -36,6 +36,7 @@
                 <mat-cell *matCellDef="let row">
                     <button class="mr-3">Ghi danh</button>
                     <button class="mr-3" (click)="deleteCourse(this.row.maKhoaHoc)">Xoa</button>
+                    <button (click)="modifyCourse(this.row)">Sửa</button>
                 </mat-cell>
             </ng-container>
         </mat-table>

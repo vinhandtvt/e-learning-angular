@@ -4,6 +4,9 @@
     <div class="form-group">
       <label>Mã khóa học</label>
       <input type="text" class="form-control" formControlName="maKhoaHoc">
+      <div *ngIf="maKhoaHoc?.invalid && maKhoaHoc?.touched">
+        <span class="text-danger">Mã khóa học ít nhất 4 kỹ tự!</span>
+      </div>
     </div>
     <!-- <div class="form-group">
       <label>Bí danh</label>
@@ -12,14 +15,23 @@
     <div class="form-group">
       <label>Tên khóa học</label>
       <input type="text" class="form-control" formControlName="tenKhoaHoc">
+      <div *ngIf="tenKhoaHoc?.invalid && tenKhoaHoc?.touched">
+        <span class="text-danger">Tên khóa học không được để trống!</span>
+      </div>
     </div>
     <div class="form-group">
       <label>Mô tả</label>
       <textarea class="form-control" formControlName="moTa"></textarea>
+      <div *ngIf="moTa?.invalid && moTa?.touched">
+        <span class="text-danger">Mô tả khóa học không được để trống!</span>
+      </div>
     </div>
     <div class="form-group">
       <label>Lượt xem</label>
       <input type="text" class="form-control" formControlName="luotXem">
+      <div *ngIf="luotXem?.invalid && luotXem?.touched">
+        <span class="text-danger">Lượt xem phải là số!</span>
+      </div>
     </div>
     <!-- <div class="form-group">
       <label>Danh gia</label>
@@ -45,27 +57,37 @@
         <option>GP09</option>
         <option>GP10</option>
       </select>
+      <div *ngIf="maNhom?.invalid && maNhom?.touched">
+        <span class="text-danger">Mâ nhóm không được để trống!</span>
+      </div>
     </div>
     <div class="form-group">
       <label>Ngày tạo</label>
       <input type="date" class="form-control" formControlName="ngayTao">
+      <div *ngIf="ngayTao?.invalid && ngayTao?.touched">
+        <span>Vui lòng chọn ngày tạo!</span>
+      </div>
     </div>
     <div class="form-group">
       <label>Mã danh mục khóa học</label>
       <select class="form-control" formControlName="maDanhMucKhoaHoc">
-        <option>BackEnd</option>
-        <option>Design</option>
-        <option>DiDong</option>
-        <option>FrontEnd</option>
-        <option>FullStack</option>
-        <option>TuDuy</option>
+        <option value="BackEnd">BackEnd</option>
+        <option value="Design">Design</option>
+        <option value="DiDong">DiDong</option>
+        <option value="FrontEnd">FrontEnd</option>
+        <option value="FullStack">FullStack</option>
+        <option value="TuDuy">TuDuy</option>
       </select>
+      <div *ngIf="maDanhMucKhoaHoc?.invalid && maDanhMucKhoaHoc?.touched">
+        <span>Mã danh mục khóa học không được để trống!</span>
+      </div>
     </div>
     <!-- <div class="form-group">
       <label>Tài khoản người tạo</label>
       <input type="text" class="form-control" formControlName="taiKhoanNguoiTao">
     </div> -->
-    <button class="btn btn-success" type="submit" (click)="onUpload(courseForm, imgCourse.files)">Them</button>
+    <button class="btn btn-success mr-3" [disabled]="courseForm.invalid" type="submit"
+      (click)="onUpload(courseForm, imgCourse.files)">Them</button>
     <button class="btn btn-danger" type="submit">lưa</button>
   </form>
 </div>

@@ -38,8 +38,34 @@
             <div class="log-sign">
                 <a *ngIf="!courseServices.daDangNhap()" routerLink="/log-in" class="btn transparent">Đăng Nhập</a>
                 <a *ngIf="!courseServices.daDangNhap()" routerLink="/sign-up" class="btn solid">Đăng Ký</a>
-                <a *ngIf="courseServices.daDangNhap()" (click)="courseServices.dangXuat()" routerLink="/sign-up"
-                    class="btn solid">Đăng xuất</a>
+                <a *ngIf="courseServices.daDangNhap()" routerLink="/sign-up" class="user__login">
+                    <div class="user__icon"><i class="fa fa-user-tie"></i></div>
+                    <div class="user__profile">
+                        <div class="user__profile--header">
+                            <div class="user__profile--header--icon">
+                                <i class="fa fa-user-secret"></i>
+                            </div>
+                            <div class="user__profile--header--info">
+                                <p>{{user.hoTen}}</p>
+                                <p>{{user.email}}</p>
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="user__profile--body">
+                            <a href="#">
+                                <p>Thông tin cá nhân</p>
+                            </a>
+                            <a href="#">
+                                <p>Các khóa học đã đăng ký</p>
+                            </a>
+                        </div>
+                        <hr>
+                        <div class="user__profile--footer">
+                            <button class="btn btn-success" (click)="this.courseServices.dangXuat()">Đăng xuất</button>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class CoursesComponent implements OnInit {
   dataSource: any = [];
   columnsToDisplay: string[] = ['STT', 'MaKhoaHoc', 'TenKhoaHoc', 'HinhAnh', 'LuotXem', 'NguoiTao', 'ThaoTac'];
 
-  constructor(private service: CoursesService, private snackbar: MatSnackBar) { }
+  constructor(private service: CoursesService, private snackbar: MatSnackBar, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.initDataSource();
@@ -36,6 +37,14 @@ export class CoursesComponent implements OnInit {
       });
     }
   
+    
+  }
+
+  // modify course 
+  modifyCourse(maKhoaHoc: object) {
+    console.log(maKhoaHoc);
+    this.service.modifyCourse(maKhoaHoc)
+    this.router.navigate(['/admin/courses/add-course'], { relativeTo: this.activatedRoute})
     
   }
 

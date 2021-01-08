@@ -1,24 +1,14 @@
 <section class="home" id="home">
     <div class="carousel">
+        <div class="carousel__video">
+            <video src="../../../assets/video/Typing_dark_05_Videvo.mov" autoplay="true" loop="true"></video>
+        </div>
+        <div class="carousel__overlay"></div>
         <div class="carousel__content">
-            <h2 class="carousel__title">Học bất cứ đâu!</h2>
+            <h2 class="carousel__title">Khởi đầu sự nghiệp của bạn</h2>
             <p>
-                Giá rẻ bất ngờ. 10 đồng 1 khóa, 10 đồng 1 khóa, quẹo lựa quẹo lựa...
+                Trở thành lập trình viên chuyên nghiệp tại CyberSoft!
             </p>
-            <div class="input">
-                <form>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Bạn muốn học gì ?"
-                            aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="basic-addon2">
-                                <!-- <i class="fab fa-search"></i> -->
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
     <div class="container">
@@ -43,7 +33,7 @@
 
                     </div>
                     <div class="course__register">
-                        <button class="btn btn-success">Đăng ký</button>
+                        <button class="btn btn-success" (click)="registerCourse(course.maKhoaHoc)">Đăng ký</button>
                     </div>
                 </div>
             </ng-container>
