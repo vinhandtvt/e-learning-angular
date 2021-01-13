@@ -1,0 +1,67 @@
+.container {
+    .coursesList {
+        background-color: white;
+        width: 100%;
+        margin: 1.5rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .coursesItem {
+            width: 200px;
+            min-height: 25rem;
+            margin: 15px;
+            background-color: rgba(0, 0, 0, 0.39);
+            border: 2px solid rgb(161, 101, 101);
+            border-radius: 5px;
+            cursor: pointer;
+            .img__container {
+                width: 100%;
+                height: 15rem;
+                background-color: salmon;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            h3.course__title {
+                color: white;
+                font-weight: 500;
+                padding-left: 1rem;
+            }
+            .course__author,
+            .course__views {
+                font-size: calc(1rem + 0.4vw);
+                color: white;
+                padding-left: 1rem;
+                .course__views--rating {
+                    color: yellow;
+                }
+                .course__views--number {
+                    font-size: 1.4rem;
+                    color: rgb(224, 218, 218);
+                }
+            }
+            .course__register {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 1.3rem;
+            }
+        }
+    }
+}
+
+@include responsive("small") {
+    .container {
+        .coursesList {
+            .coursesItem {
+                width: 300px;
+                min-height: 32rem;
+                .img__container {
+                    height: 20rem;
+                }
+            }
+        }
+    }
+}

@@ -743,10 +743,11 @@
                     position: absolute;
                     bottom: 30%;
                     left: 0;
-                    span {
+                    span.not__log-sign {
                         position: absolute;
                         top: 150px;
                         left: 20%;
+                        display: inherit;
                     }
                     .btn {
                         display: inline-block;

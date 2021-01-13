@@ -1,0 +1,189 @@
+#home {
+    .carousel {
+        // background-image: url(../../../assets/img/pexels-josh-sorenson-small.jpg);
+        height: 50rem;
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+
+        .carousel__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1;
+            video {
+                width: 100%;
+                // height: 100%;
+            }
+        }
+
+        .carousel__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+        .carousel__content {
+            position: absolute;
+            top: 55%;
+            left: 10%;
+            min-width: 40%;
+            z-index: 3;
+            h2 {
+                color: white;
+                font-size: 4rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            p {
+                color: white;
+                font-size: 2rem;
+                font-weight: normal;
+            }
+            .input {
+                .form-control {
+                    padding: 1rem;
+                    border: none;
+                    border-radius: 0;
+                    font-size: 2rem;
+                    &::placeholder {
+                        color: #a1a7b3;
+                        font-size: 2rem;
+                        font-weight: normal;
+                    }
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+                .input-group-append {
+                    width: 50px;
+                    font-size: 2rem;
+                    .input-group-text {
+                        background-color: white;
+                        color: #ec5252;
+                        border: none;
+                        padding: 2rem;
+                        i.fa-search {
+                            font-size: 1.5rem;
+                        }
+                    }
+                    &:hover {
+                        .input-group-text {
+                            background-color: #ec5252;
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .coursesList {
+        background-color: white;
+        width: 100%;
+        margin: 1.5rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        .coursesItem {
+            width: 200px;
+            min-height: 25rem;
+            margin: 15px;
+            background-color: rgba(0, 0, 0, 0.39);
+            border: 2px solid rgb(161, 101, 101);
+            border-radius: 5px;
+            cursor: pointer;
+            .img__container {
+                width: 100%;
+                height: 15rem;
+                background-color: salmon;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            h3.course__title {
+                color: white;
+                font-weight: 500;
+                padding-left: 1rem;
+            }
+            .course__author,
+            .course__views {
+                font-size: calc(1rem + 0.4vw);
+                color: white;
+                padding-left: 1rem;
+                .course__views--rating {
+                    color: yellow;
+                }
+                .course__views--number {
+                    font-size: 1.4rem;
+                    color: rgb(224, 218, 218);
+                }
+            }
+            .course__register {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 1.3rem;
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    #home {
+        .carousel {
+            height: 35rem;
+            .carousel__content {
+                position: absolute;
+                top: 60%;
+                left: 10%;
+                .carousel__title {
+                    font-size: 3rem;
+                }
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+@include responsive("small") {
+    #home {
+        .carousel {
+            height: 25rem;
+            .carousel__content {
+                position: absolute;
+                top: 70%;
+                left: 20%;
+                .carousel__title {
+                    font-size: calc(1rem + 1vw);
+                    margin-bottom: 0;
+                }
+                p {
+                    font-size: calc(1rem + 0.4vw);
+                    word-wrap: none;
+                }
+            }
+        }
+        .container {
+            .coursesList {
+                .coursesItem {
+                    width: 300px;
+                    min-height: 32rem;
+                    .img__container {
+                        height: 20rem;
+                    }
+                }
+            }
+        }
+    }
+}
