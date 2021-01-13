@@ -1,0 +1,12 @@
+// Helper
+@import "./Helper/variables";
+@import "./Helper/mixin";
+
+// Vendors
+// chỉ import file có đuôi scss
+
+// Base
+@import "./Base/reset";
+
+// main layouts
+@import "./Layouts/header";

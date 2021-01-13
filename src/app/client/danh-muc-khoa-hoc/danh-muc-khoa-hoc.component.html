@@ -1,5 +1,6 @@
 <div class="container">
-    <h2 style="color: white; justify-content: center; display: flex;" class="mt-5">Các khóa học gần đây</h2>
+    <!-- <h2 style="color: white; justify-content: center; display: flex;" class="mt-5">Các khóa học gần đây</h2> -->
+    <app-divider>Các khóa học {{courses[0].danhMucKhoaHoc.tenDanhMucKhoaHoc}}</app-divider>
     <div class="coursesList">
         <ng-container *ngFor="let course of courses; let i = index">
             <div *ngIf="i < 8" class="coursesItem">

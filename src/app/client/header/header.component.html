@@ -1,5 +1,6 @@
 <header class="header" id="header">
     <nav class="container">
+        <input type="checkbox" id="check">
         <div class="logo-container">
             <h3 routerLink="/client" class="logo">Cyber<span>Soft</span></h3>
         </div>
@@ -10,7 +11,9 @@
                 <ul>
                     <li class="nav-link">
                         <a class="nav-link--title" href="#"><i class="fa fa-th"></i>
-                            Danh Sách Khóa Học
+                            <span class="nav-link--title--word">
+                                Danh Sách Khóa Học
+                            </span>
                         </a>
                         <div class="dropdown">
                             <ul>
@@ -36,9 +39,12 @@
             </div>
 
             <div class="log-sign">
-                <a *ngIf="!courseServices.daDangNhap()" routerLink="/log-in" class="btn transparent">Đăng Nhập</a>
-                <a *ngIf="!courseServices.daDangNhap()" routerLink="/sign-up" class="btn solid">Đăng Ký</a>
-                <a *ngIf="courseServices.daDangNhap()" routerLink="/sign-up" class="user__login">
+                <span>
+                    <a *ngIf="!courseServices.daDangNhap()" routerLink="/log-in" class="btn transparent">Đăng Nhập</a>
+                    <a *ngIf="!courseServices.daDangNhap()" routerLink="/sign-up" class="btn solid">Đăng Ký</a>
+
+                </span>
+                <a *ngIf="courseServices.daDangNhap()" class="user__login">
                     <div class="user__icon"><i class="fa fa-user-tie"></i></div>
                     <div class="user__profile">
                         <div class="user__profile--header">
@@ -53,10 +59,10 @@
                         </div>
                         <hr>
                         <div class="user__profile--body">
-                            <a href="#">
+                            <a routerLink="/user">
                                 <p>Thông tin cá nhân</p>
                             </a>
-                            <a href="#">
+                            <a routerLink="/user/courses">
                                 <p>Các khóa học đã đăng ký</p>
                             </a>
                         </div>
@@ -71,9 +77,9 @@
 
         <div class="hamburger-menu-container">
             <div class="hamburger-menu">
-                <div class="line line-1"></div>
-                <div class="line line-2"></div>
-                <div class="line line-3"></div>
+                <div class="line"></div>
+                <!-- <div class="line line-2"></div>
+                <div class="line line-3"></div> -->
             </div>
         </div>
 

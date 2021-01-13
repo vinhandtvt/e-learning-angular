@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { stringify } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -249,6 +250,55 @@ export class CoursesService {
     })
     )
   }
+
+  // get logged user info
+  loggedUserCourses(taiKhoan: string) {
+    const body = {
+      taiKhoan: taiKhoan,
+      matKhau: ''
+    }
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan`, body).pipe(
+      tap( (data: any) => {
+        //loading data
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  // Service Hủy khóa học đá ghi danh
+
+  cancelCourse(maKhoaHoc: string) {
+    const body = {
+      maKhoaHoc: maKhoaHoc,
+      taiKhoan: JSON.parse(this.getToken()).taiKhoan
+    }
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/HuyGhiDanh`, body, { responseType: 'text'}).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err)
+      })
+    )
+    
+  }
+
+  // service cập nhật thông tin người dùng
+
+  updateProfile(data: any) {
+    return this.http.put(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, data).pipe(
+      tap( data => {
+        // loading
+      }),
+      catchError( err => {
+        return this.handleErr(err)
+      })
+    )
+  }
+
+  
 
 
 }

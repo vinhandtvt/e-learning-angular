@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module'; // import Shared Module
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,16 +17,23 @@ import { ChiTietKhoaHocComponent } from './chi-tiet-khoa-hoc/chi-tiet-khoa-hoc.c
 import { FilterPipe } from '../pipes/filter.pipe';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { RegisterCourseComponent } from './register-course/register-course.component';
+import { UserComponent } from './user/user.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { UserCoursesComponent } from './user-courses/user-courses.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
 @NgModule({
-  declarations: [ClientComponent, HeaderComponent, LogInComponent, SignUpComponent, HomeComponent, FooterComponent, DanhMucKhoaHocComponent, ChiTietKhoaHocComponent, FilterPipe, UserProfileComponent, RegisterCourseComponent],
+  declarations: [ClientComponent, HeaderComponent, LogInComponent, SignUpComponent, HomeComponent, FooterComponent, DanhMucKhoaHocComponent, ChiTietKhoaHocComponent, FilterPipe, UserProfileComponent, RegisterCourseComponent, UserComponent, UserHomeComponent, UserCoursesComponent],
   imports: [
     CommonModule,
     ClientRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    MatTabsModule
      // -> added filter pipe to use it inside the component 
   ]
 })

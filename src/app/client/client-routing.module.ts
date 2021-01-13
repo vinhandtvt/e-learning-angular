@@ -6,6 +6,9 @@ import { DanhMucKhoaHocComponent } from './danh-muc-khoa-hoc/danh-muc-khoa-hoc.c
 import { HomeComponent } from './home/home.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { UserCoursesComponent } from './user-courses/user-courses.component';
 
 const routes: Routes = [
   {
@@ -24,7 +27,18 @@ const routes: Routes = [
       },
       {
         path: 'chi-tiet-khoa-hoc/:maKhoaHoc', component: ChiTietKhoaHocComponent
+      },
+      {
+        path: 'user', component: UserHomeComponent, children : [
+          {
+            path: '', component: UserProfileComponent
+          },
+          {
+            path: 'courses', component: UserCoursesComponent
+          }
+        ]
       }
+
     ]
   }
 ];

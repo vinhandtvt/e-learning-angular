@@ -1,0 +1,26 @@
+<!-- <ul *ngFor="let course of myCourses; let i = index">
+    <li>
+        <span>{{ i + 1}}</span>
+        <span>{{course.maKhoaHoc}}</span>
+        <span>{{course.tenKhoaHoc}}</span>
+    </li>
+</ul> -->
+
+<table>
+    <thead>
+        <tr>
+            <th>stt</th>
+            <th>Mã khóa học</th>
+            <th>Tên khóa học</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let course of myCourses; let i = index">
+        <tr>
+            <td>{{ i + 1}}</td>
+            <td>{{course.maKhoaHoc}}</td>
+            <td>{{course.tenKhoaHoc}}</td>
+            <td><button class="btn btn-danger" (click)="cancelCourse(course.maKhoaHoc)">Hủy đăng ký</button></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,1 +1,43 @@
-<p>user-profile works!</p>
+<div class="user__profile">
+    <form [formGroup]="userForm">
+        <div class="form-group">
+            <label>Họ tên</label>
+            <input type="text" class="form-control" formControlName="hoTen">
+            <div *ngIf="hoTen?.invalid && hoTen?.touched">
+                <span>Họ tên không được để trống</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div *ngIf="email?.invalid && email?.touched">
+                <span class="text-danger">Email Không hợp lệ</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Số điện thoại</label>
+            <input type="text" class="form-control" formControlName="soDT">
+            <div *ngIf="soDT?.invalid && soDT?.touched">
+                <span class="text-danger">Số điện thoại không được để trống!</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tài khoản</label>
+            <input type="text" class="form-control" formControlName="taiKhoan">
+            <div *ngIf="taiKhoan?.invalid && taiKhoan?.touched">
+                <span class="text-danger">Tài khoản không hợp lệ</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Mật khẩu</label>
+            <input type="password" class="form-control" formControlName="matKhau">
+            <div *ngIf="matKhau?.invalid && matKhau?.touched">
+                <span class="text-danger">Mật khẩu không hợp lệ</span>
+            </div>
+        </div>
+    </form>
+    <div class="user__profile--formAction">
+        <button [disabled]="userForm.invalid" class="btn btn-danger" (click)="updateProfile(userForm)">Lưu</button>
+
+    </div>
+</div>

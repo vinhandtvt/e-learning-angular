@@ -23,4 +23,6 @@ export class HeaderComponent implements OnInit {
   onSearch(event: any){
     this.courseServices.getSearchItem(event);
   }
+
+  
 }

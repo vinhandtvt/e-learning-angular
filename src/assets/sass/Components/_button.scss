@@ -1,0 +1,15 @@
+.btnUde-white {
+    @include styleButton($color-gray-4, $color-white-0, $pd-1, $pd-1, $border-radius);
+    @include styleText($color-gray-4, $fs-0, $fw-bold);
+    &:hover {
+        @include styleButtonHover($color-black-0, $color-white-0, $pd-1, $pd-1, $color-black-0);
+    }
+}
+
+.btnUde-red {
+    @include styleButton($color-gray-4, $color-red-0, $pd-1, $pd-1, $border-radius);
+    @include styleText($color-white-0, $fs-0, $fw-bold);
+    &:hover {
+        @include styleButtonHover($color-black-0, $color-red-1, $pd-1, $pd-2, $color-black-0);
+    }
+}

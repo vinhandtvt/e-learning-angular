@@ -19,6 +19,8 @@ export class DanhMucKhoaHocComponent implements OnInit {
     this.activatedRoute.url.subscribe(url => {
       this.courseServices.getCourseByCategory(url[1]?.path, this.maNhom).subscribe(res => {
         this.courses = res; 
+        console.log(this.courses);
+        
       })
     });
     // this.courseServices.getCourseByCategory(this.maDanhMuc, this.maNhom).subscribe(res => {
