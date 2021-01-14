@@ -1,28 +1,41 @@
-<div class="courseDetail">
-    <div class="courseDetail_header">
-        <div class="courseDetail_header--content">
-            <h3 class="courseDetail_header--title">{{course.tenKhoaHoc}}</h3>
-            <!-- <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc">{{course.tenKhoaHoc}}</h3> -->
-            <!-- <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc === '' || course.tenKhoaHoc === null">
-                Khóa
-                học này không có tên</h3> -->
-            <p class="courseDetail_header--rating">Đánh giá khóa học
-                <span class="course__views--rating"><i class="fa fa-star"></i></span>
-                <span class="course__views--rating"><i class="fa fa-star"></i></span>
-                <span class="course__views--rating"><i class="fa fa-star"></i></span>
-                <span class="course__views--rating"><i class="fa fa-star"></i></span>
-                <span class="course__views--rating"><i class="fa fa-star-half-alt"></i></span>
-                4.5
-                <span class="course__views--number">({{course.luotXem}})</span>
-            </p>
-            <button class="btn courseDetail_header--btn">Đăng ký</button>
-        </div>
-        <div class="courseDetail_header--img">
-            <img [src]="course.hinhAnh" alt="hình ảnh khóa học">
-        </div>
+<ng-container *ngIf="course">
+    <div class="Detail">
+        <h2 mat-dialog-title>Chi tiết khóa học</h2>
+        <mat-dialog-content class="courseDetail">
+            <div class="courseDetail_header">
+                <div class="courseDetail_header--content">
+                    <h3 class="courseDetail_header--title">{{course?.tenKhoaHoc}}</h3>
+                    <!-- <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc">{{course.tenKhoaHoc}}</h3> -->
+                    <!-- <h3 class="courseDetail_header--title" *ngIf="course.tenKhoaHoc === '' || course.tenKhoaHoc === null">
+                    Khóa
+                    học này không có tên</h3> -->
+                    <p class="courseDetail_header--rating">Đánh giá khóa học
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star"></i></span>
+                        <span class="course__views--rating"><i class="fa fa-star-half-alt"></i></span>
+                        4.5
+                        <span class="course__views--number">({{course.luotXem}})</span>
+                    </p>
+                    <button class="btn courseDetail_header--btn">Đăng ký</button>
+                </div>
+                <div class="courseDetail_header--img">
+                    <img [src]="course.hinhAnh" alt="hình ảnh khóa học">
+                </div>
+            </div>
+            <div class="courseDetail_desc">
+                <h3 class="courseDetail_desc--title">Nội Dung Khóa Học</h3>
+                <p class="courseDetail_desc--content">{{course.moTa}}</p>
+            </div>
+
+
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+            <button class="btn" id="courseDetail__close" mat-button mat-dialog-close><i
+                    class="fa fa-window-close"></i></button>
+            <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+        </mat-dialog-actions>
     </div>
-    <div class="courseDetail_desc">
-        <h3 class="courseDetail_desc--title">Nội Dung Khóa Học</h3>
-        <p class="courseDetail_desc--content">{{course.moTa}}</p>
-    </div>
-</div>
+
+</ng-container>

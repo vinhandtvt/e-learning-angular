@@ -1,0 +1,142 @@
+.Detail {
+    .courseDetail {
+        width: 70vw;
+        margin: 2rem auto;
+        height: 75vh;
+
+        .courseDetail_header {
+            height: 45%;
+            background-color: seagreen;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            background-image: url(../../../assets/img/pexels-josh-sorenson-small.jpg);
+            .courseDetail_header--img {
+                background-color: hotpink;
+                position: absolute;
+                bottom: 15%;
+                right: 10%;
+                max-width: 25rem;
+                height: 20rem;
+                border-radius: 1rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+
+                    // clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+                }
+            }
+            .courseDetail_header--content {
+                position: absolute;
+                bottom: 15%;
+                left: 10%;
+                width: 40rem;
+                height: 15rem;
+                padding-left: 1rem;
+                color: white;
+                .courseDetail_header--title {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    color: white;
+                    text-transform: uppercase;
+                }
+                .courseDetail_header--rating {
+                    font-size: 1.4rem;
+                }
+                .courseDetail_header--btn {
+                    cursor: pointer;
+                    background: none;
+                    width: 80px;
+                    height: 40px;
+                    font-size: 1.4rem;
+                    border: 1px solid #28769c;
+                    background-color: white;
+                    color: #3489bd;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    transition: 0.5s;
+                    &:hover {
+                        border: 2px solid #925a07;
+                        transform: scale(1.2);
+                        color: black;
+                    }
+                }
+            }
+        }
+
+        .courseDetail_desc {
+            height: 55%;
+            background-color: seashell;
+            padding: 1.5rem 1rem;
+            .courseDetail_desc--title {
+                color: black;
+                font-size: 4rem;
+                font-weight: 500;
+            }
+            .courseDetail_desc--content {
+                font-size: calc(1rem + 0.4vw);
+                font-weight: normal;
+            }
+        }
+    }
+    mat-dialog-actions {
+        button#courseDetail__close {
+            width: 50px;
+            height: 30px;
+            background-color: red;
+            i {
+                font-size: 20px;
+            }
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@include responsive("large") {
+    .mat-dialog-container {
+        padding: 10px 5px !important;
+        .Detail {
+            .courseDetail {
+                padding: 0;
+                .courseDetail_header {
+                    .courseDetail_header--content {
+                        position: absolute;
+                        bottom: 10%;
+                        left: 0;
+                        max-width: 25rem;
+                        .courseDetail_header--title {
+                            font-size: calc(1rem + 1vw);
+                        }
+                        .courseDetail_header--btn {
+                            cursor: pointer;
+                            background: none;
+                            width: 60px;
+                            height: 28px;
+                            font-size: 1.2rem;
+                            background-color: white;
+                            border-radius: 5px;
+                            font-weight: normal;
+                            transition: 0.5s;
+                            &:hover {
+                                border: 1px solid #925a07;
+                                transform: scale(1.1);
+                                color: black;
+                            }
+                        }
+                    }
+                    .courseDetail_header--img {
+                        display: none;
+                    }
+                }
+                .courseDetail_desc {
+                    .courseDetail_desc--title {
+                        font-size: calc(1.5rem + 0.5vw);
+                    }
+                }
+            }
+        }
+    }
+}

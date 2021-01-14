@@ -21,6 +21,7 @@ import { UserComponent } from './user/user.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { UserCoursesComponent } from './user-courses/user-courses.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -33,7 +34,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
      // -> added filter pipe to use it inside the component 
   ]
 })

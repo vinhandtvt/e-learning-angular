@@ -1,7 +1,7 @@
 <section class="home" id="home">
     <div class="carousel">
         <div class="carousel__video">
-            <video src="../../../assets/video/Typing_dark_05_Videvo.mov" autoplay="true" loop="true"></video>
+            <video src="../../../assets/video/Typing_light_01_Videvo.mov" autoplay="true" loop="true"></video>
         </div>
         <div class="carousel__overlay"></div>
         <div class="carousel__content">
@@ -24,7 +24,8 @@
                     <div class="img__container">
                         <img class="course__img" [src]="course.hinhAnh" alt="course.tenKhoaHoc" />
                     </div>
-                    <h3 routerLink="/chi-tiet-khoa-hoc/{{course.maKhoaHoc}}" class="course__title">{{course.tenKhoaHoc}}
+                    <!-- <h3 routerLink="/chi-tiet-khoa-hoc/{{course.maKhoaHoc}}" class="course__title">{{course.tenKhoaHoc}} -->
+                    <h3 (click)="openDialog(course.maKhoaHoc)" class="course__title">{{course.tenKhoaHoc}}
                     </h3>
                     <div class="course__views">
                         <span class="course__views--rating"><i class="fa fa-star"></i></span>

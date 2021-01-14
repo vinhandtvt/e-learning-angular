@@ -1,6 +1,9 @@
+import { ChiTietKhoaHocComponent } from './../chi-tiet-khoa-hoc/chi-tiet-khoa-hoc.component';
 import { CoursesService } from './../../services/courses.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +17,7 @@ export class HomeComponent implements OnInit {
   inputSearch: string = '';
   filtered = [];
 
-  constructor( private courseService: CoursesService, private router: Router, private acitvatedRoute: ActivatedRoute) { }
+  constructor( private courseService: CoursesService, private router: Router, private acitvatedRoute: ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     console.log(this.courseService.searchText);
@@ -44,5 +47,18 @@ export class HomeComponent implements OnInit {
       
     }
   }
+
+  openDialog(targetCourse: any) {
+    const dialogRef = this.dialog.open(ChiTietKhoaHocComponent, {
+      data: {
+        maKhoaHoc: targetCourse
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   
 }

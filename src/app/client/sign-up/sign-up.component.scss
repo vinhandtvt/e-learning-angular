@@ -1,47 +1,47 @@
-#signup {
-    width: 60%;
-    margin: 10rem auto;
-    padding: 3rem 5rem;
-    background-color: #60b4df;
-    h1 {
-        display: flex;
-        justify-content: center;
-        font-size: 3rem;
-        font-weight: 600;
-    }
-    .signup__form {
-        font-size: calc(1rem + 0.4vw);
-        .signup__form--input {
-            input {
-                padding: 1rem 1.5rem;
-                font-size: 1.8rem;
-                color: black;
-            }
-        }
-        .signup__form--button {
-            button {
-                display: inline-block;
-                padding: 1rem 2rem;
-                font-size: calc(1rem + 0.2vw);
-                border: 0.2rem solid white;
-                border-radius: 4rem;
-                margin: 0 0.3rem;
-                transition: 0.3s;
-                text-transform: uppercase;
-            }
-            .btn.solid {
-                background-color: white;
-                color: black;
-                font-size: calc(1rem + 0.2vw);
-                min-width: 6rem;
-                display: inline-block;
-                white-space: nowrap;
-                &:hover {
-                    background-color: transparent;
-                    color: #0b5479;
-                    color: white;
-                }
-            }
-        }
-    }
-}
+// #signup {
+//     width: 60%;
+//     margin: 10rem auto;
+//     padding: 3rem 5rem;
+//     background-color: #60b4df;
+//     h1 {
+//         display: flex;
+//         justify-content: center;
+//         font-size: 3rem;
+//         font-weight: 600;
+//     }
+//     .signup__form {
+//         font-size: calc(1rem + 0.4vw);
+//         .signup__form--input {
+//             input {
+//                 padding: 1rem 1.5rem;
+//                 font-size: 1.8rem;
+//                 color: black;
+//             }
+//         }
+//         .signup__form--button {
+//             button {
+//                 display: inline-block;
+//                 padding: 1rem 2rem;
+//                 font-size: calc(1rem + 0.2vw);
+//                 border: 0.2rem solid white;
+//                 border-radius: 4rem;
+//                 margin: 0 0.3rem;
+//                 transition: 0.3s;
+//                 text-transform: uppercase;
+//             }
+//             .btn.solid {
+//                 background-color: white;
+//                 color: black;
+//                 font-size: calc(1rem + 0.2vw);
+//                 min-width: 6rem;
+//                 display: inline-block;
+//                 white-space: nowrap;
+//                 &:hover {
+//                     background-color: transparent;
+//                     color: #0b5479;
+//                     color: white;
+//                 }
+//             }
+//         }
+//     }
+// }
