@@ -1,27 +1,27 @@
-.user__profile {
-    form {
-        margin: 15px auto;
-        .form-group {
-            min-width: 450px;
-            .form-control {
-                height: 40px;
-                font-size: 15px;
-            }
-        }
-    }
-    .user__profile--formAction {
-        display: flex;
-        justify-content: flex-end;
-        margin: 15px auto;
-        button {
-            padding: 10px 15px;
-            font-size: 1.6rem;
-            transition: all 0.5s;
-            &:hover {
-                transform: scale(1.1);
-                color: black;
-                box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-            }
-        }
-    }
-}
+// .user__profile {
+//     form {
+//         margin: 15px auto;
+//         .form-group {
+//             min-width: 450px;
+//             .form-control {
+//                 height: 40px;
+//                 font-size: 15px;
+//             }
+//         }
+//     }
+//     .user__profile--formAction {
+//         display: flex;
+//         justify-content: flex-end;
+//         margin: 15px auto;
+//         button {
+//             padding: 10px 15px;
+//             font-size: 1.6rem;
+//             transition: all 0.5s;
+//             &:hover {
+//                 transform: scale(1.1);
+//                 color: black;
+//                 box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+//             }
+//         }
+//     }
+// }

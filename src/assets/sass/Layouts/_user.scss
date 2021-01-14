@@ -1,0 +1,193 @@
+#user {
+    .user {
+        margin: 6rem auto;
+        flex-wrap: nowrap;
+        .user__menu {
+            max-width: 23%;
+            background-color: white;
+            border-radius: 10px;
+            margin-right: 0.5rem;
+            .user__menu--header {
+                display: flex;
+                align-items: center;
+                .user__menu--header--avatar {
+                    border-radius: 100%;
+                    width: 5rem;
+                    height: 5rem;
+                    border: 1px solid gray;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 1rem;
+                }
+                .user__menu--header--info {
+                    font-size: 1.6rem;
+                    font-weight: normal;
+                    margin-top: 1.5rem;
+                    line-height: 0.5;
+                    p:first-child {
+                        font-weight: 600;
+                    }
+                    p:last-child {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            .user__menu--body {
+                display: flex;
+                flex-direction: column;
+                .acitve {
+                    background-color: red;
+                }
+            }
+        }
+        .user__content {
+            margin-left: 5px;
+            background-color: silver;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            .user__profile {
+                form {
+                    margin: 15px auto;
+                    .form-group {
+                        min-width: 450px;
+                        .form-control {
+                            height: 40px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .user__profile--formAction {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 15px auto;
+                    button {
+                        padding: 10px 15px;
+                        font-size: 1.6rem;
+                        transition: all 0.5s;
+                        &:hover {
+                            // transform: scale(1.1);
+                            cursor: pointer;
+                            color: black;
+                            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                        }
+                    }
+                }
+            }
+            table {
+                margin: 1.5rem 2rem;
+                border-collapse: collapse;
+                width: 100%;
+                thead,
+                tbody {
+                    tr {
+                        td {
+                            border: 1px solid #dddddd;
+                            text-align: left;
+                            padding: 1rem 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("large") {
+    #user {
+        .user {
+            .user__menu {
+                .user__menu--header {
+                    display: flex;
+                    align-items: center;
+                    .user__menu--header--avatar {
+                        border-radius: 100%;
+                        width: 3rem;
+                        height: 3rem;
+                        margin: 0 1rem;
+                    }
+                    .user__menu--header--info {
+                        font-size: 1.4rem;
+                        font-weight: normal;
+                        margin-top: 1.5rem;
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    #user {
+        .user {
+            .user__menu {
+                max-width: 95%;
+                margin: 1rem auto;
+                min-width: 395px;
+                .user__menu--header {
+                    font-size: calc(1rem + 0.64vw);
+                }
+                .user__menu--body {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    padding-bottom: 1.5rem;
+                }
+            }
+            .user__content {
+                max-width: 95%;
+                margin: 0 auto;
+                min-width: 395px;
+                .user__profile {
+                    form {
+                        .form-group {
+                            // min-width: 90vw;
+                            .form-control {
+                                height: 30px;
+                                font-size: calc(1rem + 0.64vw);
+                            }
+                        }
+                    }
+                    .user__profile--formAction {
+                        display: flex;
+                        justify-content: center;
+                        margin: 15px auto;
+                        button {
+                            padding: 10px 15px;
+                            font-size: 1.4rem;
+                            transition: all 0.5s;
+                            &:hover {
+                                // transform: scale(none);
+                                background-color: red;
+                                color: black;
+                                box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+                            }
+                        }
+                    }
+                }
+                table {
+                    margin: 1.5rem 0rem;
+                    max-width: 90vw;
+                }
+            }
+        }
+    }
+}
+
+@include responsive("small") {
+    #user {
+        .user {
+            .user__content {
+                .user__profile {
+                    form {
+                        .form-group {
+                            min-width: 90vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

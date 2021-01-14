@@ -1,48 +1,48 @@
-.user {
-    margin: 6rem auto;
-    flex-wrap: nowrap;
-    .user__menu {
-        max-width: 20%;
-        background-color: white;
-        border-radius: 10px;
-        margin-right: 0.5rem;
-        .user__menu--header {
-            display: flex;
-            align-items: center;
-            .user__menu--header--avatar {
-                border-radius: 100%;
-                width: 5rem;
-                height: 5rem;
-                border: 1px solid gray;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0 1rem;
-            }
-            .user__menu--header--info {
-                font-size: 1.6rem;
-                font-weight: normal;
-                margin-top: 1.5rem;
-                line-height: 0.5;
-                p:first-child {
-                    font-weight: 600;
-                }
-                p:last-child {
-                    font-size: 1.2rem;
-                }
-            }
-        }
-        .user__menu--body {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    .user__content {
-        margin-left: 5px;
-        background-color: silver;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-}
+// .user {
+//     margin: 6rem auto;
+//     flex-wrap: nowrap;
+//     .user__menu {
+//         max-width: 20%;
+//         background-color: white;
+//         border-radius: 10px;
+//         margin-right: 0.5rem;
+//         .user__menu--header {
+//             display: flex;
+//             align-items: center;
+//             .user__menu--header--avatar {
+//                 border-radius: 100%;
+//                 width: 5rem;
+//                 height: 5rem;
+//                 border: 1px solid gray;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 margin: 0 1rem;
+//             }
+//             .user__menu--header--info {
+//                 font-size: 1.6rem;
+//                 font-weight: normal;
+//                 margin-top: 1.5rem;
+//                 line-height: 0.5;
+//                 p:first-child {
+//                     font-weight: 600;
+//                 }
+//                 p:last-child {
+//                     font-size: 1.2rem;
+//                 }
+//             }
+//         }
+//         .user__menu--body {
+//             display: flex;
+//             flex-direction: column;
+//         }
+//     }
+//     .user__content {
+//         margin-left: 5px;
+//         background-color: silver;
+//         border-radius: 10px;
+//         display: flex;
+//         align-items: center;
+//         position: relative;
+//     }
+// }
