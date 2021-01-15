@@ -9,26 +9,27 @@
                 CyberLive hoàn toàn MIỄN PHÍ và các chương trình KHUYẾN MÃI hấp dẫn
                 đến các bạn.
             </p>
-            <form>
+            <form [formGroup]="subscribeForm">
                 <div class="input-group mb-3">
-                    <input type="email" class="field" placeholder="Email của bạn" />
-                    <button class="btn btn-subscribe" type="submit">
+                    <input type="email" class="field" placeholder="Email của bạn" formControlName="email" />
+                    <button (click)="subscribed(subscribeForm)" [disabled]="subscribeForm.invalid"
+                        class="btn btn-subscribe" type="submit">
                         đăng ký
                     </button>
                 </div>
             </form>
         </div>
         <div class="footer__mid col-12 col-md-4">
-            <div class="contact-box">
+            <form [formGroup]="contactForm" class="contact-box">
                 <h2>Liên hệ</h2>
-                <input type="text" class="field" placeholder="Tên của bạn" />
-                <input type="email" class="field" placeholder="Email của bạn" />
-                <input type="text" class="field" placeholder="Số điện thoại của bạn" />
-                <textarea class="field area" placeholder="Tin nhắn"></textarea>
-                <button class="btn btn-contact" type="submit">
+                <input type="text" formControlName="hoTen" class="field" placeholder="Tên của bạn" />
+                <input type="email" formControlName="email" class="field" placeholder="Email của bạn" />
+                <input type="text" formControlName="soDT" class="field" placeholder="Số điện thoại của bạn" />
+                <textarea formControlName="message" class="field area" placeholder="Tin nhắn"></textarea>
+                <button (click)="contactUs()" [disabled]="contactForm.invalid" class="btn btn-contact" type="submit">
                     gửi
                 </button>
-            </div>
+            </form>
         </div>
         <div class="footer__right col-12 col-md-4">
             <div class="iframe">

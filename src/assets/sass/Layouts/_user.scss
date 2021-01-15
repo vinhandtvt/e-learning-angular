@@ -36,8 +36,21 @@
             .user__menu--body {
                 display: flex;
                 flex-direction: column;
-                .acitve {
-                    background-color: red;
+                .item {
+                    height: 5rem;
+                    padding: 1rem 1.5rem;
+                    background-color: rgb(216, 211, 211);
+                    margin-top: 1rem;
+                    display: flex;
+                    align-items: center;
+                }
+                .active {
+                    height: 50px;
+                    padding: 1rem 1.5rem;
+                    background-color: rgb(233, 118, 118);
+                    color: blue;
+                    display: flex;
+                    align-items: center;
                 }
             }
         }
