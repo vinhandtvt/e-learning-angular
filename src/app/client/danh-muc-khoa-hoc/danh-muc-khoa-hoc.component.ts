@@ -10,17 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class DanhMucKhoaHocComponent implements OnInit {
   courses: any;
   maDanhMuc: string = '';
-  maNhom = 'GP01';
+  maNhom: string = 'GP01';
 
 
   constructor( private courseServices: CoursesService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    if(this.courseServices.daDangNhap()) {
+      console.log("da dang nhap nha nha");
+      
+      this.maNhom = JSON.parse(this.courseServices.getToken()).maNhom;  
+    }
     this.activatedRoute.url.subscribe(url => {
       this.courseServices.getCourseByCategory(url[1]?.path, this.maNhom).subscribe(res => {
         this.courses = res; 
-        console.log(this.courses);
-        
+                
       })
     });
     // this.courseServices.getCourseByCategory(this.maDanhMuc, this.maNhom).subscribe(res => {

@@ -3,41 +3,43 @@
     <h3 class="users__add"> <a routerLink="/admin/courses/add-course">Thêm Khóa học</a> </h3>
     <div *ngIf="dataSource">
         <mat-table [dataSource]="dataSource">
-            <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
 
             <!-- Name Column -->
             <ng-container matColumnDef="STT">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> STT</mat-header-cell>
-                <mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </mat-cell>
+                <th mat-header-cell *matHeaderCellDef> STT</th>
+                <td mat-cell *matCellDef="let row; let i = index"> {{i + 1}} </td>
             </ng-container>
             <ng-container matColumnDef="MaKhoaHoc">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Mã khóa học </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{row.maKhoaHoc}} </mat-cell>
+                <th mat-header-cell *matHeaderCellDef> Mã khóa học </th>
+                <td mat-cell *matCellDef="let row"> {{row.maKhoaHoc}} </td>
             </ng-container>
             <ng-container matColumnDef="TenKhoaHoc">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Tên khóa học </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{row.tenKhoaHoc}} </mat-cell>
+                <th mat-header-cell *matHeaderCellDef>Tên khóa học </th>
+                <td mat-cell *matCellDef="let row"> {{row.tenKhoaHoc}} </td>
             </ng-container>
             <ng-container matColumnDef="HinhAnh">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Hình ảnh </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{row.hinhAnh}} </mat-cell>
+                <th mat-header-cell *matHeaderCellDef>Hình ảnh </th>
+                <td mat-cell *matCellDef="let row"> {{row.hinhAnh}} </td>
             </ng-container>
             <ng-container matColumnDef="LuotXem">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Lượt xem</mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{row.luotXem}} </mat-cell>
+                <th mat-header-cell *matHeaderCellDef>Lượt xem</th>
+                <td mat-cell *matCellDef="let row"> {{row.luotXem}} </td>
             </ng-container>
             <ng-container matColumnDef="NguoiTao">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Người tạo</mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{row.nguoiTao.hoTen}} </mat-cell>
+                <th mat-header-cell *matHeaderCellDef>Người tạo</th>
+                <td mat-cell *matCellDef="let row"> {{row.nguoiTao.hoTen}} </td>
             </ng-container>
             <ng-container matColumnDef="ThaoTac">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Thao tác</mat-header-cell>
-                <mat-cell *matCellDef="let row">
-                    <button class="mr-3">Ghi danh</button>
-                    <button class="mr-3" (click)="deleteCourse(this.row.maKhoaHoc)">Xoa</button>
-                    <button (click)="modifyCourse(this.row)">Sửa</button>
-                </mat-cell>
+                <th mat-header-cell *matHeaderCellDef>Thao tác</th>
+                <td mat-cell *matCellDef="let row">
+                    <button mat-raised-button color="primary" class="mr-1 p-0">Ghi danh</button>
+                    <button mat-raised-button color="warn" class="mr-1 p-0"
+                        (click)="deleteCourse(this.row.maKhoaHoc)">Xoa</button>
+                    <button mat-raised-button color="accent" class="mr-1 p-0"
+                        (click)="modifyCourse(this.row)">Sửa</button>
+                </td>
             </ng-container>
         </mat-table>
         <!-- <mat-paginator [length]="dataSource.totalCount" [pageSize]="dataSource.count"

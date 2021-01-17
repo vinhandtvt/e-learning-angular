@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.courseServices.layDanhMucKhoaHoc().subscribe( res => this.danhMucKhoaHoc = res);
     this.user = JSON.parse(this.courseServices.getToken());
-    console.log(this.user);
     
   }  
   onSearch(event: any){

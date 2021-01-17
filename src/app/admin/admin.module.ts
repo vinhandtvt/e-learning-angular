@@ -1,3 +1,16 @@
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -28,6 +41,24 @@ import { GhiDanhComponent } from './ghi-danh/ghi-danh.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCourseComponent } from './add-course/add-course.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { A11yModule } from '@angular/cdk/a11y';
+import { CdkTableModule } from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PortalModule } from '@angular/cdk/portal';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatTreeModule} from '@angular/material/tree';
+
 
 
 
@@ -49,7 +80,40 @@ import { AddCourseComponent } from './add-course/add-course.component';
     MatDialogModule,
     MatCardModule,
     MatDividerModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule, // form here
+    A11yModule,
+    ClipboardModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatCardModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    CdkStepperModule,
+    MatDatepickerModule,
+    MatGridListModule,
+    MatInputModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSortModule,
+    MatTabsModule,
+    MatTooltipModule,
+    MatTreeModule,
+    OverlayModule,
+    PortalModule,
+    ScrollingModule,
   ]
 
 })

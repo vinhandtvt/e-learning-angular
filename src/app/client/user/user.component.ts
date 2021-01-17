@@ -17,6 +17,7 @@ export class UserComponent implements OnInit {
 
   getUserInfo() {
     return JSON.parse(this.service.getToken());
+    
   }
 
 }

@@ -1,9 +1,10 @@
+import  Swal  from 'sweetalert2';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { stringify } from '@angular/compiler/src/util';
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,8 @@ export class CoursesService {
   handleErr(err: any): any {
     switch ( err.status ) {
       case 500:
-        alert(err.error);
+        // alert(err.error);
+        Swal.fire(err.error);
         break;
       default:
         break;
@@ -294,6 +296,60 @@ export class CoursesService {
       }),
       catchError( err => {
         return this.handleErr(err)
+      })
+    )
+  }
+
+
+  // services liên quan tới việc ghi danh khóa học dựa trên user account
+
+  getUnresgiteredCourseByUser(account: string): Observable<any> {
+    const body = {};
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachKhoaHocChuaGhiDanh?TaiKhoan=${account}`, body).pipe(
+      tap( data => {
+        // loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  registerCourseByUser(data: any) {
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/GhiDanhKhoaHoc`, data, { responseType: 'text'}).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  getUnauthenticationCoursesByUser(taiKhoan: string) {
+    const body = {
+      taiKhoan: taiKhoan
+    }
+    return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachKhoaHocChoXetDuyet`, body).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  getAuthenticationCoursesByUser(taiKhoan: string) {
+    const body = {
+      taiKhoan: taiKhoan
+    }
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachKhoaHocDaXetDuyet', body).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr( err);
       })
     )
   }

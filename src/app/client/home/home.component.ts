@@ -20,7 +20,10 @@ export class HomeComponent implements OnInit {
   constructor( private courseService: CoursesService, private router: Router, private acitvatedRoute: ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    console.log(this.courseService.searchText);
+    if( this.courseService.daDangNhap()) {
+      this.maNhom = this.maNhom = JSON.parse(this.courseService.getToken()).maNhom; 
+
+    }
     
     this.courseService.layDanhSachKhoaHoc(this.maNhom).subscribe( res => {
       this.layDanhSachKhoaHoc = res; 

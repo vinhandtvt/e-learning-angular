@@ -38,6 +38,8 @@ export class UsersComponent implements OnInit {
     //   this.usersList = users;
     // })
     this.initDataSource();
+    
+    
     this.getUserService.searchText.subscribe(data => {
       this.inputSearch = data;
       console.log(this.inputSearch);
@@ -47,7 +49,8 @@ export class UsersComponent implements OnInit {
 
   initDataSource() {
     this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
-      this.dataSource = data;      
+      this.dataSource = data;  
+       
     })
   }
   
@@ -70,22 +73,29 @@ export class UsersComponent implements OnInit {
         });
       });
     }
-    // console.log(taiKhoan);
-    // this.getUserService.deleteUser(taiKhoan);
-    // this.initDataSource(); 
   }
 
   // user information detail
-  openDialog() {
-    const dialogRef = this.dialog.open(GhiDanhComponent);
+  openDialog(targetAccount: any) {
+    const dialogRef = this.dialog.open(GhiDanhComponent, {
+      data: {
+        taiKhoan: targetAccount
+      }
+    });
+
+    dialogRef.afterClosed().subscribe( res => {
+      console.log(`Dialog result: ${res}`);
+      
+    })
   }
 
   getUserInfo(taiKhoan: string) {
     this.router.navigate(['/admin/users/' + taiKhoan], {relativeTo: this.activatedRoute})
   }
 
-  updateUser(){
-    alert('Chưa lập trình button này, đừng có bấm ahihi đồ ngốc')
+  updateUser(tk: string){
+    console.log(tk);
+    
   }
 
 }
