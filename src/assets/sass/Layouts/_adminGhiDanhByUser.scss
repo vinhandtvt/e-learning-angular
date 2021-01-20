@@ -1,0 +1,17 @@
+#ghiDanhByUser {
+    width: 65vw;
+    .khoaHocChuaGhiDanh {
+        mat-form-field {
+            width: 88%;
+        }
+        button {
+            margin-left: 2.5rem;
+        }
+    }
+    .khoaHocChoXacThuc,
+    .khoaHocDaGhiDanh {
+        .mat-table {
+            width: 88%;
+        }
+    }
+}

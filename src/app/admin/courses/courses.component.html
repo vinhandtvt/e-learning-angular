@@ -34,7 +34,8 @@
             <ng-container matColumnDef="ThaoTac">
                 <th mat-header-cell *matHeaderCellDef>Thao tác</th>
                 <td mat-cell *matCellDef="let row">
-                    <button mat-raised-button color="primary" class="mr-1 p-0">Ghi danh</button>
+                    <button mat-raised-button color="primary" class="mr-1 p-0"
+                        (click)="openDialog(this.row.maKhoaHoc)">Ghi danh</button>
                     <button mat-raised-button color="warn" class="mr-1 p-0"
                         (click)="deleteCourse(this.row.maKhoaHoc)">Xoa</button>
                     <button mat-raised-button color="accent" class="mr-1 p-0"

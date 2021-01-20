@@ -326,6 +326,18 @@ export class CoursesService {
     )
   }
 
+  unRegisterCourseByUser(data: any) {
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/HuyGhiDanh', data, { responseType: 'text'}).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+
+  }
+
   getUnauthenticationCoursesByUser(taiKhoan: string) {
     const body = {
       taiKhoan: taiKhoan
@@ -355,6 +367,40 @@ export class CoursesService {
   }
 
   
+  // services liên quan tới ghi danh khóa học dựa trên khóa học maKhoaHoc
+
+  getUnregisteredUsersByCourse(data: any) {
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDungChuaGhiDanh', data).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  getWaitingApprovalUsers(data: any) {
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachHocVienChoXetDuyet', data).pipe(
+      tap( (data: any)=> {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
+  getRegisteredUsers(data: any) {
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachHocVienKhoaHoc', data).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
 
 
 }

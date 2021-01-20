@@ -1,4 +1,4 @@
-<div class="ghiDanhByUser">
+<div class="ghiDanhByUser" id="ghiDanhByUser">
     <h2 mat-dialog-title>Ghi Danh</h2>
     <mat-dialog-content>
         <div class="khoaHocChuaGhiDanh">
@@ -15,7 +15,7 @@
             <button mat-raised-button color="primary" (click)="register(selected)">Ghi danh</button>
         </div>
         <hr>
-        <div class="khoaHocChoXacThuc" *ngIf="unAuthenticatedCourses">
+        <div class="khoaHocChoXacThuc" *ngIf="unAuthenticatedCourses.length >= 1">
             <h4>Khóa học chờ xác thực</h4>
             <table mat-table [dataSource]="unAuthenticatedCourses" class="mat-elevation-z8">
                 <!-- Position Column -->
@@ -35,6 +35,16 @@
                     <th mat-header-cell *matHeaderCellDef> Mã khóa học </th>
                     <td mat-cell *matCellDef="let element"> {{element.maKhoaHoc}} </td>
                 </ng-container>
+                <!-- Action Column -->
+                <ng-container matColumnDef="thaoTac">
+                    <th mat-header-cell *matHeaderCellDef>Thao tác</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-raised-button color="Primary" (click)="register(this.element.maKhoaHoc)">Xác
+                            thực</button>
+                        <button mat-raised-button color="warn"
+                            (click)="unRegister(this.element.maKhoaHoc)">Hủy</button>
+                    </td>
+                </ng-container>
 
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -42,7 +52,7 @@
             </table>
         </div>
         <hr>
-        <div class="khoaHocDaGhiDanh" *ngIf="AuthenticationCourses">
+        <div class="khoaHocDaGhiDanh" *ngIf="AuthenticationCourses.length >= 1">
             <h4>Khóa học đã ghi danh</h4>
             <table mat-table [dataSource]="AuthenticationCourses" class="mat-elevation-z8">
                 <!-- Position Column -->
@@ -61,6 +71,14 @@
                 <ng-container matColumnDef="maKhoaHoc">
                     <th mat-header-cell *matHeaderCellDef> Mã khóa học </th>
                     <td mat-cell *matCellDef="let element"> {{element.maKhoaHoc}} </td>
+                </ng-container>
+                <!-- action Column  -->
+                <ng-container matColumnDef="thaoTac">
+                    <th mat-header-cell *matHeaderCellDef>Thao tác</th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-raised-button color="warn"
+                            (click)="unRegister(this.element.maKhoaHoc)">Hủy</button>
+                    </td>
                 </ng-container>
 
 

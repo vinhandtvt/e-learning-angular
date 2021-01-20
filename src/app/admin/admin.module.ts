@@ -58,12 +58,13 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatTreeModule} from '@angular/material/tree';
+import { GhiDanhKhoaHocComponent } from './ghi-danh-khoa-hoc/ghi-danh-khoa-hoc.component';
 
 
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent],
+  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent, GhiDanhKhoaHocComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
