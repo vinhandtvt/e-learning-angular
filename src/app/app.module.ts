@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptor } from './core/interceptor/token.interceptor';
+
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
@@ -26,6 +29,7 @@ import { TokenInterceptor } from './core/interceptor/token.interceptor';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    CKEditorModule
   ],
   providers: [
     {

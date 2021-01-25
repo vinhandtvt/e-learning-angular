@@ -5,8 +5,84 @@
         font-size: 2rem;
         margin-top: 1.5rem;
     }
-    mat-table {
-        width: 100%;
+    table {
+        width: 81vw;
+
+        .mat-column-index {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 5% !important;
+            width: 5% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-name {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 25% !important;
+            width: 25% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-useraccount {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 18% !important;
+            width: 18% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-soDT {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 13% !important;
+            width: 13% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-role {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 14% !important;
+            width: 14% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
         .mat-column-action {
             word-wrap: break-word !important;
             white-space: unset !important;

@@ -50,11 +50,11 @@ export class GhiDanhComponent implements OnInit {
   }
   unRegister(maKhoaHoc: string) {
     if(confirm("Bạn có chắc hủy khóa học này không ?")) {
-      const body = {
-        maKhoaHoc: maKhoaHoc,
-        taiKhoan: this.userAccount
-      }
-      this.service.unRegisterCourseByUser(body).subscribe( res => {
+      // const body = {
+      //   maKhoaHoc: maKhoaHoc,
+      //   taiKhoan: this.userAccount
+      // }
+      this.service.unRegisterCourseByUser(this.userAccount, maKhoaHoc).subscribe( res => {
         Swal.fire(res);
         this.allUnRegisteredCourses();
         this.unAuthCourses();

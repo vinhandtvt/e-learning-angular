@@ -43,11 +43,8 @@ export class CoursesComponent implements OnInit {
   }
 
   // modify course 
-  modifyCourse(maKhoaHoc: object) {
-    console.log(maKhoaHoc);
-    this.service.modifyCourse(maKhoaHoc)
-    this.router.navigate(['/admin/courses/add-course'], { relativeTo: this.activatedRoute})
-    
+  modifyCourse(data: any) {
+    this.router.navigate([`/admin/courses/edit-course/`, data?.maKhoaHoc], { relativeTo: this.activatedRoute})
   }
 
   // Ghi danh functions

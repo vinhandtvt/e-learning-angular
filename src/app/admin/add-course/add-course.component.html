@@ -1,93 +1,175 @@
-<div class="container">
-  <form [formGroup]="courseForm">
-    <h3>Thêm khóa học</h3>
-    <div class="form-group">
-      <label>Mã khóa học</label>
-      <input type="text" class="form-control" formControlName="maKhoaHoc">
-      <div *ngIf="maKhoaHoc?.invalid && maKhoaHoc?.touched">
-        <span class="text-danger">Mã khóa học ít nhất 4 kỹ tự!</span>
-      </div>
-    </div>
-    <!-- <div class="form-group">
-      <label>Bí danh</label>
-      <input type="text" class="form-control" formControlName="biDanh">
-    </div> -->
-    <div class="form-group">
-      <label>Tên khóa học</label>
-      <input type="text" class="form-control" formControlName="tenKhoaHoc">
-      <div *ngIf="tenKhoaHoc?.invalid && tenKhoaHoc?.touched">
-        <span class="text-danger">Tên khóa học không được để trống!</span>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Mô tả</label>
-      <textarea class="form-control" formControlName="moTa"></textarea>
-      <div *ngIf="moTa?.invalid && moTa?.touched">
-        <span class="text-danger">Mô tả khóa học không được để trống!</span>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Lượt xem</label>
-      <input type="text" class="form-control" formControlName="luotXem">
-      <div *ngIf="luotXem?.invalid && luotXem?.touched">
-        <span class="text-danger">Lượt xem phải là số!</span>
-      </div>
-    </div>
-    <!-- <div class="form-group">
-      <label>Danh gia</label>
-      <input type="text" class="form-control" formControlName="danhGia">
-    </div> -->
-    <div class="form-group">
+<div class="addEditCourse">
+  <div class="addEditCourse__title">
+    <h1 *ngIf="isAddMode">Thêm khóa học</h1>
+    <h1 *ngIf="!isAddMode">Sửa khóa học</h1>
+  </div>
+
+  <form [formGroup]="courseForm" class="addEditCourse__form">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Mã khóa học</mat-label>
+        <input matInput type="text" placeholder="FE051" formControlName="maKhoaHoc">
+        <mat-hint>ví dụ: FE051</mat-hint>
+        <mat-error>
+          <div *ngIf="maKhoaHoc?.invalid && maKhoaHoc?.touched">
+            <span class="text-danger">Mã khóa học ít nhất 4 kỹ tự!</span>
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Tên khóa học</mat-label>
+        <input matInput type="text" placeholder="Front end" formControlName="tenKhoaHoc">
+        <mat-hint>ví dụ: Lập trình Front end</mat-hint>
+        <mat-error>
+
+          <div *ngIf="tenKhoaHoc?.invalid && tenKhoaHoc?.touched">
+            <span class="text-danger">Tên khóa học không được để trống!</span>
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Bí danh</mat-label>
+        <input matInput type="text" placeholder="Front end" formControlName="biDanh">
+        <mat-hint>ví dụ:Front end</mat-hint>
+        <mat-error>
+
+          <div *ngIf="tenKhoaHoc?.invalid && tenKhoaHoc?.touched">
+            <span class="text-danger">Tên khóa học không được để trống!</span>
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Lượt xem</mat-label>
+        <input matInput type="text" placeholder="lượt xem" formControlName="luotXem">
+        <mat-hint>500</mat-hint>
+        <mat-error>
+          <div *ngIf="luotXem?.invalid && luotXem?.touched">
+            <span class="text-danger">Lượt xem phải là số!</span>
+          </div>
+        </mat-error>
+
+      </mat-form-field>
+    </p>
+    <p>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Đánh giá</mat-label>
+        <input matInput type="number" min="1" max="5" placeholder="4/5" formControlName="danhGia">
+        <mat-hint>5</mat-hint>
+        <mat-error>
+          <div *ngIf="danhGia?.invalid && danhGia?.touched">
+            <span class="text-danger">đánh giá từ 1 tới 5!</span>
+          </div>
+        </mat-error>
+
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Tài khoản người tạo: </mat-label>
+        <select matNativeControl formControlName="taiKhoanNguoiTao">
+          <option *ngFor="let user of listGV" [value]="user.taiKhoan">{{user.hoTen}}</option>
+          <!-- <option value="GP02">GP02</option>
+          <option value="GP03">GP03</option>
+          <option value="GP04">GP04</option>
+          <option value="GP05">GP05</option>
+          <option value="GP06">GP06</option>
+          <option value="GP07">GP07</option>
+          <option value="GP08">GP08</option>
+          <option value="GP09">GP09</option>
+          <option value="GP10">GP10</option> -->
+        </select>
+        <div *ngIf="maNhom?.invalid && maNhom?.touched">
+          <span class="text-danger">Mâ nhóm không được để trống!</span>
+        </div>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Mã nhóm: </mat-label>
+        <select matNativeControl formControlName="maNhom">
+          <option value="GP01" selected>GP01</option>
+          <option value="GP02">GP02</option>
+          <option value="GP03">GP03</option>
+          <option value="GP04">GP04</option>
+          <option value="GP05">GP05</option>
+          <option value="GP06">GP06</option>
+          <option value="GP07">GP07</option>
+          <option value="GP08">GP08</option>
+          <option value="GP09">GP09</option>
+          <option value="GP10">GP10</option>
+        </select>
+        <div *ngIf="maNhom?.invalid && maNhom?.touched">
+          <span class="text-danger">Mâ nhóm không được để trống!</span>
+        </div>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Ngày tạo</mat-label>
+        <input matInput type="date" formControlName="ngayTao" id="ngayTao">
+        <mat-error>
+          <div *ngIf="ngayTao?.invalid && ngayTao?.touched">
+            <span>Vui lòng chọn ngày tạo!</span>
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Mã danh mục khóa học</mat-label>
+        <select matNativeControl formControlName="maDanhMucKhoaHoc">
+          <option value="BackEnd">BackEnd</option>
+          <option value="Design">Design</option>
+          <option value="DiDong">DiDong</option>
+          <option value="FrontEnd">FrontEnd</option>
+          <option value="FullStack">FullStack</option>
+          <option value="TuDuy">TuDuy</option>
+        </select>
+        <mat-error>
+          <div *ngIf="maDanhMucKhoaHoc?.invalid && maDanhMucKhoaHoc?.touched">
+            <span>Mã danh mục khóa học không được để trống!</span>
+          </div>
+        </mat-error>
+
+      </mat-form-field>
+    </p>
+
+    <div class="form-group" class="addEditCourse__form--img">
       <label>Hình ảnh</label>
       <input type="file" class="form-control" #imgCourse>
     </div>
-    <div class="form-group">
-      <!-- <label>Mã nhóm</label>
-      <input type="text" class="form-control" formControlName="maNhom"> -->
-      <label>Mã nhóm: </label>
-      <select class="form-control" formControlName="maNhom">
-        <option>GP01</option>
-        <option>GP02</option>
-        <option>GP03</option>
-        <option>GP04</option>
-        <option>GP05</option>
-        <option>GP06</option>
-        <option>GP07</option>
-        <option>GP08</option>
-        <option>GP09</option>
-        <option>GP10</option>
-      </select>
-      <div *ngIf="maNhom?.invalid && maNhom?.touched">
-        <span class="text-danger">Mâ nhóm không được để trống!</span>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Ngày tạo</label>
-      <input type="date" class="form-control" formControlName="ngayTao">
-      <div *ngIf="ngayTao?.invalid && ngayTao?.touched">
-        <span>Vui lòng chọn ngày tạo!</span>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Mã danh mục khóa học</label>
-      <select class="form-control" formControlName="maDanhMucKhoaHoc">
-        <option value="BackEnd">BackEnd</option>
-        <option value="Design">Design</option>
-        <option value="DiDong">DiDong</option>
-        <option value="FrontEnd">FrontEnd</option>
-        <option value="FullStack">FullStack</option>
-        <option value="TuDuy">TuDuy</option>
-      </select>
-      <div *ngIf="maDanhMucKhoaHoc?.invalid && maDanhMucKhoaHoc?.touched">
-        <span>Mã danh mục khóa học không được để trống!</span>
-      </div>
-    </div>
-    <!-- <div class="form-group">
-      <label>Tài khoản người tạo</label>
-      <input type="text" class="form-control" formControlName="taiKhoanNguoiTao">
-    </div> -->
-    <button class="btn btn-success mr-3" [disabled]="courseForm.invalid" type="submit"
-      (click)="onUpload(courseForm, imgCourse.files)">Them</button>
-    <button class="btn btn-danger" type="submit">lưa</button>
+    <p class="addEditCourse__form--textarea">
+      <mat-form-field appearance="fill">
+        <mat-label>Mô tả</mat-label>
+        <textarea matInput placeholder="tin nhắn" formControlName="moTa"></textarea>
+        <mat-hint>ví dụ: đây là khóa học ...</mat-hint>
+        <mat-error>
+
+          <div *ngIf="moTa?.invalid && moTa?.touched">
+            <span class="text-danger">Mô tả khóa học không được để trống!</span>
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p class="formActions">
+      <button class="btn btn-success mr-3" [disabled]="courseForm.invalid || !isAddMode" type="submit"
+        (click)="onUpload(courseForm, imgCourse.files)">Them</button>
+      <button class="btn btn-danger" type="submit" [disabled]="isAddMode || courseForm.invalid"
+        (click)="updateCourse(courseForm, imgCourse.files)">lưa</button>
+    </p>
+
   </form>
 </div>

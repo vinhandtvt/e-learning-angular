@@ -1,3 +1,4 @@
+import { CoursesService } from 'src/app/services/courses.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -8,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private services : CoursesService) { }
 
   ngOnInit(): void {
+  }
+
+  daDangNhap() {
+    this.services.daDangNhap();
+  }
+  dangXuat() {
+    this.services.dangXuat();
   }
 
 }

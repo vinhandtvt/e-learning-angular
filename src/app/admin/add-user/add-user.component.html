@@ -1,6 +1,111 @@
-<div class="add__user">
-    <h2>Thêm người dùng</h2>
-    <form [formGroup]="addForm">
+<div class="addEditUser">
+    <div class="addEditUser__title">
+        <h1 *ngIf="isAddMode">Thêm người dùng mới</h1>
+        <h1 *ngIf="!isAddMode">Cập nhật người dùng</h1>
+    </div>
+
+    <form [formGroup]="addForm" class="addEditForm">
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Tên người dùng</mat-label>
+                <input matInput placeholder="Nguyễn văn A" formControlName="hoTen">
+                <mat-hint>ví dụ: Nguyễn văn A</mat-hint>
+                <mat-error>
+                    <div *ngIf="(nameError?.invalid && nameError?.touched) || nameError?.dirty">
+                        <span *ngIf="nameError?.errors?.required">Họ tên không được để trống</span>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p class="example-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Vui lòng nhập email</mat-label>
+                <input matInput placeholder="email@vidu.com" formControlName="email">
+                <mat-hint>ví dụ: email@gmail.com</mat-hint>
+                <mat-error>
+                    <div *ngIf="(emailError?.invalid && emailError?.touched) || emailError?.dirty">
+                        <span *ngIf="emailError?.errors?.required">Email không được để trống</span>
+                        <span *ngIf="emailError?.errors?.email">Email không hợp lệ</span>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Số điện thoại</mat-label>
+                <input matInput placeholder="+84 099999999" formControlName="soDT">
+                <mat-hint>ví dụ: (+84) 0123456789</mat-hint>
+                <mat-error>
+                    <div *ngIf="(phoneNumberError?.invalid && phoneNumberError?.touched) || phoneNumberError?.dirty">
+                        <span *ngIf="phoneNumberError?.errors?.required">Số điện thoại không được để trống</span>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Tài khoản</mat-label>
+                <input matInput placeholder="brook" formControlName="taiKhoan">
+                <mat-hint>ví dụ: admin</mat-hint>
+                <mat-error>
+                    <div *ngIf="(taiKhoanError?.invalid && taiKhoanError?.touched) || taiKhoanError?.dirty">
+                        <span *ngIf="taiKhoanError?.errors?.required">Tài khoản không được để trống</span>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Vui lòng nhập mật khẩu</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="matKhau">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>ví dụ: 123456</mat-hint>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Mã loại người dùng</mat-label>
+                <select matNativeControl formControlName="maLoaiNguoiDung">
+                    <option value="" selected></option>
+                    <!-- <option *ngFor="let ma of maLoaiNguoiDung" [value]="ma.value">
+                        {{ma.viewValue}}
+                    </option> -->
+                    <option value="HV">HỌC VIÊN</option>
+                    <option value="GV">GIÁO VIÊN</option>
+                </select>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill" *ngIf="!isAddMode">
+                <mat-label>Mã nhóm</mat-label>
+                <select matNativeControl formControlName="maNhom">
+                    <option value="GP01" selected>Nhóm 1</option>
+                    <option value="GP02">Nhóm 2</option>
+                    <option value="GP03">Nhóm 3</option>
+                    <option value="GP04">Nhóm 4</option>
+                    <option value="GP05">Nhóm 5</option>
+                    <option value="GP06">Nhóm 6</option>
+                    <option value="GP07">Nhóm 7</option>
+                    <option value="GP08">Nhóm 8</option>
+                    <option value="GP09">Nhóm 9</option>
+                    <option value="GP10">Nhóm 10</option>
+                </select>
+            </mat-form-field>
+        </p>
+    </form>
+    <div class="addEditForm__actions">
+        <button mat-raised-button color="warn" [disabled]="addForm.invalid || !isAddMode"
+            (click)="addUser(addForm)">Thêm
+            người dùng
+            mới</button>
+        <button mat-raised-button color="warn" [disabled]="addForm.invalid || isAddMode"
+            (click)="updateUser(addForm)">Lưa thay đổi</button>
+    </div>
+    <!-- <form [formGroup]="addForm">
         <div class="form-group">
             <label>Tài khoản</label>
             <input type="text" formControlName="taiKhoan" class="form-control" placeholder="Tài khoản người dùng"
@@ -58,6 +163,7 @@
                 <button>Lưu</button>
             </div>
         </div>
-    </form>
+    </form> -->
+
 
 </div>

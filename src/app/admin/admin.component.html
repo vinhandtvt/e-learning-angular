@@ -1,12 +1,12 @@
 <app-header></app-header>
-<section class="admin">
-    <div class="dashboard container-fluid">
+<section class="admin" id="admin">
+    <div class="admin container-fluid">
 
-        <div class="dashboard__header row">
-            <div class="dashboard__header--logo col-2">
+        <div class="admin__header row">
+            <div class="admin__header--logo col-2">
                 <p>Nhan vi van</p>
             </div>
-            <div class="dashboard__header--info col-10">
+            <div class="admin__header--info col-10">
                 <div class="input">
                     <form>
                         <div class="input-group">
@@ -24,14 +24,14 @@
                 </div>
             </div>
         </div>
-        <div class="dashboard__body row">
-            <div class="dashboard__body--menu col-2">
+        <div class="admin__body row">
+            <div class="admin__body--menu col-2">
                 <ul>
-                    <li routerLink="/admin/courses">Quản lý khóa học</li>
-                    <li routerLink="/admin/users">Quản lý người dùng</li>
+                    <li routerLinkActive="active" routerLink="/admin/courses">Quản lý khóa học</li>
+                    <li routerLinkActive="active" routerLink="/admin/users">Quản lý người dùng</li>
                 </ul>
             </div>
-            <div class="dashboard__body--contents col-10">
+            <div class="admin__body--contents col-10">
                 <!-- <app-users></app-users> -->
                 <router-outlet></router-outlet>
             </div>

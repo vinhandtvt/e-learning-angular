@@ -1,7 +1,7 @@
 import  Swal  from 'sweetalert2';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -148,6 +148,18 @@ export class CoursesService {
     )
   }
 
+  // lấy tất cả người dùng có maLoaiNguoiDung = "GV"
+  getAllUsersInonePage(maNhom: string) {
+    return this.http.get(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${maNhom}`).pipe(
+      tap((data: any) => {
+        // LOADING
+      }),
+      catchError( err => {
+        return this.handleErr(err);
+      })
+    )
+  }
+
   deleteUser(userName: string) {
     return this.http.delete(`https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${userName}`, { responseType: 'text'}).pipe(
       tap((data: any) => {
@@ -233,6 +245,7 @@ export class CoursesService {
 
   modifyCourse(course: object) {
     this.course.next(course);
+    // chưa dùng tới
   }
 
   // service that register a course
@@ -300,6 +313,18 @@ export class CoursesService {
     )
   }
 
+  // cập nhật thông tin khóa học
+  updateCourse(data: any) {
+    return this.http.put(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/CapNhatKhoaHoc`, data).pipe(
+      tap( (data: any) => {
+        //loading
+      }),
+      catchError( err => {
+        return this.handleErr( err);
+      })
+    )
+  }
+
 
   // services liên quan tới việc ghi danh khóa học dựa trên user account
 
@@ -326,8 +351,13 @@ export class CoursesService {
     )
   }
 
-  unRegisterCourseByUser(data: any) {
-    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/HuyGhiDanh', data, { responseType: 'text'}).pipe(
+  unRegisterCourseByUser(taiKhoan: string, maKhoaHoc: string) {
+
+    const body = {
+      taiKhoan,
+      maKhoaHoc
+    }
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/HuyGhiDanh', body, { responseType: 'text'}).pipe(
       tap( (data: any) => {
         //loading
       }),
@@ -369,8 +399,11 @@ export class CoursesService {
   
   // services liên quan tới ghi danh khóa học dựa trên khóa học maKhoaHoc
 
-  getUnregisteredUsersByCourse(data: any) {
-    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDungChuaGhiDanh', data).pipe(
+  getUnregisteredUsersByCourse(maKhoaHoc: any) {
+    const body = {
+      maKhoaHoc
+    }
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachNguoiDungChuaGhiDanh', body).pipe(
       tap( (data: any) => {
         //loading
       }),
@@ -380,8 +413,11 @@ export class CoursesService {
     )
   }
 
-  getWaitingApprovalUsers(data: any) {
-    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachHocVienChoXetDuyet', data).pipe(
+  getWaitingApprovalUsers(maKhoaHoc: any) {
+    const body = {
+      maKhoaHoc
+    }
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachHocVienChoXetDuyet', body).pipe(
       tap( (data: any)=> {
         //loading
       }),
@@ -391,8 +427,11 @@ export class CoursesService {
     )
   }
 
-  getRegisteredUsers(data: any) {
-    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachHocVienKhoaHoc', data).pipe(
+  getRegisteredUsers(maKhoaHoc: any) {
+    const body = {
+      maKhoaHoc: maKhoaHoc
+    }
+    return this.http.post('https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/LayDanhSachHocVienKhoaHoc', body).pipe(
       tap( (data: any) => {
         //loading
       }),
@@ -402,5 +441,5 @@ export class CoursesService {
     )
   }
 
-
+  
 }

@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if( this.courseService.daDangNhap()) {
-      this.maNhom = this.maNhom = JSON.parse(this.courseService.getToken()).maNhom; 
+      this.maNhom = JSON.parse(this.courseService.getToken()).maNhom; 
 
     }
     

@@ -12,15 +12,9 @@ import { AddCourseComponent } from './add-course/add-course.component';
 
 const routes: Routes = [
   {
-    path:'', component: AdminComponent,children: [
+    path:'', component: AdminComponent, canActivate: [AuthGuard],children: [
       {
-        path: '', component: UsersComponent
-      },
-      {
-        path:'dashboard', component: DashboardComponent, canActivate: [AuthGuard]
-      },
-      {
-        path: 'header', component: HeaderComponent
+        path: '', component: UsersComponent,
       },
       {
         path: 'users', children: [
@@ -31,11 +25,21 @@ const routes: Routes = [
             path: 'add' , component: AddUserComponent
           },
           {
+            path: 'add/:taiKhoan', component: AddUserComponent
+          },
+          {
             path: ':taiKhoan', component: UserProfileComponent
-          }
-          
+          },
+
         ]
       },
+      {
+        path:'dashboard', component: DashboardComponent, //canActivate: [AuthGuard]
+      },
+      {
+        path: 'header', component: HeaderComponent
+      },
+     
       {
         path: 'courses', children: [
           {
@@ -43,6 +47,9 @@ const routes: Routes = [
           },
           {
             path: 'add-course', component: AddCourseComponent
+          },
+          {
+            path: 'edit-course/:maKhoaHoc', component: AddCourseComponent
           }
         ]
       }

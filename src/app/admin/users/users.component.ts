@@ -5,6 +5,7 @@ import { CoursesService } from 'src/app/services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { GhiDanhComponent } from '../ghi-danh/ghi-danh.component';
+import { AddUserComponent } from '../add-user/add-user.component';
 
 
 
@@ -50,6 +51,8 @@ export class UsersComponent implements OnInit {
   initDataSource() {
     this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
       this.dataSource = data;  
+      console.log(this.dataSource);
+      
        
     })
   }
@@ -89,13 +92,12 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  getUserInfo(taiKhoan: string) {
+  getUserInfo(taiKhoan: any) {
     this.router.navigate(['/admin/users/' + taiKhoan], {relativeTo: this.activatedRoute})
   }
 
-  updateUser(tk: string){
-    console.log(tk);
-    
+  updateUser(data: any){
+    this.router.navigate([`/admin/users/add/`, data.taiKhoan], {relativeTo: this.activatedRoute})
   }
 
 }

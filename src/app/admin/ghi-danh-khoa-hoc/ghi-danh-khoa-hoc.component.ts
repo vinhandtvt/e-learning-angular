@@ -5,6 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoursesService } from 'src/app/services/courses.service';
 import { GhiDanhComponent } from '../ghi-danh/ghi-danh.component';
 import {map, startWith} from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ghi-danh-khoa-hoc',
@@ -16,6 +17,7 @@ export class GhiDanhKhoaHocComponent implements OnInit {
   @Output() submitClicked = new EventEmitter<any>();
   maKhoaHoc: string = '';
   users: any[] = [];
+  user: any;
   searchUser: any;
   myControl = new FormControl();
   filteredOptions!: Observable<any[]>;
@@ -27,7 +29,7 @@ export class GhiDanhKhoaHocComponent implements OnInit {
   constructor(private service: CoursesService, public dialogRef: MatDialogRef<GhiDanhComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.maKhoaHoc = this.data.maKhoaHoc;
     this.unRegisterUsers();
     this.awaitingUsers();
@@ -46,11 +48,42 @@ export class GhiDanhKhoaHocComponent implements OnInit {
     } );
   }
 
-  unRegisterUsers() {
+  register(taiKhoan: string){
     const body = {
-      maKhoaHoc: this.maKhoaHoc
+      maKhoaHoc: this.maKhoaHoc,
+      taiKhoan: taiKhoan
     }
-    this.service.getUnregisteredUsersByCourse(body).subscribe( res => {
+    console.log(body);
+    
+    this.service.registerCourseByUser(body).subscribe( res => {
+      Swal.fire(res);
+      this.unRegisterUsers();
+      this.awaitingUsers();
+      this.registeredUserList();
+    });
+    
+  }
+  unRegister(taiKhoan: any) {
+    if(confirm("Bạn có chắc hủy khóa học này không ?")) {
+      // const body = {
+      //   maKhoaHoc: this.maKhoaHoc,
+      //   taiKhoan: taiKhoan
+      // }
+      this.service.unRegisterCourseByUser(taiKhoan, this.maKhoaHoc).subscribe( res => {
+        Swal.fire(res);
+        
+        this.unRegisterUsers();
+      this.awaitingUsers();
+      this.registeredUserList();
+      
+      });
+    } else { return }
+    
+  }
+
+  // lấy danh sách học viên chưa đăng ký khóa học 
+  unRegisterUsers() {
+    this.service.getUnregisteredUsersByCourse(this.maKhoaHoc).subscribe( res => {
       this.users = res;
       this.filteredOptions = this.myControl.valueChanges
       .pipe(
@@ -61,31 +94,26 @@ export class GhiDanhKhoaHocComponent implements OnInit {
     })  
   }
 
-  getPosts(value: any) {
-    console.log(value);
-    
-  }
-
   //  lấy danh sách học viên chờ xét duyệt
   awaitingUsers() {
-    const body = {
-      maKhoaHoc: this.maKhoaHoc
-    }
-    this.service.getWaitingApprovalUsers(body).subscribe( res => {
+    this.service.getWaitingApprovalUsers(this.maKhoaHoc).subscribe( res => {
       this.waitingUsers = res;
       
     })
   }
 
+  // lấy danh sách học viện đã đăng ký khóa học này
   registeredUserList() {
-    const body = {
-      maKhoaHoc: this.maKhoaHoc
-    }
-    this.service.getRegisteredUsers(body).subscribe( res => {
+    this.service.getRegisteredUsers(this.maKhoaHoc).subscribe( res => {
       this.registeredUsers = res;
-      
-      
     })
   }
+
+
+  onSubmit() {
+    const user = this.myControl.value.taiKhoan
+    this.register(user);
+  }
+ 
 
 }

@@ -1,3 +1,4 @@
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -61,8 +62,6 @@ import {MatTreeModule} from '@angular/material/tree';
 import { GhiDanhKhoaHocComponent } from './ghi-danh-khoa-hoc/ghi-danh-khoa-hoc.component';
 
 
-
-
 @NgModule({
   declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent, GhiDanhKhoaHocComponent],
   imports: [
@@ -115,6 +114,7 @@ import { GhiDanhKhoaHocComponent } from './ghi-danh-khoa-hoc/ghi-danh-khoa-hoc.c
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    CKEditorModule
   ]
 
 })

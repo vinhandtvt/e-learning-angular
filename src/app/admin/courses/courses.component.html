@@ -2,7 +2,7 @@
     <h2 style="text-align: center;">Tất cả các khóa học.</h2>
     <h3 class="users__add"> <a routerLink="/admin/courses/add-course">Thêm Khóa học</a> </h3>
     <div *ngIf="dataSource">
-        <mat-table [dataSource]="dataSource">
+        <table mat-table [dataSource]="dataSource">
             <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
             <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
 
@@ -42,7 +42,7 @@
                         (click)="modifyCourse(this.row)">Sửa</button>
                 </td>
             </ng-container>
-        </mat-table>
+        </table>
         <!-- <mat-paginator [length]="dataSource.totalCount" [pageSize]="dataSource.count"
             [pageSizeOptions]="[5, 10, 20, 30, 100]" (page)="pageEvent = $event; onPaginateChange($event)"
             showFirstLastButtons>
