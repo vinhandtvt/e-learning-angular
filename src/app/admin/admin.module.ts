@@ -60,10 +60,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatTreeModule} from '@angular/material/tree';
 import { GhiDanhKhoaHocComponent } from './ghi-danh-khoa-hoc/ghi-danh-khoa-hoc.component';
+import { UserFilterComponent } from './user-filter/user-filter.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent, GhiDanhKhoaHocComponent],
+  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent, GhiDanhKhoaHocComponent, UserFilterComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -114,7 +116,11 @@ import { GhiDanhKhoaHocComponent } from './ghi-danh-khoa-hoc/ghi-danh-khoa-hoc.c
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    CKEditorModule
+    CKEditorModule,
+    SharedModule
+  ],
+  exports: [
+    MatSortModule
   ]
 
 })

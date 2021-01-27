@@ -73,7 +73,7 @@
       </mat-form-field>
     </p>
 
-    <p>
+    <p *ngIf="!isAddMode">
       <mat-form-field appearance="fill">
         <mat-label>Tài khoản người tạo: </mat-label>
         <select matNativeControl formControlName="taiKhoanNguoiTao">

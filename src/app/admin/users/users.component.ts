@@ -1,15 +1,14 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { CoursesService } from 'src/app/services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { GhiDanhComponent } from '../ghi-danh/ghi-danh.component';
 import { AddUserComponent } from '../add-user/add-user.component';
-
-
-
-
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 
 @Component({
@@ -17,55 +16,53 @@ import { AddUserComponent } from '../add-user/add-user.component';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, AfterViewInit {
 
   maNhom: string = 'GP01';
-  page: number = 1;
-  size: number = 20;
-  inputSearch: string = '';
-  // MatPaginator Output
-  // MatPaginator Output
-  pageEvent!: PageEvent;
-  dataSource: any = [];
-  columnsToDisplay: string[] = ['index', 'name', 'useraccount', 'soDT', 'role', 'action'];
+  users: any;
+  // public dataSource = new MatTableDataSource<any>();
   token: any;
+  public columnsToDisplay: string[] = ['index', 'name', 'useraccount', 'soDT', 'role', 'action'];
+  public dataSource = new MatTableDataSource<any>();
+
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
 
 
   constructor(private getUserService: CoursesService, private snackbar: MatSnackBar, public dialog: MatDialog, private activatedRoute: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void {
-    // this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( users => {
-    //   console.log("lists of users: ", users.items);
-    //   this.usersList = users;
-    // })
-    this.initDataSource();
-    
-    
-    this.getUserService.searchText.subscribe(data => {
-      this.inputSearch = data;
-      console.log(this.inputSearch);
-    });
-    
+    this.initDataSource(); 
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   initDataSource() {
-    this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
-      this.dataSource = data;  
-      console.log(this.dataSource);
-      
-       
+    return this.getUserService.getAllUsersInonePage(this.maNhom).subscribe( res => {
+      this.dataSource.data = res as any;
     })
   }
+
   
-  onPaginateChange(event: PageEvent) {
-    this.page = event.pageIndex;
-    this.size = event.pageSize;
-    this.page += 1;
-    this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
-      this.dataSource = data;
-     
-    })
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+
+  
+  // onPaginateChange(event: PageEvent) {
+  //   this.page = event.pageIndex;
+  //   this.size = event.pageSize;
+  //   this.page += 1;
+  //   this.getUserService.getAllUsers(this.maNhom, this.page, this.size).subscribe( data => {
+  //     this.dataSource = data;
+     
+  //   })
+  // }
   deleteUser(taiKhoan: string) {
     if(confirm(`Bạn có muốn xóa người dùng ${taiKhoan} không ?`)) {
       this.getUserService.deleteUser(taiKhoan).subscribe( res => {
@@ -101,3 +98,4 @@ export class UsersComponent implements OnInit {
   }
 
 }
+

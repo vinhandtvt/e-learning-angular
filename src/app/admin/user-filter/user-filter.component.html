@@ -1,24 +1,12 @@
-<app-divider>Quản Lý Người Dùng</app-divider>
 <div class="users">
-    <div class class="users__function">
-        <div class="users__function--title">
-            <a routerLink="/admin/users/add">
-                <span class="material-icons">
-                    person_add_alt_1
-                </span>
-            </a>
-            <span class="users__function--title--hover">
-                Thêm người dùng mới
-            </span>
-        </div>
-        <div class="users__function--searchBox">
-            <input (keyup)="applyFilter($any($event.target).value)" placeholder="Tìm kiếm người dùng"
-                class="search-text">
-            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
-        </div>
-
-    </div>
+    <h2 style="text-align: center;">Tất cả người dùng</h2>
+    <h3 class="users__add"> <a routerLink="/admin/users/add">Thêm người dùng</a> </h3>
     <div *ngIf="dataSource">
+        <div>
+            <mat-form-field>
+                <input matInput type="text" (keyup)="doFilter($any($event.target).value)" placeholder="Filter">
+            </mat-form-field>
+        </div>
         <table mat-table [dataSource]="dataSource" matSort>
             <!-- <table mat-table [dataSource]="dataSource" matSort> -->
             <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
@@ -43,23 +31,17 @@
             </ng-container>
             <ng-container matColumnDef="role">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>Vai trò</th>
-                <td mat-cell *matCellDef="let row"> {{row.maLoaiNguoiDung === 'HV' ? "Học viên" : "Giáo viên"}} </td>
+                <td mat-cell *matCellDef="let row"> {{row.maLoaiNguoiDung}} </td>
             </ng-container>
             <ng-container matColumnDef="action">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>Thao tác</th>
                 <td mat-cell *matCellDef="let row">
-                    <button class="mr-2 p-3 btn btn-info actions__btn" (click)="getUserInfo(this.row.taiKhoan)"><i
-                            class="fa fa-user"></i>
-                        <span class="actions__mes1">Chi tiết</span>
-                    </button>
-                    <button class="actions__btn mr-2 p-3 btn btn-primary" (click)="openDialog(this.row.taiKhoan)"><i
-                            class="fas fa-edit"></i>
-                        <span class="actions__mes2">Ghi danh</span>
-                    </button>
-                    <button class="actions__btn mr-2 p-3 btn btn-success" (click)="updateUser(this.row)"><i
-                            class="fa fa-user-edit"></i><span class="actions__mes3">Chỉnh sửa</span></button>
-                    <button class="actions__btn mr-2 p-3 btn btn-danger" (click)="deleteUser(this.row.taiKhoan)"><i
-                            class="fa fa-trash-alt"></i><span class="actions__mes4">Xóa</span></button>
+                    <button mat-raised-button class="mr-2 p-0">Chi
+                        tiet</button>
+                    <button mat-raised-button color="primary" class="mr-2 p-0">Ghi danh</button>
+                    <button mat-raised-button color="accent" class="mr-2 p-0">Chinh
+                        sua</button>
+                    <button mat-raised-button color="warn" class="mr-2 p-0">Xoa</button>
                 </td>
             </ng-container>
         </table>
@@ -67,7 +49,7 @@
             [pageSizeOptions]="[5, 10, 20, 30, 100]" (page)="pageEvent = $event; onPaginateChange($event)"
             showFirstLastButtons>
         </mat-paginator> -->
-        <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20, 40, 60, 100]">
+        <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]">
         </mat-paginator>
     </div>
 </div>
