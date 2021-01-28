@@ -1,11 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
 import { CoursesService } from 'src/app/services/courses.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { GhiDanhComponent } from '../ghi-danh/ghi-danh.component';
-import { AddUserComponent } from '../add-user/add-user.component';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
