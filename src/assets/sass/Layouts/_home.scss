@@ -4,7 +4,7 @@
         height: 50rem;
         position: relative;
         overflow: hidden;
-        color: white;
+        color: $color-white-0;
         text-align: center;
 
         .carousel__video {
@@ -35,58 +35,58 @@
             min-width: 40%;
             z-index: 3;
             h2 {
-                color: white;
-                font-size: 4rem;
+                color: $color-white-0;
+                font-size: $fs-5;
                 font-weight: bold;
                 text-transform: uppercase;
             }
             p {
-                color: white;
-                font-size: 2rem;
+                color: $color-white-0;
+                font-size: $fs-2;
                 font-weight: normal;
             }
             .input {
                 .form-control {
-                    padding: 1rem;
+                    padding: $pd-1;
                     border: none;
                     border-radius: 0;
-                    font-size: 2rem;
+                    font-size: $fs-2;
                     &::placeholder {
-                        color: #a1a7b3;
-                        font-size: 2rem;
+                        color: $color-gray-2;
+                        font-size: $fs-2;
                         font-weight: normal;
                     }
                     &:focus {
                         box-shadow: none;
                     }
                 }
-                .input-group-append {
-                    width: 50px;
-                    font-size: 2rem;
-                    .input-group-text {
-                        background-color: white;
-                        color: #ec5252;
-                        border: none;
-                        padding: 2rem;
-                        i.fa-search {
-                            font-size: 1.5rem;
-                        }
-                    }
-                    &:hover {
-                        .input-group-text {
-                            background-color: #ec5252;
-                            color: white;
-                            cursor: pointer;
-                        }
-                    }
-                }
+                // .input-group-append {
+                //     width: 50px;
+                //     font-size: 2rem;
+                //     .input-group-text {
+                //         background-color: $color-white-0;
+                //         color: #ec5252;
+                //         border: none;
+                //         padding: 2rem;
+                //         i.fa-search {
+                //             font-size: 1.5rem;
+                //         }
+                //     }
+                //     &:hover {
+                //         .input-group-text {
+                //             background-color: #ec5252;
+                //             color: $color-white-0;
+                //             cursor: pointer;
+                //         }
+                //     }
+                // }
             }
         }
     }
     .coursesList {
-        background-color: white;
+        background-color: $color-white-0;
         width: 100%;
-        margin: 1.5rem auto;
+        margin: $mg-2 auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -94,15 +94,14 @@
         .coursesItem {
             width: 200px;
             min-height: 25rem;
-            margin: 15px;
+            margin: $mg-2;
             background-color: rgba(0, 0, 0, 0.39);
             border: 2px solid rgb(161, 101, 101);
             border-radius: 5px;
-            cursor: pointer;
             .img__container {
                 width: 100%;
                 height: 15rem;
-                background-color: salmon;
+                background-color: $color-purple-1;
 
                 img {
                     width: 100%;
@@ -110,17 +109,18 @@
                 }
             }
             h3.course__title {
-                color: white;
+                color: $color-white-0;
                 font-weight: 500;
-                padding-left: 1rem;
+                padding-left: $pd-1;
+                cursor: pointer;
             }
             .course__author,
             .course__views {
                 font-size: calc(1rem + 0.4vw);
-                color: white;
+                color: $color-white-0;
                 padding-left: 1rem;
                 .course__views--rating {
-                    color: yellow;
+                    color: $color-yellow-2;
                 }
                 .course__views--number {
                     font-size: 1.4rem;
@@ -131,6 +131,7 @@
                 display: flex;
                 justify-content: flex-end;
                 padding-right: 1.3rem;
+                cursor: pointer;
             }
         }
     }
@@ -145,10 +146,10 @@
                 top: 60%;
                 left: 10%;
                 .carousel__title {
-                    font-size: 3rem;
+                    font-size: $fs-4;
                 }
                 p {
-                    font-size: 1.8rem;
+                    font-size: ($fs-2 - 2);
                 }
             }
         }

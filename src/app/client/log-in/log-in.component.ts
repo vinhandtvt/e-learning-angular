@@ -30,7 +30,7 @@ export class LogInComponent implements OnInit {
       if (res && res.maLoaiNguoiDung === 'GV') {
         // localStorage.setItem('userAdmin', JSON.stringify(res));
         localStorage.setItem('token', JSON.stringify(res));
-        this.router.navigate(['/admin/dashboard']);
+        this.router.navigate(['/admin']);
       } else {
         // localStorage.setItem('userHocVien', JSON.stringify(res));
         localStorage.setItem('token', JSON.stringify(res));

@@ -1,0 +1,332 @@
+.courses {
+    .courses__function {
+        display: flex;
+        justify-content: flex-start;
+        background-color: white;
+        align-items: center;
+        .courses__function--title {
+            color: white;
+            position: relative;
+            margin: 1rem 1.5rem;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+
+            .courses__function--title--hover {
+                position: absolute;
+                top: -60px;
+                left: -40px;
+                color: white;
+                font-weight: 500;
+                background-color: #36bbf8;
+                width: 160px;
+                height: 40px;
+                line-height: 40px;
+                box-shadow: 0 0 10px 5px #1029b8;
+                border-radius: 3px;
+                display: none;
+                padding-left: 10px;
+                &::after {
+                    content: " ";
+                    width: 20px;
+                    height: 20px;
+                    background-color: #36bbf8;
+                    border-top: 0px solid #f5eded;
+                    border-right: 1px solid #ffffff;
+                    border-bottom: 1px solid #ffffff;
+                    border-left: 0px solid #ffffff;
+                    position: absolute;
+                    top: 100%;
+                    left: 25%;
+                    margin-top: -10px;
+                    transform: rotate(45deg);
+                }
+            }
+            &:hover {
+                .courses__function--title--hover {
+                    display: block;
+                }
+            }
+        }
+        .courses__function--searchBox {
+            position: absolute;
+            display: flex;
+            // top: 10.5%;
+            left: 5%;
+            background: #2f3640;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+            &:hover {
+                .search-text {
+                    width: 300px;
+                    padding: 0 6px;
+                }
+                .search-btn {
+                    background-color: white;
+                }
+            }
+
+            .search-text {
+                border: none;
+                background: none;
+                outline: none;
+                padding: 0;
+                color: white;
+                font-size: 1.6rem;
+                transition: 0.4s;
+                line-height: 40px;
+                width: 20px;
+            }
+            .search-btn {
+                color: #e84118;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #2f3640;
+                position: absolute;
+                top: 0;
+                right: 0;
+                i {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+    table {
+        // width: 81vw;
+        .mat-column-STT {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 5% !important;
+            width: 5% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-MaKhoaHoc {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 8% !important;
+            width: 8% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-TenKhoaHoc {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 15% !important;
+            width: 15% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-HinhAnh {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 40% !important;
+            width: 40% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-LuotXem {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 5% !important;
+            width: 5% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-NguoiTao {
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 6% !important;
+            width: 6% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+        .mat-column-ThaoTac {
+            position: relative;
+            word-wrap: break-word !important;
+            white-space: unset !important;
+            flex: 0 0 19% !important;
+            width: 19% !important;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-word;
+
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+            .actions__mes2,
+            .actions__mes3,
+            .actions__mes4 {
+                position: absolute;
+                top: -50px;
+                left: -5px;
+                color: white;
+                font-weight: 500;
+                background-color: #3cd9e4d8;
+                width: 60px;
+                height: 40px;
+                line-height: 40px;
+                box-shadow: 0 0 10px 5px #1029b8;
+                border-radius: 3px;
+                display: none;
+                &::after {
+                    content: " ";
+                    width: 20px;
+                    height: 20px;
+                    background-color: #3cd9e4d8;
+                    border-top: 0px solid #f5eded;
+                    border-right: 1px solid #ffffff;
+                    border-bottom: 1px solid #ffffff;
+                    border-left: 0px solid #ffffff;
+                    position: absolute;
+                    top: 100%;
+                    left: 25%;
+                    margin-top: -10px;
+                    transform: rotate(45deg);
+                }
+            }
+            .actions__mes2 {
+                // background-color: #7cc2fa;
+                left: -10px;
+                background-color: #36bbf8;
+
+                &::after {
+                    background-color: #36bbf8;
+                }
+            }
+            .actions__mes3 {
+                left: 30px;
+                background-color: #5cac6d;
+
+                &::after {
+                    background-color: #5cac6d;
+                }
+            }
+            .actions__mes4 {
+                left: 70px;
+                background-color: rgb(245, 148, 124);
+                &::after {
+                    background-color: rgb(245, 148, 124);
+                }
+            }
+            button {
+                &:hover {
+                    .actions__mes1,
+                    .actions__mes2,
+                    .actions__mes3,
+                    .actions__mes4 {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    .courses {
+        app-divider {
+            display: none;
+        }
+        .courses__function {
+            .courses__function--title {
+                .courses__function--title--hover {
+                    left: -15px;
+                    &::after {
+                        content: "";
+                        left: 10%;
+                    }
+                }
+            }
+            .courses__function--searchBox {
+                position: absolute;
+                display: flex;
+                right: 5%;
+                left: unset;
+                background: #2f3640;
+                height: 40px;
+                border-radius: 40px;
+                padding: 10px;
+                &:hover {
+                    .search-text {
+                        max-width: 250px;
+                    }
+                }
+            }
+        }
+        table {
+            .mat-column-HinhAnh {
+                display: none;
+            }
+        }
+    }
+}
+
+@include responsive("small") {
+    .courses {
+        .courses__function {
+            .courses__function--searchBox {
+                &:hover {
+                    .search-text {
+                        max-width: 200px;
+                    }
+                }
+            }
+        }
+        table {
+            .mat-column-LuotXem,
+            .mat-column-NguoiTao,
+            .mat-column-MaKhoaHoc {
+                display: none;
+            }
+        }
+    }
+}

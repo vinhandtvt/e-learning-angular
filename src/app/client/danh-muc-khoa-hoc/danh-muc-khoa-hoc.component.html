@@ -7,7 +7,7 @@
                 <div class="img__container">
                     <img class="course__img" [src]="course.hinhAnh" alt="course.tenKhoaHoc" />
                 </div>
-                <h3 routerLink="/chi-tiet-khoa-hoc/{{course.maKhoaHoc}}" class="course__title">{{course.tenKhoaHoc}}
+                <h3 (click)="openDialog(course.maKhoaHoc)" class="course__title">{{course.tenKhoaHoc}}
                 </h3>
                 <div class="course__views">
                     <span class="course__views--rating"><i class="fa fa-star"></i></span>
@@ -20,7 +20,11 @@
 
                 </div>
                 <div class="course__register">
-                    <button class="btn btn-success" (click)="registerCourse(course.maKhoaHoc)">Đăng ký</button>
+                    <button *ngIf="daDangKy(course.maKhoaHoc, myCourses)" class="btn btn-warning" disabled>
+                        Đã đăng ký</button>
+                    <button *ngIf="!daDangKy(course.maKhoaHoc, myCourses)" class="btn btn-success"
+                        (click)="registerCourse(course.maKhoaHoc)">
+                        Đăng ký</button>
                 </div>
             </div>
             <!-- <div class="coursesItem">

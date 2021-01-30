@@ -2,13 +2,13 @@
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #60b4df;
+    background-color: $color-blue-0;
     width: 100%;
     z-index: 10;
 
     .container {
         max-width: 90%;
-        padding: 0 2rem;
+        padding: 0 $pd-1;
         height: 5rem;
         margin: 0 auto;
         display: flex;
@@ -22,17 +22,20 @@
             align-items: center;
             max-width: 17rem;
             height: 4rem;
-            padding-top: 1.8rem;
+            padding-top: ($pd-3 - 2);
             cursor: pointer;
             .logo {
                 font-size: calc(1rem + 0.66667vw);
-                font-weight: 600;
+                font-weight: $fw-bold-1;
                 letter-spacing: 0.2rem;
                 text-transform: uppercase;
-                color: white;
+                color: $color-white-0;
                 line-height: 5rem;
                 span {
-                    font-weight: 300;
+                    font-weight: $fw-normal;
+                }
+                &:hover {
+                    color: $color-black-1;
                 }
             }
         }
@@ -56,14 +59,14 @@
                         a {
                             white-space: nowrap;
                             line-height: 3rem;
-                            color: white;
-                            padding: 0 0.8rem;
+                            color: $color-white-0;
+                            padding: 0 ($pd-1 - 2);
                             letter-spacing: 1px;
                             transition: 0.5s;
                             display: flex;
                             align-items: center;
                             i {
-                                margin-right: 0.5rem;
+                                margin-right: $mg-0;
                             }
                         }
                         .dropdown {
@@ -82,25 +85,25 @@
                                     width: 100%;
                                     a {
                                         display: flex;
-                                        background-color: white;
-                                        color: #3489bd;
-                                        padding: 0.5rem 1rem;
-                                        font-size: 1.8rem;
+                                        background-color: $color-white-0;
+                                        color: $color-blue-3;
+                                        padding: $pd-0 $pd-1;
+                                        font-size: ($fs-0 + 2);
                                         align-items: center;
                                         justify-content: space-around;
                                         transition: 0.5s;
                                     }
                                     &:not(:nth-last-child(2)) {
-                                        border-bottom: 2px solid #efefef;
+                                        border-bottom: 2px solid $color-white-1;
                                     }
                                     &:hover {
                                         a {
-                                            background-color: #3489bd;
-                                            color: white;
+                                            background-color: $color-blue-3;
+                                            color: $color-white-0;
                                         }
                                     }
                                     &:first-child:hover ~ .arrow {
-                                        background-color: #3489bd;
+                                        background-color: $color-blue-3;
                                     }
                                 }
                                 .arrow {
@@ -109,7 +112,7 @@
                                     height: 11px;
                                     top: -6px;
                                     left: 50%;
-                                    background-color: white;
+                                    background-color: $color-white-0;
                                     transform: rotate(45deg);
                                 }
                             }
@@ -133,7 +136,7 @@
                     height: 40px;
                     width: 100%;
                     display: flex;
-                    background: #f2f2f2;
+                    background: $color-white-1;
                     border-radius: 10px;
                     align-items: center;
 
@@ -145,9 +148,9 @@
                         border: none;
                         outline: none;
                         border-radius: 5px 0 0 5px;
-                        padding: 0 10px;
-                        color: #000;
-                        font-size: 16px;
+                        padding: 0 $pd-1;
+                        color: $color-black-1;
+                        font-size: $fs-0;
                     }
                     .icon {
                         height: 100%;
@@ -155,20 +158,20 @@
                         line-height: 5rem;
                         text-align: center;
                         border-radius: 0 5px 5px 0;
-                        background-color: #f2f2f2;
-                        color: #ec5252;
+                        background-color: $color-white-1;
+                        color: $color-red-1;
                         cursor: pointer;
                         &:hover {
-                            color: #f2f2f2;
-                            background-color: #ec5252;
+                            color: $color-white-1;
+                            background-color: $color-red-1;
                             .fa-search {
-                                color: #f2f2f2;
-                                background-color: #ec5252;
+                                color: $color-white-1;
+                                background-color: $color-red-1;
                             }
                         }
                         span {
-                            color: #222222;
-                            font-size: 18px;
+                            color: $color-black-2;
+                            font-size: ($fs-0 + 2);
                         }
                     }
                 }
@@ -181,35 +184,35 @@
                 // position: relative;
                 .btn {
                     display: inline-block;
-                    padding: 0.5rem 1.2rem;
+                    padding: $pd-0 ($pd-1 + 2);
                     font-size: calc(1rem + 0.2vw);
-                    border: 0.2rem solid white;
+                    border: 0.2rem solid $color-white-0;
                     border-radius: 4rem;
-                    margin: 0 0.3rem;
+                    margin: 0 ($mg-0 - 2);
                     transition: 0.3s;
                     text-transform: uppercase;
                 }
                 .btn.solid {
-                    background-color: white;
-                    color: #69bde7;
+                    background-color: $color-white-0;
+                    color: $color-blue-1;
                     font-size: calc(1rem + 0.2vw);
                     min-width: 6rem;
                     display: inline-block;
                     white-space: nowrap;
                     &:hover {
                         background-color: transparent;
-                        color: white;
+                        color: $color-white-0;
                     }
                 }
                 .btn.transparent {
                     background-color: transparent;
-                    color: white;
+                    color: $color-white-0;
                     white-space: nowrap;
                     font-size: calc(1rem + 0.2vw);
                     min-width: 6rem;
                     &:hover {
-                        background-color: white;
-                        color: #69bde7;
+                        background-color: $color-white-0;
+                        color: $color-blue-1;
                     }
                 }
                 .user__login {
@@ -217,16 +220,17 @@
                     height: 50px;
                     border-radius: 100%;
                     // border: red solid 1px;
-                    background-color: black;
+                    background-color: $color-black-0;
                     position: relative;
                     right: 0;
                     transition: 0.5s;
+                    cursor: pointer;
                     .user__icon {
                         justify-content: center;
                         line-height: 50px;
                         text-align: center;
-                        color: white;
-                        font-weight: 700;
+                        color: $color-white-0;
+                        font-weight: $fw-bold-2;
                     }
                     .user__profile {
                         display: none;
@@ -235,7 +239,7 @@
                         right: -95px;
                         width: 250px;
                         max-height: 500px;
-                        background-color: #ffffff;
+                        background-color: $color-white-0;
                         .user__profile--header {
                             display: flex;
                             align-items: center;
@@ -243,17 +247,17 @@
                             .user__profile--header--icon {
                                 width: 5rem;
                                 height: 5rem;
-                                margin: 0.5rem 1rem;
+                                margin: $mg-0 $mg-1;
                                 text-align: center;
                                 line-height: 5rem;
                                 border-radius: 100%;
                                 border: 1px solid black;
                             }
                             .user__profile--header--info {
-                                font-size: 1.4rem;
+                                font-size: $fs-1;
                                 font-weight: normal;
                                 line-height: 0.5;
-                                margin-top: 1rem;
+                                margin-top: $mg-1;
                             }
                         }
                     }
@@ -274,7 +278,7 @@
         position: sticky;
         top: 0;
         left: 0;
-        background-color: #60b4df;
+        background-color: $color-blue-0;
         width: 100%;
         z-index: 10;
         .container {
@@ -296,10 +300,10 @@
                 cursor: pointer;
                 .logo {
                     font-size: calc(1rem + 0.66667vw);
-                    font-weight: 600;
+                    font-weight: $fw-bold-1;
                     letter-spacing: 0.2rem;
                     text-transform: uppercase;
-                    color: white;
+                    color: $color-white-0;
                     line-height: 5rem;
                     span {
                         font-weight: 300;
@@ -326,7 +330,7 @@
                             a {
                                 white-space: nowrap;
                                 line-height: 3rem;
-                                color: white;
+                                color: $color-white-0;
                                 padding: 0 0.8rem;
                                 letter-spacing: 1px;
                                 transition: 0.5s;
@@ -355,8 +359,8 @@
                                         width: 100%;
                                         a {
                                             display: flex;
-                                            background-color: white;
-                                            color: #3489bd;
+                                            background-color: $color-white-0;
+                                            color: $color-blue-3;
                                             padding: 0.5rem 1rem;
                                             font-size: 1.8rem;
                                             align-items: center;
@@ -368,12 +372,12 @@
                                         }
                                         &:hover {
                                             a {
-                                                background-color: #3489bd;
-                                                color: white;
+                                                background-color: $color-blue-3;
+                                                color: $color-white-0;
                                             }
                                         }
                                         &:first-child:hover ~ .arrow {
-                                            background-color: #3489bd;
+                                            background-color: $color-blue-3;
                                         }
                                     }
                                     .arrow {
@@ -382,7 +386,7 @@
                                         height: 11px;
                                         top: -6px;
                                         left: 50%;
-                                        background-color: white;
+                                        background-color: $color-white-0;
                                         transform: rotate(45deg);
                                     }
                                 }
@@ -406,7 +410,7 @@
                         height: 40px;
                         width: 100%;
                         display: flex;
-                        background: #f2f2f2;
+                        background: $color-white-1;
                         border-radius: 10px;
                         align-items: center;
 
@@ -419,7 +423,7 @@
                             outline: none;
                             border-radius: 5px 0 0 5px;
                             padding: 0 10px;
-                            color: #000;
+                            color: $color-black-1;
                             font-size: 16px;
                         }
                         .icon {
@@ -428,19 +432,19 @@
                             line-height: 5rem;
                             text-align: center;
                             border-radius: 0 5px 5px 0;
-                            background-color: #f2f2f2;
-                            color: #ec5252;
+                            background-color: $color-white-1;
+                            color: $color-red-1;
                             cursor: pointer;
                             &:hover {
-                                color: #f2f2f2;
-                                background-color: #ec5252;
+                                color: $color-white-1;
+                                background-color: $color-red-1;
                                 .fa-search {
-                                    color: #f2f2f2;
-                                    background-color: #ec5252;
+                                    color: $color-white-1;
+                                    background-color: $color-red-1;
                                 }
                             }
                             span {
-                                color: #222222;
+                                color: $color-black-2;
                                 font-size: 18px;
                             }
                         }
@@ -456,33 +460,33 @@
                         display: inline-block;
                         padding: 0.5rem 1.2rem;
                         font-size: calc(1rem + 0.2vw);
-                        border: 0.2rem solid white;
+                        border: 0.2rem solid $color-white-0;
                         border-radius: 4rem;
                         margin: 0 0.3rem;
                         transition: 0.3s;
                         text-transform: uppercase;
                     }
                     .btn.solid {
-                        background-color: white;
-                        color: #69bde7;
+                        background-color: $color-white-0;
+                        color: $color-blue-1;
                         font-size: calc(1rem + 0.2vw);
                         min-width: 6rem;
                         display: inline-block;
                         white-space: nowrap;
                         &:hover {
                             background-color: transparent;
-                            color: white;
+                            color: $color-white-0;
                         }
                     }
                     .btn.transparent {
                         background-color: transparent;
-                        color: white;
+                        color: $color-white-0;
                         white-space: nowrap;
                         font-size: calc(1rem + 0.2vw);
                         min-width: 6rem;
                         &:hover {
-                            background-color: white;
-                            color: #69bde7;
+                            background-color: $color-white-0;
+                            color: $color-blue-1;
                         }
                     }
                     .user__login {
@@ -498,7 +502,7 @@
                             justify-content: center;
                             line-height: 50px;
                             text-align: center;
-                            color: white;
+                            color: $color-white-0;
                             font-weight: 700;
                         }
                         .user__profile {
@@ -516,14 +520,14 @@
                                 .user__profile--header--icon {
                                     width: 5rem;
                                     height: 5rem;
-                                    margin: 0.5rem 1rem;
+                                    margin: $mg-0 $mg-1;
                                     text-align: center;
                                     line-height: 5rem;
                                     border-radius: 100%;
                                     border: 1px solid black;
                                 }
                                 .user__profile--header--info {
-                                    font-size: 1.4rem;
+                                    font-size: $fs-1;
                                     font-weight: normal;
                                     line-height: 0.5;
                                     margin-top: 1rem;
@@ -549,7 +553,7 @@
         position: sticky;
         top: 0;
         left: 0;
-        background-color: #60b4df;
+        background-color: $color-blue-0;
         width: 100%;
         height: 5rem;
         z-index: 10;
@@ -573,10 +577,10 @@
                 cursor: pointer;
                 .logo {
                     font-size: calc(1rem + 0.66667vw);
-                    font-weight: 600;
+                    font-weight: $fw-bold-1;
                     letter-spacing: 0.2rem;
                     text-transform: uppercase;
-                    color: white;
+                    color: $color-white-0;
                     line-height: 5rem;
                     span {
                         font-weight: 300;
@@ -589,7 +593,7 @@
                 top: 5rem;
                 left: 0;
                 width: 100%;
-                background-color: #3489bd;
+                background-color: $color-blue-3;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -610,7 +614,7 @@
                             a {
                                 white-space: nowrap;
                                 line-height: 3rem;
-                                color: white;
+                                color: $color-white-0;
                                 padding: 0 0.8rem;
                                 letter-spacing: 1px;
                                 transition: 0.5s;
@@ -618,7 +622,7 @@
                                 align-items: center;
                                 justify-content: start;
                                 font-size: 1.8rem;
-                                font-weight: 600;
+                                font-weight: $fw-bold-1;
                                 i {
                                     display: none;
                                 }
@@ -642,8 +646,8 @@
                                         width: 100%;
                                         a {
                                             display: flex;
-                                            background-color: white;
-                                            color: #3489bd;
+                                            background-color: $color-white-0;
+                                            color: $color-blue-3;
                                             padding: 0.5rem 1rem;
                                             font-size: 1.5rem;
                                             align-items: center;
@@ -655,12 +659,12 @@
                                         }
                                         &:hover {
                                             a {
-                                                background-color: #3489bd;
-                                                color: white;
+                                                background-color: $color-blue-3;
+                                                color: $color-white-0;
                                             }
                                         }
                                         &:first-child:hover ~ .arrow {
-                                            background-color: #3489bd;
+                                            background-color: $color-blue-3;
                                         }
                                     }
                                     .arrow {
@@ -670,7 +674,7 @@
                                         height: 11px;
                                         top: -6px;
                                         left: 15%;
-                                        background-color: white;
+                                        background-color: $color-white-0;
                                         transform: rotate(45deg);
                                     }
                                 }
@@ -696,7 +700,7 @@
                         height: 40px;
                         width: 100%;
                         display: flex;
-                        background: #f2f2f2;
+                        background: $color-white-1;
                         border-radius: 10px;
                         align-items: center;
 
@@ -709,7 +713,7 @@
                             outline: none;
                             border-radius: 5px 0 0 5px;
                             padding: 0 10px;
-                            color: #000;
+                            color: $color-black-1;
                             font-size: 16px;
                         }
                         .icon {
@@ -718,19 +722,19 @@
                             line-height: 5rem;
                             text-align: center;
                             border-radius: 0 5px 5px 0;
-                            background-color: #f2f2f2;
-                            color: #ec5252;
+                            background-color: $color-white-1;
+                            color: $color-red-1;
                             cursor: pointer;
                             &:hover {
-                                color: #f2f2f2;
-                                background-color: #ec5252;
+                                color: $color-white-1;
+                                background-color: $color-red-1;
                                 .fa-search {
-                                    color: #f2f2f2;
-                                    background-color: #ec5252;
+                                    color: $color-white-1;
+                                    background-color: $color-red-1;
                                 }
                             }
                             span {
-                                color: #222222;
+                                color: $color-black-2;
                                 font-size: 18px;
                             }
                         }
@@ -754,33 +758,33 @@
                         display: inline-block;
                         padding: 0.5rem 1.2rem;
                         font-size: calc(1rem + 0.2vw);
-                        border: 0.2rem solid white;
+                        border: 0.2rem solid $color-white-0;
                         border-radius: 4rem;
                         margin: 0 0.3rem;
                         transition: 0.3s;
                         text-transform: uppercase;
                     }
                     .btn.solid {
-                        background-color: white;
-                        color: #69bde7;
+                        background-color: $color-white-0;
+                        color: $color-blue-1;
                         font-size: calc(1rem + 0.2vw);
                         min-width: 6rem;
                         display: inline-block;
                         white-space: nowrap;
                         &:hover {
                             background-color: transparent;
-                            color: white;
+                            color: $color-white-0;
                         }
                     }
                     .btn.transparent {
                         background-color: transparent;
-                        color: white;
+                        color: $color-white-0;
                         white-space: nowrap;
                         font-size: calc(1rem + 0.2vw);
                         min-width: 6rem;
                         &:hover {
-                            background-color: white;
-                            color: #69bde7;
+                            background-color: $color-white-0;
+                            color: $color-blue-1;
                         }
                     }
                     .user__login {
@@ -798,7 +802,7 @@
                             justify-content: center;
                             line-height: 50px;
                             text-align: center;
-                            color: white;
+                            color: $color-white-0;
                             font-weight: 700;
                         }
                         .user__profile {
@@ -817,14 +821,14 @@
                                 .user__profile--header--icon {
                                     width: 5rem;
                                     height: 5rem;
-                                    margin: 0.5rem 1rem;
+                                    margin: $mg-0 $mg-1;
                                     text-align: center;
                                     line-height: 5rem;
                                     border-radius: 100%;
                                     border: 1px solid black;
                                 }
                                 .user__profile--header--info {
-                                    font-size: 1.4rem;
+                                    font-size: $fs-1;
                                     font-weight: normal;
                                     line-height: 0.5;
                                     margin-top: 1rem;
@@ -857,19 +861,10 @@
                     .line {
                         width: 2rem;
                         height: 3px;
-                        background-color: white;
+                        background-color: $color-white-0;
                         border-radius: 3px;
                         position: relative;
                         transition: 0.5s;
-                        // &::before,
-                        // ::after {
-                        //     content: "";
-                        //     position: absolute;
-                        //     width: inherit;
-                        //     height: inherit;
-                        //     background-color: #fff;
-                        //     border-radius: 3px;
-                        // }
                         &::before {
                             transform: translateY(-7px);
                             content: "";

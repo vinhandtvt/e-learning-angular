@@ -1,0 +1,49 @@
+.addEditUser {
+    color: black;
+    height: 100vh;
+    background-color: white;
+    .addEditUser__title {
+        margin: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form.addEditForm {
+        width: 90%;
+        margin: 1.5rem auto;
+        display: flex;
+        flex-wrap: wrap;
+        p {
+            margin: 1rem 1.5rem;
+            min-width: 30%;
+
+            mat-form-field {
+                width: 100%;
+            }
+        }
+    }
+    .addEditForm__actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 2rem;
+        button:first-child {
+            background-color: green;
+            margin-right: 1rem;
+        }
+    }
+}
+@include responsive("medium") {
+    .addEditUser {
+        .addEditUser__title {
+            margin: 0;
+        }
+        form.addEditForm {
+            margin: 0;
+        }
+        .addEditForm__actions {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+    }
+}

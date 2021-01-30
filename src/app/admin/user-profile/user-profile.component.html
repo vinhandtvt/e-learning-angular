@@ -1,7 +1,8 @@
-<h3 style="text-align: center; justify-content: center; font-size: 35px; font-weight: 500; color: white;"
+<!-- <h3 style="text-align: center; justify-content: center; font-size: 35px; font-weight: 500; color: white;"
     class="dflex pt-5">
-    Thông tin người dùng</h3>
+    Thông tin người dùng</h3> -->
 <div *ngIf="user" class="userProfile">
+    <app-divider>Thông tin người dùng</app-divider>
     <mat-card class="card">
         <mat-card-header>
             <div mat-card-avatar>
@@ -20,7 +21,7 @@
         <mat-card-content>
             <form [formGroup]="userForm">
                 <p>
-                    <mat-form-field appearance="legacy">
+                    <mat-form-field appearance="fill">
                         <mat-label>Tên người dùng</mat-label>
                         <input matInput placeholder="Placeholder" formControlName="hoTen">
                         <mat-hint>ví dụ: Nguyễn văn A</mat-hint>
@@ -33,7 +34,7 @@
                 </p>
                 <p class="example-container">
                     <mat-form-field appearance="fill">
-                        <mat-label>Enter your email</mat-label>
+                        <mat-label>Vui lòng nhập email</mat-label>
                         <input matInput placeholder="pat@example.com" formControlName="email">
                         <mat-hint>ví dụ: email@gmail.com</mat-hint>
                         <mat-error>
@@ -57,9 +58,9 @@
                     </mat-form-field>
                 </p>
                 <p>
-                    <mat-form-field appearance="outline">
+                    <mat-form-field appearance="fill">
                         <mat-label>Tài khoản</mat-label>
-                        <input matInput placeholder="Placeholder" formControlName="taiKhoan">
+                        <input matInput placeholder="Tài khoản" formControlName="taiKhoan">
                         <mat-hint>ví dụ: admin</mat-hint>
                         <mat-error>
                             <div *ngIf="(taiKhoanError?.invalid && taiKhoanError?.touched) || taiKhoanError?.dirty">
@@ -70,7 +71,7 @@
                 </p>
                 <p>
                     <mat-form-field appearance="fill">
-                        <mat-label>Enter your password</mat-label>
+                        <mat-label>Vui lòng nhập mật khẩu</mat-label>
                         <input matInput [type]="hide ? 'password' : 'text'" formControlName="matKhau">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">

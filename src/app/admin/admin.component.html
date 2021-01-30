@@ -1,38 +1,18 @@
 <app-header></app-header>
 <section class="admin" id="admin">
     <div class="admin container-fluid">
-
-        <!-- <div class="admin__header row">
-            <div class="admin__header--logo col-2">
-                <p>Nhan vi van</p>
-            </div>
-            <div class="admin__header--info col-10">
-                <div class="input">
-                    <form>
-                        <div class="input-group">
-                            <input type="search" placeholder="Search" (keyup)="onSearch($any($event.target).value)"
-                                aria-label="Recipient's username" aria-describedby="basic-addon2"
-                                class="form-control" />
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="basic-addon2">
-                                    
-                                    <i class="fa fa-search"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> -->
         <div class="admin__body row">
-            <div class="admin__body--menu col-2">
-                <ul>
-                    <li routerLinkActive="active" routerLink="/admin/courses">Quản lý khóa học</li>
-                    <li routerLinkActive="active" routerLink="/admin/users">Quản lý người dùng</li>
+            <div class="admin__body--menu col-12 col-md-2 d-flex">
+                <ul class="row">
+                    <li class="col-6 col-md-12" routerLinkActive="active" routerLink="/admin/courses">Quản lý khóa
+                        học
+                    </li>
+                    <li class="col-6 col-md-12" routerLinkActive="active" routerLink="/admin/users">Quản lý người
+                        dùng
+                    </li>
                 </ul>
             </div>
-            <div class="admin__body--contents col-10">
-                <!-- <app-users></app-users> -->
+            <div class="admin__body--contents col-12 col-md-10">
                 <router-outlet></router-outlet>
             </div>
         </div>

@@ -19,7 +19,7 @@
         </p>
         <p class="example-container">
             <mat-form-field appearance="fill">
-                <mat-label>Vui lòng nhập email</mat-label>
+                <mat-label>Email</mat-label>
                 <input matInput placeholder="email@vidu.com" formControlName="email">
                 <mat-hint>ví dụ: email@gmail.com</mat-hint>
                 <mat-error>
@@ -57,7 +57,7 @@
         </p>
         <p>
             <mat-form-field appearance="fill">
-                <mat-label>Vui lòng nhập mật khẩu</mat-label>
+                <mat-label>Mật khẩu</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="matKhau">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">

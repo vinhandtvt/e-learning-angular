@@ -1,35 +1,51 @@
 // variable color
-$color-black-0: #29303b; // default
+$color-black-0: #1e1e2a; // default
+$color-black-1: black;
+$color-black-2: #222222;
 $color-white-0: #fff; //default
-$color-red-0: #ec5252;
-$color-red-1: #521822;
-$color-red-2: #992337;
-$color-purple: #6e1a52;
-$color-gray-1: rgba(20, 23, 28, 0.05);
+$color-white-1: #f5f5f5;
+$color-red-0: #f13030;
+$color-red-1: #ec5252;
+$color-purple-0: #a16565;
+$color-purple-1: #fa8072;
+$color-purple-2: #e97676;
+$color-gray-1: #fff5ee;
 $color-gray-2: #a1a7b3;
-$color-gray-3: #cacbcc;
-$color-gray-4: #686f7a;
-$color-gray-5: #f7f8fa;
-$color-gray-6: #dedfe0;
-$color-black-light: #505763;
-$color-white-cream: #f2f3f5;
-$color-black-dark: rgba(20, 23, 28, 0.1);
+$color-gray-3: #d8d3d3;
+$color-gray-light: rgba(230, 230, 230, 0.6);
 $color-yellow: #f4c150;
-$color-blue: #007791;
+$color-yellow-1: #925a07;
+$color-yellow-2: #ffff00;
+$color-yellow-3: #fed970;
+$color-yellow-4: #febc4a;
+$color-yellow-5: #fec95b;
+$color-yellow-6: #ce922e;
+$color-yellow-7: #dca03b;
+$color-yellow-8: #fee395;
+$color-blue-0: #60b4df;
+$color-blue-1: #69bde7;
+$color-blue-2: #28769c;
+$color-blue-3: #3489bd;
+$color-blue-4: #1e55fa80;
+$color-blue-5: #50abf1;
+$color-green-0: #2ecc71;
+$color-green-1: #0e522a;
 $color-trans: transparent;
 
 // variable font-size
-$fs-0: 15px; //default
-$fs-1: 13px;
+$fs-0: 16px; //default
+$fs-1: 14px;
 $fs-2: 20px;
 $fs-3: 24px;
-//Còn 1 font-size: 36px;
-$fs-4: 40px;
+$fs-4: 30px;
+$fs-5: 40px;
 
 //variable margin
-$mg-0: 2px;
+$mg-0: 5px;
 $mg-1: 10px;
-$mg-2: 25px;
+$mg-2: 15px;
+$mg-3: 20px;
+$mg-4: 25px;
 
 //variable border-radius
 $border-radius: 2px;
@@ -37,16 +53,19 @@ $border-radius: 2px;
 //variable padding
 $pd-0: 5px; //default
 $pd-1: 10px;
-$pd-3: 16px;
-$pd-2: 20px;
+$pd-2: 15px;
+$pd-3: 20px;
+$pd-4: 25px;
 
 //variable line-height
 $line-height-0: 1.43; //default
+$line-height-0: 5; //default
 
 //variable font-weight
 $fw-normal: normal;
-$fw-bold-0: 600;
-$fw-bold-1: 700;
+$fw-bold-0: 500;
+$fw-bold-1: 600;
+$fw-bold-2: 700;
 $fw-bold: bold;
 
 //break points

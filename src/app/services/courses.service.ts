@@ -257,7 +257,7 @@ export class CoursesService {
     // console.log(body);
     
     return this.http.post(`https://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/DangKyKhoaHoc`, body, { responseType: 'text'}).pipe(
-    tap( data => {
+    tap( (data: any) => {
       // loading
     }),
     catchError( err => {

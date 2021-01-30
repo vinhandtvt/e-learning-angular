@@ -4,9 +4,9 @@
         flex-wrap: nowrap;
         .user__menu {
             max-width: 23%;
-            background-color: white;
+            background-color: $color-white-0;
             border-radius: 10px;
-            margin-right: 0.5rem;
+            margin-right: $mg-0;
             .user__menu--header {
                 display: flex;
                 align-items: center;
@@ -14,22 +14,22 @@
                     border-radius: 100%;
                     width: 5rem;
                     height: 5rem;
-                    border: 1px solid gray;
+                    border: 1px solid $color-gray-2;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin: 0 1rem;
+                    margin: 0 $mg-1;
                 }
                 .user__menu--header--info {
-                    font-size: 1.6rem;
+                    font-size: $fs-0;
                     font-weight: normal;
-                    margin-top: 1.5rem;
+                    margin-top: $mg-2;
                     line-height: 0.5;
                     p:first-child {
-                        font-weight: 600;
+                        font-weight: $fw-bold-1;
                     }
                     p:last-child {
-                        font-size: 1.2rem;
+                        font-size: ($fs-1 - 2);
                     }
                 }
             }
@@ -39,7 +39,7 @@
                 .item {
                     height: 5rem;
                     padding: 1rem 1.5rem;
-                    background-color: rgb(216, 211, 211);
+                    background-color: $color-gray-3;
                     margin-top: 1rem;
                     display: flex;
                     align-items: center;
@@ -47,8 +47,8 @@
                 .active {
                     height: 50px;
                     padding: 1rem 1.5rem;
-                    background-color: rgb(233, 118, 118);
-                    color: blue;
+                    background-color: $color-purple-2;
+                    color: $color-blue-4;
                     display: flex;
                     align-items: center;
                 }
@@ -56,19 +56,19 @@
         }
         .user__content {
             margin-left: 5px;
-            background-color: silver;
+            background-color: $color-gray-2;
             border-radius: 10px;
             display: flex;
             align-items: center;
             position: relative;
             .user__profile {
                 form {
-                    margin: 15px auto;
+                    margin: $mg-2 auto;
                     .form-group {
                         min-width: 450px;
                         .form-control {
                             height: 40px;
-                            font-size: 15px;
+                            font-size: $fs-1;
                         }
                     }
                 }
@@ -77,8 +77,8 @@
                     justify-content: flex-end;
                     margin: 15px auto;
                     button {
-                        padding: 10px 15px;
-                        font-size: 1.6rem;
+                        padding: $pd-1 $pd-2;
+                        font-size: $fs-0;
                         transition: all 0.5s;
                         &:hover {
                             // transform: scale(1.1);
@@ -90,16 +90,16 @@
                 }
             }
             table {
-                margin: 1.5rem 2rem;
+                margin: $mg-2 $mg-3;
                 border-collapse: collapse;
                 width: 100%;
                 thead,
                 tbody {
                     tr {
                         td {
-                            border: 1px solid #dddddd;
+                            border: 1px solid $color-gray-3;
                             text-align: left;
-                            padding: 1rem 1.5rem;
+                            padding: $pd-1 $pd-2;
                         }
                     }
                 }
@@ -118,13 +118,13 @@
                         border-radius: 100%;
                         width: 3rem;
                         height: 3rem;
-                        margin: 0 1rem;
+                        margin: 0 $mg-1;
                     }
                     .user__menu--header--info {
-                        font-size: 1.4rem;
+                        font-size: $fs-1;
                         font-weight: normal;
-                        margin-top: 1.5rem;
-                        margin-left: 0.5rem;
+                        margin-top: $mg-2;
+                        margin-left: $mg-0;
                     }
                 }
             }
@@ -137,7 +137,7 @@
         .user {
             .user__menu {
                 max-width: 95%;
-                margin: 1rem auto;
+                margin: $mg-1 auto;
                 min-width: 395px;
                 .user__menu--header {
                     font-size: calc(1rem + 0.64vw);
@@ -146,7 +146,7 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
-                    padding-bottom: 1.5rem;
+                    padding-bottom: $mg-2;
                 }
             }
             .user__content {
@@ -166,10 +166,10 @@
                     .user__profile--formAction {
                         display: flex;
                         justify-content: center;
-                        margin: 15px auto;
+                        margin: $mg-2 auto;
                         button {
-                            padding: 10px 15px;
-                            font-size: 1.4rem;
+                            padding: $pd-1 $pd-2;
+                            font-size: $fs-1;
                             transition: all 0.5s;
                             &:hover {
                                 // transform: scale(none);
@@ -181,7 +181,7 @@
                     }
                 }
                 table {
-                    margin: 1.5rem 0rem;
+                    margin: $mg-2 0rem;
                     max-width: 90vw;
                 }
             }

@@ -17,7 +17,6 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UsersComponent } from './users/users.component';
@@ -60,12 +59,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatTreeModule} from '@angular/material/tree';
 import { GhiDanhKhoaHocComponent } from './ghi-danh-khoa-hoc/ghi-danh-khoa-hoc.component';
-import { UserFilterComponent } from './user-filter/user-filter.component';
 import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [AdminComponent, DashboardComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent, GhiDanhKhoaHocComponent, UserFilterComponent],
+  declarations: [AdminComponent, HeaderComponent, UserProfileComponent, UsersComponent, UserFilterPipe, CoursesComponent, GhiDanhComponent, AddUserComponent, AddCourseComponent, GhiDanhKhoaHocComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

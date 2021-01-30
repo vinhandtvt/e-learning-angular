@@ -7,7 +7,7 @@
 body,
 html {
     height: 100vh;
-    background-color: #1e1e2a;
+    background-color: $color-black-0;
     // background-color: #535363;
 
     font-family: sans-serif;
@@ -26,12 +26,3 @@ a {
         text-decoration: none;
     }
 }
-
-// html,
-// body {
-//     height: 100%;
-// }
-// body {
-//     margin: 0;
-//     font-family: Roboto, "Helvetica Neue", sans-serif;
-// }

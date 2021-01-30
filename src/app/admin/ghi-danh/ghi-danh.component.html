@@ -88,7 +88,8 @@
         </div>
     </mat-dialog-content>
     <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button>
+        <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+        <button mat-raised-button color="warn" mat-button [mat-dialog-close]="true" cdkFocusInitial><i
+                class="fa fa-times"></i></button>
     </mat-dialog-actions>
 </div>

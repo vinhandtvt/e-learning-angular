@@ -18,7 +18,10 @@
                         4.5
                         <span class="course__views--number">({{course.luotXem}})</span>
                     </p>
-                    <button class="btn courseDetail_header--btn">Đăng ký</button>
+                    <button *ngIf="daDangKy" class="btn btn-warning">Đã đăng ký</button>
+                    <button *ngIf="!daDangKy" class="btn courseDetail_header--btn"
+                        (click)="registerCourse(course.maKhoaHoc)">Đăng
+                        ký</button>
                 </div>
                 <div class="courseDetail_header--img">
                     <img [src]="course.hinhAnh" alt="hình ảnh khóa học">

@@ -2,18 +2,18 @@
     width: 60%;
     margin: 10rem auto;
     padding: 3rem 5rem;
-    background-color: #60b4df;
+    background-color: $color-blue-0;
     h1 {
         display: flex;
         justify-content: center;
-        font-size: 3rem;
-        font-weight: 600;
+        font-size: $fs-4;
+        font-weight: $fw-bold-1;
     }
     .signup__form {
         font-size: calc(1rem + 0.4vw);
         .signup__form--input {
             input {
-                padding: 1rem 1.5rem;
+                padding: $pd-1 $pd-2;
                 font-size: 1.8rem;
                 color: black;
             }
@@ -21,7 +21,7 @@
         .signup__form--button {
             button {
                 display: inline-block;
-                padding: 1rem 2rem;
+                padding: $pd-1 $pd-3;
                 font-size: calc(1rem + 0.2vw);
                 border: 0.2rem solid white;
                 border-radius: 4rem;
@@ -49,8 +49,8 @@
 @include responsive("small") {
     #signup {
         width: 90%;
-        margin: 2rem auto;
-        padding: 1rem 2rem;
+        margin: $mg-3 auto;
+        padding: $pd-1 $pd-3;
         h1 {
             font-size: calc(2rem + 1vw);
         }
@@ -58,7 +58,7 @@
             font-size: calc(1rem + 0.4vw);
             .signup__form--input {
                 input {
-                    padding: 0.4rem 1.5rem;
+                    padding: 0.4rem $pd-2;
                     font-size: calc(1rem + 0.6vw);
                     color: black;
                 }

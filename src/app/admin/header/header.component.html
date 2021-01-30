@@ -2,27 +2,23 @@
     <mat-toolbar-row>
         <span>
             <a href="#"><img src="../../../assets/img/index.png" style="width: 50px" alt=""></a>
-            Admin Center
+            Trung tâm quản lý
         </span>
-        <span class="example-spacer"></span>
+        <span class="admin__header--spacer"></span>
         <span>
-            <a>Dashboard</a>
+            <a>Bảng điểu khiển</a>
         </span>
-        <span class="example-spacer"></span>
+        <span class="admin__header--spacer"></span>
         <button mat-icon-button [matMenuTriggerFor]="menu" class="user__icon">
             <span><i class="fa fa-user-tie"></i></span>
         </button>
         <mat-menu #menu="matMenu">
-            <!-- <button mat-menu-item>
-                <mat-icon>dialpad</mat-icon>
-                <span>Redial</span>
-            </button> -->
             <button mat-menu-item>
-                <span><i class="fa fa-user-cog"></i></span>
+                <span><i class="fa fa-user-cog mr-3"></i></span>
                 <span>Cập nhật thông tin</span>
             </button>
             <button mat-menu-item (click)="dangXuat()">
-                <span><i class="fa fa-sign-out-alt"></i></span>
+                <span><i class="fa fa-sign-out-alt mr-3"></i></span>
                 <span>Đăng xuất</span>
             </button>
         </mat-menu>

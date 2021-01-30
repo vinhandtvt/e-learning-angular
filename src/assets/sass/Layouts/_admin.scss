@@ -1,83 +1,49 @@
 #admin {
     background-color: #212121;
-    height: 100vh;
+    height: calc(100vh - 64px);
     .admin {
-        .admin__header {
-            min-height: 70px;
-            .admin__header--logo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                text-transform: uppercase;
-                font-size: 3rem;
-                font-weight: 700;
+        .admin__body {
+            .admin__body--menu {
                 // border: 1px solid red;
-                p {
-                    transform: rotate(-10deg);
-                }
-            }
-            .admin__header--info {
-                background-color: blue;
-                .input {
-                    .form-control {
-                        padding: 1rem;
-                        border: none;
-                        border-radius: 0;
-                        font-size: 2rem;
-                        &::placeholder {
-                            color: #a1a7b3;
-                            font-size: 2rem;
-                            font-weight: normal;
-                        }
-                        &:focus {
-                            box-shadow: none;
+                padding-top: 75px;
+                color: white;
+                ul {
+                    display: flex;
+                    align-content: flex-start;
+                    li {
+                        cursor: pointer;
+                        margin: 0;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        &:hover {
+                            background-color: #767676;
                         }
                     }
-                    .input-group-append {
-                        width: 50px;
-                        font-size: 2rem;
-                        .input-group-text {
-                            background-color: white;
-                            color: #ec5252;
-                            border: none;
-                            padding: 2rem;
-                            i.fa-search {
-                                font-size: 1.5rem;
-                            }
-                        }
-                        &:hover {
-                            .input-group-text {
-                                background-color: #ec5252;
-                                color: white;
-                                cursor: pointer;
-                            }
-                        }
+                    .active {
+                        background-color: #767676;
                     }
                 }
             }
         }
-        .admin__body {
-            height: calc(100vh - 189px);
-            .admin__body--menu {
-                // border: 1px solid red;
-                color: white;
-                li {
-                    cursor: pointer;
-                    margin: 0;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    &:hover {
-                        background-color: #767676;
+    }
+}
+
+@include responsive("medium") {
+    #admin {
+        .admin {
+            .admin__body {
+                .admin__body--menu {
+                    justify-content: center;
+                    padding-top: $pd-0;
+                    ul {
+                        justify-content: center;
+                        li {
+                            word-wrap: none;
+                            min-width: 200px;
+                        }
                     }
                 }
-                .active {
-                    background-color: #767676;
-                }
-            }
-            .admin__body--contents {
-                // border: 1px solid red;
             }
         }
     }

@@ -4,51 +4,51 @@ footer.footer {
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        font-size: 2rem;
+        font-size: $fs-2;
         .footer__left {
             width: 33%;
-            padding: 2rem 1.5rem;
+            padding: $pd-3 $pd-2;
             h3 {
                 justify-content: center;
                 align-items: center;
-                padding-top: 2.5rem;
+                padding-top: $pd-4;
                 width: 100%;
-                font-weight: 700;
-                color: rgb(238, 215, 215);
+                font-weight: $fw-bold-2;
+                color: $color-white-0;
             }
             p.footer__left--desc {
-                font-size: 1.6rem;
-                color: white;
+                font-size: $fs-0;
+                color: $color-white-0;
             }
             input.field {
                 width: 100%;
-                padding: 0.5rem 1rem;
+                padding: $pd-0 $pd-1;
                 outline: none;
                 border: 0.2rem solid rgba(0, 0, 0, 0);
-                background-color: rgba(230, 230, 230, 0.6);
-                font-size: 1.8rem;
-                margin-bottom: 2.2rem;
+                background-color: $color-gray-light;
+                font-size: $fs-0;
+                margin-bottom: ($mg-3 + 2);
                 transition: 0.3s;
                 &:hover {
                     background-color: rgba(0, 0, 0, 0.2);
                 }
                 &:focus {
-                    background-color: #fff;
-                    border: 0.2rem solid rgba(30, 85, 250, 0.5);
+                    background-color: $color-white-0;
+                    border: 0.2rem solid $color-blue-4;
                 }
             }
             .btn {
                 width: 100%;
-                padding: 0.5rem 1rem;
-                font-size: 1.8rem;
+                padding: $pd-0 $pd-1;
+                font-size: $fs-0;
                 text-transform: capitalize;
-                background-color: #2ecc71;
+                background-color: $color-green-0;
                 cursor: pointer;
                 outline: none;
                 border: none;
                 transition: 0.5s;
                 &:hover {
-                    background-color: #27ae60;
+                    background-color: $color-green-1;
                 }
             }
         }
@@ -58,22 +58,22 @@ footer.footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem 0.2rem;
+            padding: $pd-3 ($pd-0 - 3);
 
             .contact-box {
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                padding: 25px 40px;
-                font-size: 2rem;
+                padding: $pd-4 ($pd-3 + $pd-3);
+                font-size: $fs-2;
                 h2 {
                     position: relative;
-                    padding-bottom: 10px;
-                    margin-bottom: 10px;
+                    padding-bottom: $pd-1;
+                    margin-bottom: $mg-1;
                     text-transform: capitalize;
-                    font-size: 2rem;
-                    font-weight: 700;
-                    color: white;
+                    font-size: $fs-2;
+                    font-weight: $fw-bold-2;
+                    color: $color-white-0;
                     &::after {
                         content: "";
                         position: absolute;
@@ -83,49 +83,49 @@ footer.footer {
                         height: 0.4rem;
                         width: 5rem;
                         border-radius: 0.2rem;
-                        background-color: #2ecc75;
+                        background-color: $color-green-0;
                     }
                 }
                 input.field {
                     width: 100%;
-                    padding: 0.5rem 1rem;
+                    padding: $pd-0 $pd-1;
                     outline: none;
-                    border: 0.2rem solid rgba(0, 0, 0, 0);
-                    background-color: rgba(230, 230, 230, 0.6);
-                    font-size: 1.8rem;
-                    margin-bottom: 2.2rem;
+                    border: 0.2rem solid $color-black-1;
+                    background-color: $color-gray-light;
+                    font-size: $fs-0;
+                    margin-bottom: ($mg-3 + 2);
                     transition: 0.3s;
                     &:hover {
                         background-color: rgba(0, 0, 0, 0.2);
                     }
                     &:focus {
-                        background-color: #fff;
-                        border: 0.2rem solid rgba(30, 85, 250, 0.5);
+                        background-color: $color-white-0;
+                        border: 0.2rem solid $color-blue-4;
                     }
                 }
                 .area {
                     min-height: 15rem;
                     width: 100%;
-                    padding-left: 1.2rem;
+                    padding-left: ($pd-2 - 3);
                 }
                 .btn {
                     width: 100%;
-                    padding: 0.5rem 1rem;
-                    font-size: 1.8rem;
+                    padding: $pd-0 $pd-1;
+                    font-size: $fs-0;
                     text-transform: capitalize;
-                    background-color: #2ecc71;
+                    background-color: $color-green-0;
                     cursor: pointer;
                     outline: none;
                     border: none;
                     transition: 0.5s;
                     &:hover {
-                        background-color: #27ae60;
+                        background-color: $color-green-1;
                     }
                 }
             }
         }
         .footer__right {
-            padding-top: 2rem;
+            padding-top: $pd-3;
             width: 33%;
             display: flex;
             text-align: center;
@@ -145,49 +145,155 @@ footer.footer {
         display: flex;
         width: 80%;
         margin: 0 auto;
-        height: 200px;
+        // height: 200px;
         .footer__bottom--right {
             width: 33%;
 
             font-size: calc(1rem + 0.4vw);
-            padding: 1rem 1.5rem;
+            padding: $pd-1 $pd-2;
             ul {
                 li {
                     a {
-                        color: white;
+                        color: $color-white-0;
                     }
                 }
             }
         }
         .footer__bottom--mid {
             width: 33%;
-            padding: 1rem 1.5rem;
+            padding: $pd-1 $pd-2;
 
             font-size: calc(1rem + 0.4vw);
-            p {
-                a {
-                    color: white;
+            .tags a {
+                display: inline-block;
+                height: 21px;
+                margin: 0 10px 0 0;
+                padding: 0 7px 0 14px;
+                white-space: nowrap;
+                position: relative;
+
+                background: -moz-linear-gradient(top, $color-yellow-3 0%, $color-yellow-4 100%);
+                background: -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    color-stop(0%, $color-yellow-3),
+                    color-stop(100%, $color-yellow-4)
+                );
+                background: -webkit-linear-gradient(top, $color-yellow-3 0%, $color-yellow-4 100%);
+                background: -o-linear-gradient(top, $color-yellow-3 0%, $color-yellow-4 100%);
+                background: linear-gradient(to bottom, $color-yellow-3 0%, $color-yellow-4 100%);
+                background-color: $color-yellow-5;
+
+                color: $color-yellow-1;
+                font: bold 11px/21px Arial, Tahoma, sans-serif;
+                text-decoration: none;
+                text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+
+                border-top: 1px solid $color-yellow-4;
+                border-bottom: 1px solid $color-yellow-6;
+                border-right: 1px solid $color-yellow-7;
+                border-radius: 1px 3px 3px 1px;
+                box-shadow: inset 0 1px $color-yellow-8, 0 1px 2px rgba(0, 0, 0, 0.21);
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 5px;
+                    left: -6px;
+                    width: 10px;
+                    height: 10px;
+
+                    background: -moz-linear-gradient(45deg, $color-yellow-3 0%, $color-yellow-4 100%);
+                    background: -webkit-gradient(
+                        linear,
+                        left bottom,
+                        right top,
+                        color-stop(0%, $color-yellow-3),
+                        color-stop(100%, $color-yellow-4)
+                    );
+                    background: -webkit-linear-gradient(-45deg, $color-yellow-3 0%, $color-yellow-4 100%);
+                    background: -o-linear-gradient(45deg, $color-yellow-3 0%, $color-yellow-4 100%);
+                    background: linear-gradient(135deg, $color-yellow-3 0%, $color-yellow-4 100%);
+                    background-color: $color-yellow-5;
+
+                    border-left: 1px solid $color-yellow-4;
+                    border-bottom: 1px solid $color-yellow-6;
+                    border-radius: 0 0 0 2px;
+                    box-shadow: inset 1px 0 $color-yellow-3, 0 2px 2px -2px rgba(0, 0, 0, 0.33);
+
+                    -webkit-transform: scale(1, 1.5) rotate(45deg);
+                    -moz-transform: scale(1, 1.5) rotate(45deg);
+                    -ms-transform: scale(1, 1.5) rotate(45deg);
+                    transform: scale(1, 1.5) rotate(45deg);
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 7px;
+                    left: 1px;
+                    width: 5px;
+                    height: 5px;
+                    background: $color-white-0;
+                    border-radius: 4px;
+                    border: 1px solid $color-yellow-7;
+                    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.21);
+                }
+                &:hover {
+                    background: $color-blue-1;
+                    color: $color-white-0;
+                    text-shadow: -1px -1px 0 rgba(153, 102, 51, 0.3);
                 }
             }
         }
         .footer__bottom--left {
             width: 33%;
+            display: none;
         }
     }
     .footer__copyright {
-        border-top: 5px solid white;
+        border-top: 5px solid $color-white-0;
         height: 70px;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
-        font-size: 1.5rem;
+        font-size: ($fs-0 - 1);
         display: flex;
         justify-content: space-between;
         align-items: center;
         .footer__copyright--brand {
-            color: white;
+            color: $color-white-0;
         }
         .footer__copyright--social {
-            color: white;
+            color: $color-white-0;
+            display: flex;
+            justify-content: flex-end;
+
+            span:nth-child(1) {
+                background-color: $color-blue-5;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                margin: 0 8px;
+                &:hover {
+                    color: $color-blue-5;
+                    background-color: $color-white-0;
+                }
+            }
+            span:nth-child(2) {
+                background-color: $color-blue-2;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                &:hover {
+                    color: $color-blue-2;
+                    background-color: $color-white-0;
+                }
+            }
         }
     }
 }
@@ -201,17 +307,17 @@ footer.footer {
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    color: white;
+                    color: $color-white-0;
                     font-size: calc(1rem + 0.46vw);
                 }
                 .footer__left--desc {
-                    color: whitesmoke;
+                    color: $color-white-1;
                     font-size: calc(1rem + 0.2vw);
                     font-weight: normal;
                 }
                 form {
                     input.field {
-                        font-size: 1.4rem;
+                        font-size: $fs-1;
                         font-weight: normal;
                     }
                     button.btn-subscribe {
@@ -222,13 +328,13 @@ footer.footer {
             }
             .footer__mid {
                 .contact-box {
-                    padding: 2.5rem 1.5rem;
+                    padding: $pd-4 $pd-2;
                     h2 {
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         text-align: center;
-                        color: white;
+                        color: $color-white-0;
                         font-size: calc(1rem + 0.46vw);
                         text-transform: uppercase;
                     }
@@ -237,7 +343,7 @@ footer.footer {
                         font-size: calc(1rem + 0.46vw);
                     }
                     button.btn-contact {
-                        margin-top: 1.5rem;
+                        margin-top: $mg-2;
                         font-size: calc(1rem + 0.4vw);
                         font-weight: normal;
                     }
@@ -246,7 +352,7 @@ footer.footer {
             .footer__right {
                 .iframe {
                     width: 100%;
-                    max-height: 600px;
+                    max-height: $fw-bold-0;
                     iframe.iframe__fb {
                         width: 70%;
                         margin: 0 auto;
@@ -255,15 +361,19 @@ footer.footer {
             }
         }
         .footer__bottom {
-            margin: 1.5rem auto;
+            margin: $mg-2 auto;
             font-size: calc(1rem + 0.4vw);
             .footer__bottom--left {
-                margin: 1.5rem auto;
+                margin: $mg-2 auto;
             }
         }
         .footer__copyright {
-            margin: 1.5rem auto;
+            margin: $mg-2 auto;
             font-size: calc(1rem + 0.4vw);
+            .footer__copyright--social {
+                display: flex;
+                justify-content: flex-start;
+            }
         }
     }
 }
