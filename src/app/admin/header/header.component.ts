@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { CoursesService } from 'src/app/services/courses.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private services : CoursesService) { }
+  loggedUser: any;
+  constructor(private services : CoursesService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loggedUser = JSON.parse(this.services.getToken()).taiKhoan;
+    console.log(this.loggedUser);
+    
   }
 
   daDangNhap() {
@@ -20,5 +25,11 @@ export class HeaderComponent implements OnInit {
   dangXuat() {
     this.services.dangXuat();
   }
+
+  getUserInfo(taiKhoan: any) {
+    this.router.navigate(['/admin/users/' + taiKhoan], {relativeTo: this.activatedRoute})
+  }
+
+
 
 }
